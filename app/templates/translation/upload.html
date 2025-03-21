@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Translator</title>
+</head>
+<body>
+    <h2>Upload File for Translation</h2>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" required>
+        <select name="language" required>
+            <option value="English">English</option>
+            <option value="Bangla">Bangla</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Korean">Korean</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Russian">Russian</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Italian">Italian</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Swedish">Swedish</option>
+            <option value="Greek">Greek</option>
+            <option value="Thai">Thai</option>
+            <option value="Vietnamese">Vietnamese</option>
+            <option value="Malay">Malay</option>
+        </select>
+        <button type="submit">Translate</button>
+    </form>
+</body>
+</html>
