@@ -1,39 +1,301 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#    <title>File Translator</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h2>Upload File for Translation</h2>#}
+{#    {% if error %}#}
+{#        <p style="color: red;">{{ error }}</p>#}
+{#    {% endif %}#}
+{#    <form action="" method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <input type="file" name="file" required>#}
+{#        <select name="language" required>#}
+{#            <option value="English">English</option>#}
+{#            <option value="Bangla">Bangla</option>#}
+{#            <option value="Japanese">Japanese</option>#}
+{#            <option value="Korean">Korean</option>#}
+{#            <option value="Spanish">Spanish</option>#}
+{#            <option value="French">French</option>#}
+{#            <option value="German">German</option>#}
+{#            <option value="Chinese">Chinese</option>#}
+{#            <option value="Hindi">Hindi</option>#}
+{#            <option value="Arabic">Arabic</option>#}
+{#            <option value="Russian">Russian</option>#}
+{#            <option value="Portuguese">Portuguese</option>#}
+{#            <option value="Italian">Italian</option>#}
+{#            <option value="Turkish">Turkish</option>#}
+{#            <option value="Dutch">Dutch</option>#}
+{#            <option value="Swedish">Swedish</option>#}
+{#            <option value="Greek">Greek</option>#}
+{#            <option value="Thai">Thai</option>#}
+{#            <option value="Vietnamese">Vietnamese</option>#}
+{#            <option value="Malay">Malay</option>#}
+{#        </select>#}
+{#        <button type="submit">Translate</button>#}
+{#    </form>#}
+{#</body>#}
+{#</html>#}
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>File Translator</title>#}
+{#    <style>#}
+{#        body {#}
+{#            font-family: Arial, sans-serif;#}
+{#            text-align: center;#}
+{#            margin: 50px;#}
+{#        }#}
+{#        select {#}
+{#            min-width: 200px;#}
+{#            height: 100px;#}
+{#        }#}
+{#    </style>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#    <h2>Upload File for Translation</h2>#}
+{#    {% if error %}#}
+{#        <p style="color: red;">{{ error }}</p>#}
+{#    {% endif %}#}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <input type="file" name="file" required>#}
+{##}
+{#        <label for="languages">Select Languages:</label>#}
+{#        <select name="languages" id="languages" multiple required>#}
+{#            <option value="English">English</option>#}
+{#            <option value="Spanish">Spanish</option>#}
+{#            <option value="French">French</option>#}
+{#            <option value="German">German</option>#}
+{#            <option value="Chinese">Chinese</option>#}
+{#            <option value="Japanese">Japanese</option>#}
+{#            <option value="Korean">Korean</option>#}
+{#            <option value="Arabic">Arabic</option>#}
+{#        </select>#}
+{##}
+{#        <br><br>#}
+{#        <button type="submit">Translate</button>#}
+{#    </form>#}
+{##}
+{#</body>#}
+{#</html>#}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>File Translator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Translation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            text-align: left;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .drop-area {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .drop-area.highlight {
+            border-color: #000;
+        }
+        .translate-btn {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .file-name {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        /* Existing styles */
+
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: inline-block;
+}
+
+.loading-spinner .spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #333;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+    </style>
 </head>
 <body>
-    <h2>Upload File for Translation</h2>
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="file" required>
-        <select name="language" required>
-            <option value="English">English</option>
-            <option value="Bangla">Bangla</option>
-            <option value="Japanese">Japanese</option>
-            <option value="Korean">Korean</option>
-            <option value="Spanish">Spanish</option>
-            <option value="French">French</option>
-            <option value="German">German</option>
-            <option value="Chinese">Chinese</option>
-            <option value="Hindi">Hindi</option>
-            <option value="Arabic">Arabic</option>
-            <option value="Russian">Russian</option>
-            <option value="Portuguese">Portuguese</option>
-            <option value="Italian">Italian</option>
-            <option value="Turkish">Turkish</option>
-            <option value="Dutch">Dutch</option>
-            <option value="Swedish">Swedish</option>
-            <option value="Greek">Greek</option>
-            <option value="Thai">Thai</option>
-            <option value="Vietnamese">Vietnamese</option>
-            <option value="Malay">Malay</option>
-        </select>
-        <button type="submit">Translate</button>
-    </form>
+
+    <div class="container">
+        <h2>1. Context</h2>
+        <form id="translateForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="section">
+                <label>What is this for?</label><br>
+                <input type="radio" name="context" value="app"> App or Web
+                <input type="radio" name="context" value="content"> Contents
+            </div>
+
+            <div class="section">
+                <label>What is it about?</label><br>
+                <input type="text" name="description" placeholder="e.g. This app is a food delivery app" style="width: 100%; padding: 5px;">
+            </div>
+
+            <h2>2. Language (Multiple selections allowed)</h2>
+            <div class="checkbox-grid">
+                <label><input type="checkbox" name="languages" value="English"> English</label><br>
+                <label><input type="checkbox" name="languages" value="Spanish"> Spanish</label><br>
+                <label><input type="checkbox" name="languages" value="French"> French</label><br>
+                <label><input type="checkbox" name="languages" value="German"> German</label><br>
+                <label><input type="checkbox" name="languages" value="Japanese"> Japanese</label><br>
+                <label><input type="checkbox" name="languages" value="Simplified Chinese"> Simplified Chinese</label><br>
+                <label><input type="checkbox" name="languages" value="Traditional Chinese"> Traditional Chinese</label><br>
+                <label><input type="checkbox" name="languages" value="Korean"> Korean</label><br>
+                <label><input type="checkbox" name="languages" value="Russian"> Russian</label><br>
+                <label><input type="checkbox" name="languages" value="Arabic"> Arabic</label><br>
+                <label><input type="checkbox" name="languages" value="Portuguese"> Portuguese</label><br>
+                <label><input type="checkbox" name="languages" value="Italian"> Italian</label><br>
+                <label><input type="checkbox" name="languages" value="Hindi"> Hindi</label><br>
+                <label><input type="checkbox" name="languages" value="Indonesian"> Indonesian</label><br>
+                <label><input type="checkbox" name="languages" value="Turkish"> Turkish</label><br>
+                <label><input type="checkbox" name="languages" value="Thai"> Thai</label><br>
+                <label><input type="checkbox" name="languages" value="Vietnamese"> Vietnamese</label><br>
+                <label><input type="checkbox" name="languages" value="Urdu"> Urdu</label><br>
+                <label><input type="checkbox" name="languages" value="Malay"> Malay</label><br>
+                <label><input type="checkbox" name="languages" value="Dutch"> Dutch</label><br>
+                <label><input type="checkbox" name="languages" value="Polish"> Polish</label><br>
+                <label><input type="checkbox" name="languages" value="Swedish"> Swedish</label><br>
+                <label><input type="checkbox" name="languages" value="Norwegian"> Norwegian</label><br>
+                <label><input type="checkbox" name="languages" value="Danish"> Danish</label><br>
+                <label><input type="checkbox" name="languages" value="Czech"> Czech</label><br>
+                <label><input type="checkbox" name="languages" value="Hungarian"> Hungarian</label><br>
+                <label><input type="checkbox" name="languages" value="Finnish"> Finnish</label><br>
+                <label><input type="checkbox" name="languages" value="Hebrew"> Hebrew</label><br>
+                <label><input type="checkbox" name="languages" value="Romanian"> Romanian</label><br>
+                <label><input type="checkbox" name="languages" value="Greek"> Greek</label><br>
+            </div>
+
+            <h2>3. Upload File</h2>
+            <div class="drop-area" id="drop-area">
+                <p>Drag & Drop file here</p>
+                <p>Supported formats: csv, ini, json, php, ts, xliff, xml, yaml</p>
+                <input type="file" id="fileInput" name="file" hidden>
+                <div id="file-name" class="file-name"></div> <!-- Placeholder for file name -->
+            </div>
+
+            <br>
+            <button type="submit" class="translate-btn">Translate</button>
+
+            <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                <p>Translating... Please wait.</p>
+                <div class="spinner"></div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let dropArea = document.getElementById('drop-area');
+let fileInput = document.getElementById('fileInput');
+let fileNameDisplay = document.getElementById('file-name');
+let form = document.getElementById('translateForm');
+let loadingSpinner = document.getElementById('loadingSpinner');
+
+dropArea.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    dropArea.classList.add('highlight');
+});
+
+dropArea.addEventListener('dragleave', () => {
+    dropArea.classList.remove('highlight');
+});
+
+dropArea.addEventListener('drop', (event) => {
+    event.preventDefault();
+    dropArea.classList.remove('highlight');
+
+    let files = event.dataTransfer.files;
+    if (files.length > 0) {
+        fileInput.files = files;
+        fileNameDisplay.textContent = "File Uploaded: " + files[0].name; // Display the file name
+    }
+});
+
+dropArea.addEventListener('click', () => {
+    fileInput.click();
+});
+
+fileInput.addEventListener('change', function () {
+    fileNameDisplay.textContent = "File Selected: " + this.files[0].name; // Display the selected file name
+});
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Show loading spinner
+    loadingSpinner.style.display = 'block';
+
+    let formData = new FormData(form);
+
+    fetch('{% url "file-translate" %}', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.blob())
+    .then(blob => {
+        // Hide loading spinner once the translation is done
+        loadingSpinner.style.display = 'none';
+
+        let url = window.URL.createObjectURL(blob);
+        let a = document.createElement('a');
+        a.href = url;
+        a.download = "translated_files.zip";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+    })
+    .catch(error => {
+        loadingSpinner.style.display = 'none';
+        console.error('Error:', error);
+    });
+});
+
+    </script>
+
 </body>
 </html>
+

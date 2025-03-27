@@ -1,36 +1,69 @@
-import json
-import yaml
 import openai
 import os
 import polib
 import io
+import zipfile
 from django.conf import settings
 from django.shortcuts import render
 from django.core.files.storage import default_storage
 from django.http import HttpResponse
+from django.utils.text import get_valid_filename
 
 client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
 
-def translate_text(text, target_language, file_format=None):
-    """Translate entire file content using OpenAI API"""
+
+def translate_text(text, target_language, file_format=None, context=None, description=None):
+    """Translate entire file content using OpenAI API with context and description"""
+
     format_instruction = f"The following is a {file_format} file." if file_format else ""
+    context_instruction = f"Context: {context}." if context else ""
+    description_instruction = f"Description: {description}." if description else ""
+
+    prompt = f"""
+    {format_instruction}
+    {context_instruction}
+    {description_instruction}
+    Translate the entire content into {target_language}. Keep the structure unchanged.
+    """
+
     response = client.chat.completions.create(
         model="gpt-4-turbo",
         messages=[
-            {"role": "system", "content": f"{format_instruction} Translate the entire content into {target_language}. Keep the structure unchanged."},
+            {"role": "system", "content": prompt.strip()},
             {"role": "user", "content": text}
         ]
     )
+    # print(response)
+
     return response.choices[0].message.content
+
+
+def get_file_format(file_name):
+    """Determine the format of the uploaded file based on its extension"""
+    extension_mapping = {
+        ".json": "JSON",
+        ".yml": "YAML",
+        ".yaml": "YAML",
+        ".po": "PO",
+        ".php": "PHP",
+        ".ini": "INI",
+        ".xml": "XML",
+        ".csv": "CSV",
+        ".ts": "TS",
+        ".xliff": "XLIFF",
+    }
+    return extension_mapping.get(os.path.splitext(file_name)[1].lower(), "Plain Text")
 
 
 def file_translate(request):
     if request.method == "POST" and request.FILES.get("file"):
         file = request.FILES["file"]
-        target_language = request.POST.get("language")
+        target_languages = request.POST.getlist("languages")
+        context = request.POST.get("context")  # Get context (App/Web or Content)
+        description = request.POST.get("description")  # Get description
 
-        if not target_language:
-            return render(request, "translation/upload.html", {"error": "Language selection is required"})
+        if not target_languages:
+            return render(request, "translation/upload.html", {"error": "At least one language selection is required."})
 
         file_path = default_storage.save(file.name, file)
 
@@ -39,36 +72,31 @@ def file_translate(request):
                 content = f.read().decode("utf-8")
 
                 # Detect file format
-                if file.name.endswith(".json"):
-                    file_format = "JSON"
-                elif file.name.endswith((".yml", ".yaml")):
-                    file_format = "YAML"
-                elif file.name.endswith(".po"):
-                    file_format = "PO"
-                elif file.name.endswith(".php"):
-                    file_format = "PHP"
-                elif file.name.endswith(".ini"):
-                    file_format = "INI"
-                elif file.name.endswith(".xml"):
-                    file_format = "XML"
-                elif file.name.endswith(".csv"):
-                    file_format = "CSV"
-                elif file.name.endswith(".ts"):
-                    file_format = "TS"
-                elif file.name.endswith(".xliff"):
-                    file_format = "XLIFF"
-                else:
-                    file_format = "Plain Text"
+                file_extension = os.path.splitext(file.name)[1].lower()
+                file_format_mapping = {
+                    ".json": "JSON", ".yml": "YAML", ".yaml": "YAML",
+                    ".po": "PO", ".php": "PHP", ".ini": "INI",
+                    ".xml": "XML", ".csv": "CSV", ".ts": "TS", ".xliff": "XLIFF"
+                }
+                file_format = file_format_mapping.get(file_extension, "Plain Text")
 
-                # Send the entire content for translation
-                translated_content = translate_text(content, target_language, file_format)
+                zip_buffer = io.BytesIO()
+                with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
+                    for language in target_languages:
+                        translated_content = translate_text(content, language, file_format, context, description)
 
-                # Save the translated file
-                translated_file_path = save_translated_file(file.name, translated_content)
+                        translated_filename = f"{os.path.splitext(file.name)[0]}_{language}{file_extension}"
+                        translated_file_path = os.path.join(settings.MEDIA_ROOT, translated_filename)
 
-            with open(translated_file_path, "r", encoding="utf-8") as f:
-                response = HttpResponse(f.read(), content_type="text/plain")
-                response["Content-Disposition"] = f"attachment; filename={os.path.basename(translated_file_path)}"
+                        with open(translated_file_path, "w", encoding="utf-8") as f:
+                            f.write(translated_content)
+
+                        zip_file.write(translated_file_path, translated_filename)
+
+                zip_buffer.seek(0)
+
+                response = HttpResponse(zip_buffer.read(), content_type="application/zip")
+                response["Content-Disposition"] = f'attachment; filename="translated_files.zip"'
                 return response
 
         except Exception as e:
@@ -76,102 +104,3 @@ def file_translate(request):
 
     return render(request, "translation/upload.html")
 
-
-# def file_translate(request):
-#     if request.method == "POST" and request.FILES.get("file"):
-#         file = request.FILES["file"]
-#         target_language = request.POST.get("language")
-#
-#         if not target_language:
-#             return render(request, "translation/upload.html", {"error": "Language selection is required"})
-#
-#         file_path = default_storage.save(file.name, file)
-#
-#         try:
-#             with default_storage.open(file_path, "rb") as f:
-#                 content = f.read().decode("utf-8")
-#
-#                 if file.name.endswith(".json"):
-#                     data = json.loads(content)
-#                     translated_data = translate_dict_values(data, target_language)
-#                     translated_content = json.dumps(translated_data, indent=4, ensure_ascii=False)
-#
-#                 elif file.name.endswith((".yml", ".yaml")):
-#                     data = yaml.safe_load(content)
-#                     translated_data = translate_dict_values(data, target_language)
-#                     translated_content = yaml.dump(translated_data, allow_unicode=True)
-#
-#                 elif file.name.endswith(".po"):
-#                     translated_po = handle_po_file(content, target_language)
-#                     # print(translated_po)
-#                     translated_content = save_translated_file(file.name, translated_po)
-#
-#                 else:
-#                     translated_content = translate_text(content, target_language)
-#
-#             # If translated_content is a string, save it as a file
-#             if isinstance(translated_content, str):
-#                 translated_file_path = save_translated_file(file.name, translated_content)
-#
-#             with open(translated_file_path, "r", encoding="utf-8") as f:
-#                 response = HttpResponse(f.read(), content_type="text/plain")
-#                 response["Content-Disposition"] = f"attachment; filename={os.path.basename(translated_file_path)}"
-#                 return response
-#
-#         except Exception as e:
-#             return render(request, "translation/upload.html", {"error": str(e)})
-#
-#     return render(request, "translation/upload.html")
-#
-#
-# def translate_text(text, target_language):
-#     """Translate only the given text using OpenAI API"""
-#     response = client.chat.completions.create(
-#         model="gpt-4-turbo",
-#         messages=[
-#             {"role": "system", "content": f"Translate the following text to {target_language}"},
-#             {"role": "user", "content": str(text)}
-#         ]
-#     )
-#     return response.choices[0].message.content
-
-
-def translate_dict_values(data, target_language):
-    """Recursively translate only the values, not the keys, in a dictionary or list."""
-    if isinstance(data, dict):
-        return {key: translate_dict_values(value, target_language) for key, value in data.items()}
-    elif isinstance(data, list):
-        return [translate_dict_values(item, target_language) for item in data]
-    elif isinstance(data, str):
-        return translate_text(data, target_language)  # Translate only the string values
-    return data  # Leave non-string values unchanged
-
-
-def save_translated_file(original_filename, translated_content):
-    """Save the translated content as a new file"""
-    new_filename = "translated_" + original_filename
-    translated_path = os.path.join(settings.MEDIA_ROOT, new_filename)
-    print(translated_content)
-    # If the content is POFile (not a string), save using POFile's save method
-    if isinstance(translated_content, polib.POFile):
-        translated_content.save(translated_path)
-    else:
-        # For other content like JSON or YAML, write to file normally
-        with open(translated_path, "w", encoding="utf-8") as f:
-            f.write(translated_content)
-
-    return translated_path
-
-
-def handle_po_file(content, target_language):
-    """Handle PO files by translating msgid values"""
-
-    # Load PO content from a string
-    po = polib.pofile(content)  # This should work directly
-
-    # Translate each msgid and store the result in msgstr
-    for entry in po:
-        if entry.msgid:  # Avoid empty entries
-            entry.msgstr = translate_text(entry.msgid, target_language)
-
-    return po  # Return the modified POFile object
