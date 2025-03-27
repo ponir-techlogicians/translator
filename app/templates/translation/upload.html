@@ -287,6 +287,9 @@ form.addEventListener('submit', function (event) {
         document.body.appendChild(a);
         a.click();
         a.remove();
+        form.reset();  // Reset form fields
+        fileInput.value = "";  // Clear file input
+        fileNameDisplay.textContent = "No file selected";
     })
     .catch(error => {
         loadingSpinner.style.display = 'none';
