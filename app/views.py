@@ -3,14 +3,26 @@ import os
 import polib
 import io
 import zipfile
+import tiktoken
 from django.conf import settings
 from django.shortcuts import render
 from django.core.files.storage import default_storage
 from django.http import HttpResponse
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.utils.text import get_valid_filename
-
+import stripe
+stripe.api_key = settings.STRIPE_SECRET_KEY
 client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
 
+
+def count_tokens(text, model="gpt-4-turbo"):
+    """Estimate the token count of a given text for a specific model."""
+    encoding = tiktoken.encoding_for_model(model)
+    return len(encoding.encode(text))
+
+def count_bytes(text):
+    return len(text.encode('utf-8'))
 
 def translate_text(text, target_language, file_format=None, context=None, description=None):
     """Translate entire file content using OpenAI API with context and description"""
@@ -26,6 +38,18 @@ def translate_text(text, target_language, file_format=None, context=None, descri
     Translate the entire content into {target_language}. Keep the structure unchanged.
     """
 
+    # prompt_tokens = count_tokens(prompt)
+    # text_tokens = count_tokens(text)
+    # estimated_total_tokens = prompt_tokens + text_tokens
+    #
+    # print(f"Estimated token usage: {estimated_total_tokens} tokens")
+
+    prompt_bytes = count_tokens(prompt)
+    print(prompt_bytes)
+    text_bytes = count_tokens(text)
+    estimated_total_bytes = prompt_bytes + text_bytes
+    print(f"Estimated total bytes: {estimated_total_bytes}")
+
     response = client.chat.completions.create(
         model="gpt-4-turbo",
         messages=[
@@ -33,7 +57,9 @@ def translate_text(text, target_language, file_format=None, context=None, descri
             {"role": "user", "content": text}
         ]
     )
-    # print(response)
+    print(response)
+
+
 
     return response.choices[0].message.content
 
@@ -102,5 +128,45 @@ def file_translate(request):
         except Exception as e:
             return render(request, "translation/upload.html", {"error": str(e)})
 
-    return render(request, "translation/upload.html")
+    return render(request, "translation/upload.html",context={'stripe_key':settings.STRIPE_PUBLISHABLE_KEY})
 
+def price_estimate(request):
+    if request.method == "POST" and request.FILES.get("file"):
+        file = request.FILES["file"]
+        target_languages = request.POST.getlist("languages")
+        file_path = default_storage.save(file.name, file)
+        try:
+            with default_storage.open(file_path, "rb") as f:
+                content = f.read().decode("utf-8")
+                text_bytes = count_tokens(content) + 40
+                total_bytes = text_bytes * len(target_languages)
+                price = 1
+                if total_bytes >= 1000 and total_bytes <= 2000:
+                    price = 2
+                if total_bytes > 2000 and total_bytes <= 4000:
+                    price = 3
+                else:
+                    price = 4
+                return JsonResponse({
+                    "status": "success",
+                    "total_bytes": total_bytes,
+                    "price": price
+                })
+        except Exception as e:
+            return JsonResponse({"status": "error", "message": str(e)}, status=400)
+
+    return JsonResponse({"status": "error", "message": "Invalid request"}, status=400)
+
+
+@csrf_exempt
+def create_payment_intent(request):
+    price = request.POST.get("price")
+    print(price)
+    try:
+        intent = stripe.PaymentIntent.create(
+            amount=int(price)*100,  # Amount in cents ($10)
+            currency="usd",
+        )
+        return JsonResponse({'client_secret': intent.client_secret})
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
