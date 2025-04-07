@@ -203,10 +203,10 @@
                     <div id="card-element"><!-- Stripe Elements will insert the card input here --></div>
                     <button id="pay-btn">Pay Now</button>
                     <div id="payment-message"></div>
-{#                    <div id="upload-progress-container" style="display:none;">#}
-{#                        <p>Uploading and translating... <span id="upload-progress-text">0%</span></p>#}
-{#                        <progress id="upload-progress" value="0" max="100" style="width: 100%;"></progress>#}
-{#                    </div>#}
+                    <div id="upload-progress-container" style="display:none;">
+                        <p>Translating... <span id="upload-progress-text">0%</span></p>
+                        <progress id="upload-progress" value="0" max="100" style="width: 100%;"></progress>
+                    </div>
                 </form>
             </div>
         </div>
@@ -220,6 +220,9 @@
         let priceModal = document.getElementById('price-modal');
         let priceDisplay = document.getElementById('price-display');
         let payButton = document.getElementById('pay-button');
+        const progressBar = document.getElementById('upload-progress');
+        const progressText = document.getElementById('upload-progress-text');
+        const progressContainer = document.getElementById('upload-progress-container');
         let stripe = Stripe('{{ stripe_key }}');
         let elements = stripe.elements();
 
@@ -310,7 +313,7 @@
 
                                 // Call the translation API
 
-                                let formData = new FormData(form);
+                                /*let formData = new FormData(form);
 
                                 fetch('{% url "file-translate" %}', {
                                     method: 'POST',
@@ -332,34 +335,60 @@
                                     fileInput.value = "";  // Clear file input
                                     fileNameDisplay.textContent = "No file selected";
                                     $("#price-modal").hide();
+                                    window.location.reload();
                                 })
                                 .catch(error => {
                                     loadingSpinner.style.display = 'none';
                                     console.error('Error:', error);
-                                });
+                                });*/
 
-                                /*let formData = new FormData(form);
+                                let formData = new FormData(form);
                                 let xhr = new XMLHttpRequest();
 
                                 xhr.open('POST', '{% url "file-translate" %}', true);
 
                                 // Show the progress bar
-                                document.getElementById('upload-progress-container').style.display = 'block';
-                                document.getElementById('upload-progress').value = 0;
-                                document.getElementById('upload-progress-text').textContent = '0%';
+                                progressContainer.style.display = 'block';
+                                progressBar.value = 0;
+                                progressText.textContent = '0%';
 
-                                xhr.upload.onprogress = function (event) {
+                                let fakeProgress = 0;
+                                let timer = setInterval(() => {
+                                    if (fakeProgress < 90) {
+                                        fakeProgress++;
+                                        progressBar.value = fakeProgress;
+                                        progressText.textContent = fakeProgress + '%';
+                                    }
+                                }, 1000);
+
+                                /*xhr.upload.onprogress = function (event) {
+                                    if (event.lengthComputable) {
+                                        let percentComplete = Math.round((event.loaded / event.total) * 100);
+                                        progressBar.value = percentComplete;
+                                        progressText.textContent = percentComplete + '%';
+
+                                        // If real progress is higher than fake, sync up
+                                        if (percentComplete > fakeProgress) {
+                                            fakeProgress = percentComplete;
+                                        }
+                                    }
+                                };*/
+
+                                /*xhr.upload.onprogress = function (event) {
                                     if (event.lengthComputable) {
                                         let percentComplete = Math.round((event.loaded / event.total) * 100);
                                         document.getElementById('upload-progress').value = percentComplete;
                                         document.getElementById('upload-progress-text').textContent = percentComplete + '%';
                                     }
-                                };
+                                };*/
 
                                 xhr.onload = function () {
                                     loadingSpinner.style.display = 'none';
 
                                     if (xhr.status === 200) {
+                                        progressBar.value = 100;
+                                        progressText.textContent = '100%';
+
                                         let blob = xhr.response;
                                         let url = window.URL.createObjectURL(blob);
                                         let a = document.createElement('a');
@@ -373,19 +402,26 @@
                                         fileNameDisplay.textContent = "No file selected";
                                         $("#price-modal").hide();
                                         document.getElementById('upload-progress-container').style.display = 'none';
+                                        window.location.reload();
                                     } else {
                                         console.error('Translation failed');
                                     }
                                 };
 
-                                xhr.onerror = function () {
+                                /*xhr.onerror = function () {
                                     loadingSpinner.style.display = 'none';
                                     document.getElementById('upload-progress-container').style.display = 'none';
+                                    console.error('XHR error');
+                                };*/
+                                xhr.onerror = function () {
+                                    clearInterval(timer);
+                                    loadingSpinner.style.display = 'none';
+                                    progressContainer.style.display = 'none';
                                     console.error('XHR error');
                                 };
 
                                 xhr.responseType = 'blob';
-                                xhr.send(formData);*/
+                                xhr.send(formData);
                             }
                         });
                     }, error: function () {
