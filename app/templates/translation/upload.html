@@ -203,6 +203,10 @@
                     <div id="card-element"><!-- Stripe Elements will insert the card input here --></div>
                     <button id="pay-btn">Pay Now</button>
                     <div id="payment-message"></div>
+{#                    <div id="upload-progress-container" style="display:none;">#}
+{#                        <p>Uploading and translating... <span id="upload-progress-text">0%</span></p>#}
+{#                        <progress id="upload-progress" value="0" max="100" style="width: 100%;"></progress>#}
+{#                    </div>#}
                 </form>
             </div>
         </div>
@@ -302,7 +306,7 @@
                                 $("#payment-message").text(result.error.message);
                                 $("#pay-btn").text("Pay Now").prop("disabled", false);
                             } else {
-                                $("#payment-message").text("Payment successful! Starting translation...");
+                                $("#payment-message").text("Payment successful! Starting translation, Please wait a bit...");
 
                                 // Call the translation API
 
@@ -333,14 +337,62 @@
                                     loadingSpinner.style.display = 'none';
                                     console.error('Error:', error);
                                 });
-                                                }
-                                            });
-                                        },
-                                        error: function () {
-                                            $("#payment-message").text("Payment failed.");
-                                            $("#pay-btn").text("Pay Now").prop("disabled", false);
-                                        }
-                                    });
+
+                                /*let formData = new FormData(form);
+                                let xhr = new XMLHttpRequest();
+
+                                xhr.open('POST', '{% url "file-translate" %}', true);
+
+                                // Show the progress bar
+                                document.getElementById('upload-progress-container').style.display = 'block';
+                                document.getElementById('upload-progress').value = 0;
+                                document.getElementById('upload-progress-text').textContent = '0%';
+
+                                xhr.upload.onprogress = function (event) {
+                                    if (event.lengthComputable) {
+                                        let percentComplete = Math.round((event.loaded / event.total) * 100);
+                                        document.getElementById('upload-progress').value = percentComplete;
+                                        document.getElementById('upload-progress-text').textContent = percentComplete + '%';
+                                    }
+                                };
+
+                                xhr.onload = function () {
+                                    loadingSpinner.style.display = 'none';
+
+                                    if (xhr.status === 200) {
+                                        let blob = xhr.response;
+                                        let url = window.URL.createObjectURL(blob);
+                                        let a = document.createElement('a');
+                                        a.href = url;
+                                        a.download = "translated_files.zip";
+                                        document.body.appendChild(a);
+                                        a.click();
+                                        a.remove();
+                                        form.reset();
+                                        fileInput.value = "";
+                                        fileNameDisplay.textContent = "No file selected";
+                                        $("#price-modal").hide();
+                                        document.getElementById('upload-progress-container').style.display = 'none';
+                                    } else {
+                                        console.error('Translation failed');
+                                    }
+                                };
+
+                                xhr.onerror = function () {
+                                    loadingSpinner.style.display = 'none';
+                                    document.getElementById('upload-progress-container').style.display = 'none';
+                                    console.error('XHR error');
+                                };
+
+                                xhr.responseType = 'blob';
+                                xhr.send(formData);*/
+                            }
+                        });
+                    }, error: function () {
+                        $("#payment-message").text("Payment failed.");
+                        $("#pay-btn").text("Pay Now").prop("disabled", false);
+                    }
+                });
             });
             });
     </script>
