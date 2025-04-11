@@ -83,7 +83,7 @@
 #pay-btn {
     width: 100%;
     padding: 10px;
-    background-color: #5469d4;
+    background-color: #000;
     color: white;
     border: none;
     border-radius: 4px;
@@ -92,7 +92,7 @@
 }
 
 #pay-btn:hover {
-    background-color: #4353b3;
+    background-color: #000;
 }
 
 #payment-message {
@@ -135,6 +135,7 @@
         <h2>1. Context</h2>
         <form id="translateForm" enctype="multipart/form-data">
             {% csrf_token %}
+            <input type="hidden" id="usage_id" name="usage_id">
             <div class="section">
                 <label>What is this for?</label><br>
                 <input type="radio" name="context" value="app"> App or Web
@@ -276,7 +277,14 @@
                 processData: false,
                 success: function (response) {
                     estimatedPrice = response.price;
-                    $("#price-message").text("Estimated Price: $" + estimatedPrice);
+                    $("#usage_id").val(response.usage_id);
+                    var html = `<p> $ ${estimatedPrice} for translation </p>
+                                <p> ${response.text_bytes} x $0.0006 = ${response.language_cost} USD</p>
+                                <p> ${response.language_cost} USD x ${response.number_of_languages} language = ${response.price} USD </p>
+                                `;
+
+                    {#$("#price-message").html("Estimated Price: $" + estimatedPrice +' for '+response.total_bytes+' bytes');#}
+                    $("#price-message").html(html);
                     $("#stripe-payment").show();
                 },
                 error: function () {

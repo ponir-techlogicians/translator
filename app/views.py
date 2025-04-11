@@ -13,6 +13,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.text import get_valid_filename
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import stripe
+
+from app.models import Usage
+
 stripe.api_key = settings.STRIPE_SECRET_KEY
 client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
 
@@ -62,7 +65,7 @@ def translate_text(text, target_language, file_format=None, context=None, descri
 
 
 
-    return response.choices[0].message.content
+    return { "content": response.choices[0].message.content, "total_token": response.usage.total_tokens }
 
 
 def get_file_format(file_name):
@@ -138,6 +141,8 @@ def file_translate(request):
         target_languages = request.POST.getlist("languages")
         context = request.POST.get("context")
         description = request.POST.get("description")
+        usage_id = request.POST.get("usage_id")
+        usage = Usage.objects.filter(id=usage_id)
 
         if not target_languages:
             return render(request, "translation/upload.html", {"error": "At least one language selection is required."})
@@ -173,6 +178,7 @@ def file_translate(request):
                             )
                         )
 
+                    total_token = 0
                     for i, future in enumerate(as_completed(futures)):
                         language = target_languages[i]
                         translated_content = future.result()
@@ -180,9 +186,15 @@ def file_translate(request):
                         translated_file_path = os.path.join(settings.MEDIA_ROOT, translated_filename)
 
                         with open(translated_file_path, "w", encoding="utf-8") as f:
-                            f.write(translated_content)
+                            f.write(translated_content.get("content"))
 
                         results[language] = translated_file_path
+                        total_token += translated_content.get("total_token")
+
+                    if usage.exists():
+                        usage = usage.first()
+                        usage.total_token = total_token
+                        usage.save()
 
                 with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
                     for language, path in results.items():
@@ -206,18 +218,24 @@ def price_estimate(request):
             with default_storage.open(file_path, "rb") as f:
                 content = f.read().decode("utf-8")
                 text_bytes = count_tokens(content) + 40
-                total_bytes = text_bytes * len(target_languages)
-                price = 1
-                if total_bytes >= 1000 and total_bytes <= 2000:
-                    price = 2
-                if total_bytes > 2000 and total_bytes <= 4000:
-                    price = 3
-                else:
-                    price = 4
+                total_bytes = int(text_bytes * len(target_languages))
+                price = total_bytes * 0.0006
+                # if total_bytes >= 1000 and total_bytes <= 2000:
+                #     price = 2
+                # if total_bytes > 2000 and total_bytes <= 4000:
+                #     price = 3
+                # else:
+                #     price = 4
+
+                usage = Usage.objects.create(price=price, total_bytes=total_bytes,number_of_languages=len(target_languages))
                 return JsonResponse({
                     "status": "success",
                     "total_bytes": total_bytes,
-                    "price": price
+                    "text_bytes": text_bytes,
+                    "price": price,
+                    "number_of_languages": len(target_languages),
+                    "language_cost": text_bytes*0.0006,
+                    "usage_id": usage.id
                 })
         except Exception as e:
             return JsonResponse({"status": "error", "message": str(e)}, status=400)
@@ -228,10 +246,11 @@ def price_estimate(request):
 @csrf_exempt
 def create_payment_intent(request):
     price = request.POST.get("price")
-    print(price)
+    amount = int(float(price) * 100)
+    print(amount)
     try:
         intent = stripe.PaymentIntent.create(
-            amount=int(price)*100,  # Amount in cents ($10)
+            amount=amount,  # Amount in cents ($10)
             currency="usd",
         )
         return JsonResponse({'client_secret': intent.client_secret})
