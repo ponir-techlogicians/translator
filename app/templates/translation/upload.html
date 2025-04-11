@@ -279,7 +279,7 @@
                     estimatedPrice = response.price;
                     $("#usage_id").val(response.usage_id);
                     var html = `<p> $ ${estimatedPrice} for translation </p>
-                                <p> ${response.text_bytes} x $0.0006 = ${response.language_cost} USD</p>
+                                <p> ${response.text_bytes} byte x $0.0006 = ${response.language_cost} USD</p>
                                 <p> ${response.language_cost} USD x ${response.number_of_languages} language = ${response.price} USD </p>
                                 `;
 

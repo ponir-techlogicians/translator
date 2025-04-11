@@ -217,7 +217,7 @@ def price_estimate(request):
         try:
             with default_storage.open(file_path, "rb") as f:
                 content = f.read().decode("utf-8")
-                text_bytes = count_tokens(content) + 40
+                text_bytes = count_bytes(content)
                 total_bytes = int(text_bytes * len(target_languages))
                 price = total_bytes * 0.0006
                 # if total_bytes >= 1000 and total_bytes <= 2000:
@@ -232,9 +232,9 @@ def price_estimate(request):
                     "status": "success",
                     "total_bytes": total_bytes,
                     "text_bytes": text_bytes,
-                    "price": price,
+                    "price": round(price, 2),
                     "number_of_languages": len(target_languages),
-                    "language_cost": text_bytes*0.0006,
+                    "language_cost": round(text_bytes * 0.0006, 2),
                     "usage_id": usage.id
                 })
         except Exception as e:
