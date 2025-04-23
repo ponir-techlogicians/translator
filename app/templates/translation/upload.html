@@ -293,69 +293,191 @@
             });
 });
 
+        {#$(document).ready(function () {#}
+        {#    let elements = stripe.elements();#}
+        {#    let cardElement = elements.create("card");#}
+        {#    cardElement.mount("#card-element");#}
+        {##}
+        {#    $("#payment-form").submit(function (e) {#}
+        {#        e.preventDefault();#}
+        {#        $("#pay-btn").text("Processing...").prop("disabled", true);#}
+        {##}
+        {#        // Call server to create PaymentIntent#}
+        {#        $.ajax({#}
+        {#            url: "/create-payment-intent/",#}
+        {#            type: "POST",#}
+        {#            data: { price: estimatedPrice },#}
+        {#            success: function (response) {#}
+        {#                stripe.confirmCardPayment(response.client_secret, {#}
+        {#                    payment_method: {#}
+        {#                        card: cardElement#}
+        {#                    }#}
+        {#                }).then(function (result) {#}
+        {#                    if (result.error) {#}
+        {#                        $("#payment-message").text(result.error.message);#}
+        {#                        $("#pay-btn").text("Pay Now").prop("disabled", false);#}
+        {#                    } else {#}
+        {#                        $("#payment-message").text("Payment successful! Starting translation, Please wait a bit...");#}
+        {##}
+        {#                        // Call the translation API#}
+        {##}
+        {#                        /*let formData = new FormData(form);#}
+        {##}
+        {#                        fetch('{% url "file-translate" %}', {#}
+        {#                            method: 'POST',#}
+        {#                            body: formData#}
+        {#                        })#}
+        {#                        .then(response => response.blob())#}
+        {#                        .then(blob => {#}
+        {#                            // Hide loading spinner once the translation is done#}
+        {#                            loadingSpinner.style.display = 'none';#}
+        {##}
+        {#                            let url = window.URL.createObjectURL(blob);#}
+        {#                            let a = document.createElement('a');#}
+        {#                            a.href = url;#}
+        {#                            a.download = "translated_files.zip";#}
+        {#                            document.body.appendChild(a);#}
+        {#                            a.click();#}
+        {#                            a.remove();#}
+        {#                            form.reset();  // Reset form fields#}
+        {#                            fileInput.value = "";  // Clear file input#}
+        {#                            fileNameDisplay.textContent = "No file selected";#}
+        {#                            $("#price-modal").hide();#}
+        {#                            window.location.reload();#}
+        {#                        })#}
+        {#                        .catch(error => {#}
+        {#                            loadingSpinner.style.display = 'none';#}
+        {#                            console.error('Error:', error);#}
+        {#                        });*/#}
+        {##}
+        {#                        let formData = new FormData(form);#}
+        {#                        let xhr = new XMLHttpRequest();#}
+        {##}
+        {#                        xhr.open('POST', '{% url "file-translate" %}', true);#}
+        {##}
+        {#                        // Show the progress bar#}
+        {#                        progressContainer.style.display = 'block';#}
+        {#                        progressBar.value = 0;#}
+        {#                        progressText.textContent = '0%';#}
+        {##}
+        {#                        let fakeProgress = 0;#}
+        {#                        let timer = setInterval(() => {#}
+        {#                            if (fakeProgress < 90) {#}
+        {#                                fakeProgress++;#}
+        {#                                progressBar.value = fakeProgress;#}
+        {#                                progressText.textContent = fakeProgress + '%';#}
+        {#                            }#}
+        {#                        }, 1000);#}
+        {##}
+        {#                        /*xhr.upload.onprogress = function (event) {#}
+        {#                            if (event.lengthComputable) {#}
+        {#                                let percentComplete = Math.round((event.loaded / event.total) * 100);#}
+        {#                                progressBar.value = percentComplete;#}
+        {#                                progressText.textContent = percentComplete + '%';#}
+        {##}
+        {#                                // If real progress is higher than fake, sync up#}
+        {#                                if (percentComplete > fakeProgress) {#}
+        {#                                    fakeProgress = percentComplete;#}
+        {#                                }#}
+        {#                            }#}
+        {#                        };*/#}
+        {##}
+        {#                        /*xhr.upload.onprogress = function (event) {#}
+        {#                            if (event.lengthComputable) {#}
+        {#                                let percentComplete = Math.round((event.loaded / event.total) * 100);#}
+        {#                                document.getElementById('upload-progress').value = percentComplete;#}
+        {#                                document.getElementById('upload-progress-text').textContent = percentComplete + '%';#}
+        {#                            }#}
+        {#                        };*/#}
+        {##}
+        {#                        xhr.onload = function () {#}
+        {#                            loadingSpinner.style.display = 'none';#}
+        {##}
+        {#                            if (xhr.status === 200) {#}
+        {#                                progressBar.value = 100;#}
+        {#                                progressText.textContent = '100%';#}
+        {##}
+        {#                                let blob = xhr.response;#}
+        {#                                let url = window.URL.createObjectURL(blob);#}
+        {#                                let a = document.createElement('a');#}
+        {#                                a.href = url;#}
+        {#                                a.download = "translated_files.zip";#}
+        {#                                document.body.appendChild(a);#}
+        {#                                a.click();#}
+        {#                                a.remove();#}
+        {#                                form.reset();#}
+        {#                                fileInput.value = "";#}
+        {#                                fileNameDisplay.textContent = "No file selected";#}
+        {#                                $("#price-modal").hide();#}
+        {#                                document.getElementById('upload-progress-container').style.display = 'none';#}
+        {#                                window.location.reload();#}
+        {#                            } else {#}
+        {#                                console.error('Translation failed');#}
+        {#                            }#}
+        {#                        };#}
+        {##}
+        {#                        /*xhr.onerror = function () {#}
+        {#                            loadingSpinner.style.display = 'none';#}
+        {#                            document.getElementById('upload-progress-container').style.display = 'none';#}
+        {#                            console.error('XHR error');#}
+        {#                        };*/#}
+        {#                        xhr.onerror = function () {#}
+        {#                            clearInterval(timer);#}
+        {#                            loadingSpinner.style.display = 'none';#}
+        {#                            progressContainer.style.display = 'none';#}
+        {#                            console.error('XHR error');#}
+        {#                        };#}
+        {##}
+        {#                        xhr.responseType = 'blob';#}
+        {#                        xhr.send(formData);#}
+        {#                    }#}
+        {#                });#}
+        {#            }, error: function () {#}
+        {#                $("#payment-message").text("Payment failed.");#}
+        {#                $("#pay-btn").text("Pay Now").prop("disabled", false);#}
+        {#            }#}
+        {#        });#}
+        {#    });#}
+        {#    });#}
         $(document).ready(function () {
-            let elements = stripe.elements();
-            let cardElement = elements.create("card");
-            cardElement.mount("#card-element");
+    let elements = stripe.elements();
+    let cardElement = elements.create("card");
+    cardElement.mount("#card-element");
 
-            $("#payment-form").submit(function (e) {
-                e.preventDefault();
-                $("#pay-btn").text("Processing...").prop("disabled", true);
+    $("#payment-form").submit(function (e) {
+        e.preventDefault();
+        $("#pay-btn").text("Processing...").prop("disabled", true);
 
-                // Call server to create PaymentIntent
-                $.ajax({
-                    url: "/create-payment-intent/",
-                    type: "POST",
-                    data: { price: estimatedPrice },
-                    success: function (response) {
-                        stripe.confirmCardPayment(response.client_secret, {
-                            payment_method: {
-                                card: cardElement
-                            }
-                        }).then(function (result) {
-                            if (result.error) {
-                                $("#payment-message").text(result.error.message);
-                                $("#pay-btn").text("Pay Now").prop("disabled", false);
-                            } else {
-                                $("#payment-message").text("Payment successful! Starting translation, Please wait a bit...");
+        //let form = document.getElementById("payment-form");
+        let formData = new FormData(form);
 
-                                // Call the translation API
+        $.ajax({
+            url: "/create-payment-intent/",
+            type: "POST",
+            data: { price: estimatedPrice },
+            success: function (response) {
+                stripe.confirmCardPayment(response.client_secret, {
+                    payment_method: {
+                        card: cardElement
+                    }
+                }).then(function (result) {
+                    if (result.error) {
+                        $("#payment-message").text(result.error.message);
+                        $("#pay-btn").text("Pay Now").prop("disabled", false);
+                    } else {
+                        $("#payment-message").text("Payment successful! Starting translation...");
 
-                                /*let formData = new FormData(form);
+                        // Upload file and get task_id
+                        fetch("{% url 'file-translate' %}", {
+                            method: "POST",
+                            body: formData
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.task_id) {
+                                $("#payment-message").text("Translation in progress...");
 
-                                fetch('{% url "file-translate" %}', {
-                                    method: 'POST',
-                                    body: formData
-                                })
-                                .then(response => response.blob())
-                                .then(blob => {
-                                    // Hide loading spinner once the translation is done
-                                    loadingSpinner.style.display = 'none';
-
-                                    let url = window.URL.createObjectURL(blob);
-                                    let a = document.createElement('a');
-                                    a.href = url;
-                                    a.download = "translated_files.zip";
-                                    document.body.appendChild(a);
-                                    a.click();
-                                    a.remove();
-                                    form.reset();  // Reset form fields
-                                    fileInput.value = "";  // Clear file input
-                                    fileNameDisplay.textContent = "No file selected";
-                                    $("#price-modal").hide();
-                                    window.location.reload();
-                                })
-                                .catch(error => {
-                                    loadingSpinner.style.display = 'none';
-                                    console.error('Error:', error);
-                                });*/
-
-                                let formData = new FormData(form);
-                                let xhr = new XMLHttpRequest();
-
-                                xhr.open('POST', '{% url "file-translate" %}', true);
-
-                                // Show the progress bar
+                                // Show progress UI
                                 progressContainer.style.display = 'block';
                                 progressBar.value = 0;
                                 progressText.textContent = '0%';
@@ -369,76 +491,58 @@
                                     }
                                 }, 1000);
 
-                                /*xhr.upload.onprogress = function (event) {
-                                    if (event.lengthComputable) {
-                                        let percentComplete = Math.round((event.loaded / event.total) * 100);
-                                        progressBar.value = percentComplete;
-                                        progressText.textContent = percentComplete + '%';
+                                // Poll translation status
+                                let pollingInterval = setInterval(() => {
+                                    fetch(`/translation-status/${data.task_id}/`)
+                                        .then(r => r.json())
+                                        .then(statusData => {
+                                            if (statusData.status === "completed") {
+                                                loadingSpinner.style.display = 'none';
+                                                clearInterval(pollingInterval);
+                                                clearInterval(timer);
+                                                progressBar.value = 100;
+                                                progressText.textContent = '100%';
+                                                $("#payment-message").text("Translation complete!");
 
-                                        // If real progress is higher than fake, sync up
-                                        if (percentComplete > fakeProgress) {
-                                            fakeProgress = percentComplete;
-                                        }
-                                    }
-                                };*/
 
-                                /*xhr.upload.onprogress = function (event) {
-                                    if (event.lengthComputable) {
-                                        let percentComplete = Math.round((event.loaded / event.total) * 100);
-                                        document.getElementById('upload-progress').value = percentComplete;
-                                        document.getElementById('upload-progress-text').textContent = percentComplete + '%';
-                                    }
-                                };*/
 
-                                xhr.onload = function () {
-                                    loadingSpinner.style.display = 'none';
+                                                let a = document.createElement('a');
+                                                a.href = statusData.download_url;
+                                                a.download = "";
+                                                document.body.appendChild(a);
+                                                a.click();
+                                                a.remove();
 
-                                    if (xhr.status === 200) {
-                                        progressBar.value = 100;
-                                        progressText.textContent = '100%';
 
-                                        let blob = xhr.response;
-                                        let url = window.URL.createObjectURL(blob);
-                                        let a = document.createElement('a');
-                                        a.href = url;
-                                        a.download = "translated_files.zip";
-                                        document.body.appendChild(a);
-                                        a.click();
-                                        a.remove();
-                                        form.reset();
-                                        fileInput.value = "";
-                                        fileNameDisplay.textContent = "No file selected";
-                                        $("#price-modal").hide();
-                                        document.getElementById('upload-progress-container').style.display = 'none';
-                                        window.location.reload();
-                                    } else {
-                                        console.error('Translation failed');
-                                    }
-                                };
-
-                                /*xhr.onerror = function () {
-                                    loadingSpinner.style.display = 'none';
-                                    document.getElementById('upload-progress-container').style.display = 'none';
-                                    console.error('XHR error');
-                                };*/
-                                xhr.onerror = function () {
-                                    clearInterval(timer);
-                                    loadingSpinner.style.display = 'none';
-                                    progressContainer.style.display = 'none';
-                                    console.error('XHR error');
-                                };
-
-                                xhr.responseType = 'blob';
-                                xhr.send(formData);
+                                                // Reset form and hide stuff
+                                                form.reset();
+                                                $("#pay-btn").text("Pay Now").prop("disabled", false);
+                                                progressContainer.style.display = 'none';
+                                                $("#price-modal").hide();
+                                            }
+                                        });
+                                }, 1000);
+                            } else {
+                                $("#payment-message").text("Error starting translation.");
+                                $("#pay-btn").text("Pay Now").prop("disabled", false);
                             }
+                        })
+                        .catch(err => {
+                            console.error("Upload error:", err);
+                            $("#payment-message").text("Upload failed.");
+                            $("#pay-btn").text("Pay Now").prop("disabled", false);
                         });
-                    }, error: function () {
-                        $("#payment-message").text("Payment failed.");
-                        $("#pay-btn").text("Pay Now").prop("disabled", false);
                     }
                 });
-            });
-            });
+            },
+            error: function () {
+                $("#payment-message").text("Payment failed.");
+                $("#pay-btn").text("Pay Now").prop("disabled", false);
+            }
+        });
+    });
+});
+
     </script>
 
 {#    <script>#}

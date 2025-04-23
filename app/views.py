@@ -13,9 +13,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.text import get_valid_filename
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import stripe
-
+from app.tasks import translate_and_package
 from app.models import Usage
-
+from celery.result import AsyncResult
 stripe.api_key = settings.STRIPE_SECRET_KEY
 client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
 
@@ -134,7 +134,85 @@ def get_file_format(file_name):
 #
 #     return render(request, "translation/upload.html",context={'stripe_key':settings.STRIPE_PUBLISHABLE_KEY})
 
+# @csrf_exempt
+# def file_translate(request):
+#     if request.method == "POST" and request.FILES.get("file"):
+#         file = request.FILES["file"]
+#         target_languages = request.POST.getlist("languages")
+#         context = request.POST.get("context")
+#         description = request.POST.get("description")
+#         usage_id = request.POST.get("usage_id")
+#         usage = Usage.objects.filter(id=usage_id)
+#
+#         if not target_languages:
+#             return render(request, "translation/upload.html", {"error": "At least one language selection is required."})
+#
+#         file_path = default_storage.save(file.name, file)
+#
+#         try:
+#             with default_storage.open(file_path, "rb") as f:
+#                 content = f.read().decode("utf-8")
+#
+#                 file_extension = os.path.splitext(file.name)[1].lower()
+#                 file_format_mapping = {
+#                     ".json": "JSON", ".yml": "YAML", ".yaml": "YAML",
+#                     ".po": "PO", ".php": "PHP", ".ini": "INI",
+#                     ".xml": "XML", ".csv": "CSV", ".ts": "TS", ".xliff": "XLIFF"
+#                 }
+#                 file_format = file_format_mapping.get(file_extension, "Plain Text")
+#
+#
+#
+#                 zip_buffer = io.BytesIO()
+#                 futures = []
+#                 results = {}
+#
+#                 with ThreadPoolExecutor() as executor:
+#                     for language in target_languages:
+#                         futures.append(
+#                             executor.submit(
+#                                 translate_text,
+#                                 content,
+#                                 language,
+#                                 file_format,
+#                                 context,
+#                                 description
+#                             )
+#                         )
+#
+#                     total_token = 0
+#                     for i, future in enumerate(as_completed(futures)):
+#                         language = target_languages[i]
+#                         translated_content = future.result()
+#                         translated_filename = f"{os.path.splitext(file.name)[0]}_{language}{file_extension}"
+#                         translated_file_path = os.path.join(settings.MEDIA_ROOT, translated_filename)
+#
+#                         with open(translated_file_path, "w", encoding="utf-8") as f:
+#                             f.write(translated_content.get("content"))
+#
+#                         results[language] = translated_file_path
+#                         total_token += translated_content.get("total_token")
+#
+#                     if usage.exists():
+#                         usage = usage.first()
+#                         usage.total_token = total_token
+#                         usage.save()
+#
+#                 with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
+#                     for language, path in results.items():
+#                         zip_file.write(path, os.path.basename(path))
+#
+#                 zip_buffer.seek(0)
+#                 response = HttpResponse(zip_buffer.read(), content_type="application/zip")
+#                 response["Content-Disposition"] = 'attachment; filename="translated_files.zip"'
+#                 return response
+#
+#         except Exception as e:
+#             return render(request, "translation/upload.html", {"error": str(e)})
+#
+#     return render(request, "translation/upload.html", context={'stripe_key': settings.STRIPE_PUBLISHABLE_KEY})
 
+@csrf_exempt
 def file_translate(request):
     if request.method == "POST" and request.FILES.get("file"):
         file = request.FILES["file"]
@@ -152,7 +230,6 @@ def file_translate(request):
         try:
             with default_storage.open(file_path, "rb") as f:
                 content = f.read().decode("utf-8")
-
                 file_extension = os.path.splitext(file.name)[1].lower()
                 file_format_mapping = {
                     ".json": "JSON", ".yml": "YAML", ".yaml": "YAML",
@@ -161,54 +238,15 @@ def file_translate(request):
                 }
                 file_format = file_format_mapping.get(file_extension, "Plain Text")
 
-                zip_buffer = io.BytesIO()
-                futures = []
-                results = {}
-
-                with ThreadPoolExecutor() as executor:
-                    for language in target_languages:
-                        futures.append(
-                            executor.submit(
-                                translate_text,
-                                content,
-                                language,
-                                file_format,
-                                context,
-                                description
-                            )
-                        )
-
-                    total_token = 0
-                    for i, future in enumerate(as_completed(futures)):
-                        language = target_languages[i]
-                        translated_content = future.result()
-                        translated_filename = f"{os.path.splitext(file.name)[0]}_{language}{file_extension}"
-                        translated_file_path = os.path.join(settings.MEDIA_ROOT, translated_filename)
-
-                        with open(translated_file_path, "w", encoding="utf-8") as f:
-                            f.write(translated_content.get("content"))
-
-                        results[language] = translated_file_path
-                        total_token += translated_content.get("total_token")
-
-                    if usage.exists():
-                        usage = usage.first()
-                        usage.total_token = total_token
-                        usage.save()
-
-                with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
-                    for language, path in results.items():
-                        zip_file.write(path, os.path.basename(path))
-
-                zip_buffer.seek(0)
-                response = HttpResponse(zip_buffer.read(), content_type="application/zip")
-                response["Content-Disposition"] = 'attachment; filename="translated_files.zip"'
-                return response
+                task = translate_and_package.delay(file.name, content, target_languages, file_format, context, description)
+                return JsonResponse({"task_id": task.id})
 
         except Exception as e:
-            return render(request, "translation/upload.html", {"error": str(e)})
+            return JsonResponse({"error": str(e)}, status=500)
 
     return render(request, "translation/upload.html", context={'stripe_key': settings.STRIPE_PUBLISHABLE_KEY})
+
+
 def price_estimate(request):
     if request.method == "POST" and request.FILES.get("file"):
         file = request.FILES["file"]
@@ -242,6 +280,12 @@ def price_estimate(request):
 
     return JsonResponse({"status": "error", "message": "Invalid request"}, status=400)
 
+def translation_status(request, task_id):
+    result = AsyncResult(task_id)
+    if result.ready():
+        data = result.get()
+        return JsonResponse({"status": "completed", "download_url": f"/media/{os.path.basename(data['zip_path'])}"})
+    return JsonResponse({"status": "pending"})
 
 @csrf_exempt
 def create_payment_intent(request):
