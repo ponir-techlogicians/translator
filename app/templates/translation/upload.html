@@ -483,16 +483,16 @@
                                 progressText.textContent = '0%';
 
                                 let fakeProgress = 0;
-                                let timer = setInterval(() => {
+                                /*let timer = setInterval(() => {
                                     if (fakeProgress < 100) {
                                         fakeProgress++;
                                         progressBar.value = fakeProgress;
                                         progressText.textContent = fakeProgress + '%';
                                     }
-                                }, 1000);
+                                }, 1000);*/
 
                                 // Poll translation status
-                                let pollingInterval = setInterval(() => {
+                                /*let pollingInterval = setInterval(() => {
                                     fetch(`/translation-status/${data.task_id}/`)
                                         .then(r => r.json())
                                         .then(statusData => {
@@ -521,7 +521,42 @@
                                                 $("#price-modal").hide();
                                             }
                                         });
-                                }, 1000);
+                                }, 1000);*/
+
+                                let timer = setInterval(() => {
+                                fetch(`/translation-status/${data.task_id}/`)
+                                    .then(res => res.json())
+                                    .then(progressData => {
+                                        if (progressData.status === "PROGRESS" || progressData.status === "progress") {
+                                            let progress = progressData.progress || 0;
+                                            progressBar.value = progress;
+                                            progressText.textContent = progress + '%';
+                                        }else if(progressData.status==="pending"){
+                                            fakeProgress++;
+                                            progressBar.value = fakeProgress;
+                                            progressText.textContent = fakeProgress + '%';
+                                        } else if (progressData.status === "SUCCESS" || progressData.status === "completed") {
+                                            loadingSpinner.style.display = 'none';
+                                            clearInterval(timer);
+                                            progressBar.value = 100;
+                                            progressText.textContent = '100%';
+
+                                            // Download ZIP and reset UI
+                                            let a = document.createElement('a');
+                                            a.href = progressData.download_url;
+                                            a.download = "";
+                                            document.body.appendChild(a);
+                                            a.click();
+                                            a.remove();
+
+                                            $("#payment-message").text("Translation complete!");
+                                            form.reset();
+                                            $("#pay-btn").text("Pay Now").prop("disabled", false);
+                                            progressContainer.style.display = 'none';
+                                            $("#price-modal").hide();
+                                        }
+                                    });
+                            }, 1000);
                             } else {
                                 $("#payment-message").text("Error starting translation.");
                                 $("#pay-btn").text("Pay Now").prop("disabled", false);

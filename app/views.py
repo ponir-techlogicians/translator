@@ -48,11 +48,13 @@ def translate_text(text, target_language, file_format=None, context=None, descri
     #
     # print(f"Estimated token usage: {estimated_total_tokens} tokens")
 
-    prompt_bytes = count_tokens(prompt)
-    print(prompt_bytes)
-    text_bytes = count_tokens(text)
-    estimated_total_bytes = prompt_bytes + text_bytes
-    print(f"Estimated total bytes: {estimated_total_bytes}")
+    # prompt_bytes = count_tokens(prompt)
+    # print(prompt_bytes)
+    # text_bytes = count_tokens(text)
+    # estimated_total_bytes = prompt_bytes + text_bytes
+    # print(f"Estimated total bytes: {estimated_total_bytes}")
+
+    print('Translating to '+target_language+'....')
 
     response = client.chat.completions.create(
         model="gpt-4-turbo",
@@ -62,7 +64,7 @@ def translate_text(text, target_language, file_format=None, context=None, descri
         ]
     )
     print(response)
-
+    print('Translating complete '+target_language+'.')
 
 
     return { "content": response.choices[0].message.content, "total_token": response.usage.total_tokens }
@@ -280,12 +282,47 @@ def price_estimate(request):
 
     return JsonResponse({"status": "error", "message": "Invalid request"}, status=400)
 
+# def translation_status(request, task_id):
+#     result = AsyncResult(task_id)
+#     if result.ready():
+#         data = result.get()
+#         return JsonResponse({"status": "completed", "download_url": f"/media/{os.path.basename(data['zip_path'])}"})
+#     return JsonResponse({"status": "pending"})
+
 def translation_status(request, task_id):
     result = AsyncResult(task_id)
-    if result.ready():
+
+    if result.state == 'PENDING':
+        return JsonResponse({
+            "status": "pending",
+            "progress": 0
+        })
+
+    elif result.state == 'PROGRESS':
+        return JsonResponse({
+            "status": "progress",
+            "progress": result.info.get('progress', 0)
+        })
+
+    elif result.state == 'SUCCESS':
         data = result.get()
-        return JsonResponse({"status": "completed", "download_url": f"/media/{os.path.basename(data['zip_path'])}"})
-    return JsonResponse({"status": "pending"})
+        return JsonResponse({
+            "status": "completed",
+            "progress": 100,
+            "download_url": f"/media/{os.path.basename(data['zip_path'])}"
+        })
+
+    elif result.state == 'FAILURE':
+        return JsonResponse({
+            "status": "failed",
+            "progress": 0,
+            "error": str(result.result)
+        })
+
+    return JsonResponse({
+        "status": "unknown",
+        "progress": 0
+    })
 
 @csrf_exempt
 def create_payment_intent(request):
