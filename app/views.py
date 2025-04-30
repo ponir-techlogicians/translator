@@ -28,46 +28,99 @@ def count_tokens(text, model="gpt-4-turbo"):
 def count_bytes(text):
     return len(text.encode('utf-8'))
 
-def translate_text(text, target_language, file_format=None, context=None, description=None):
-    """Translate entire file content using OpenAI API with context and description"""
-
-    format_instruction = f"The following is a {file_format} file." if file_format else ""
-    context_instruction = f"Context: {context}." if context else ""
-    description_instruction = f"Description: {description}." if description else ""
-
-    prompt = f"""
-    {format_instruction}
-    {context_instruction}
-    {description_instruction}
-    Translate the entire content into {target_language}. Keep the structure unchanged.
+def translate_text(text, target_language, file_format=None, context=None, description=None,prompt=None,chunk_index=None):
     """
+    Translate a separator-joined batch of plain values using OpenAI API.
+    Preserves order and assumes each segment is a user-facing string.
+    """
+    if not prompt:
+        format_instruction = f"The content is in `{file_format}` format." if file_format else ""
+        context_instruction = f"Context: {context.strip()}" if context else ""
+        description_instruction = f"Description: {description.strip()}" if description else ""
 
-    # prompt_tokens = count_tokens(prompt)
-    # text_tokens = count_tokens(text)
-    # estimated_total_tokens = prompt_tokens + text_tokens
-    #
-    # print(f"Estimated token usage: {estimated_total_tokens} tokens")
+        prompt = f"""
+        You are a professional translation assistant.
+        
+        Each line or segment in the user message is a separate string to be translated. The segments are separated by the delimiter: `|||`.
+        
+        {format_instruction}
+        {context_instruction}
+        {description_instruction}
+        
+        Translate each segment into **{target_language}**, preserving their order.
+        Do NOT combine, remove, or reorder segments.
+        Do NOT translate the delimiter (`|||`).
+        Do not skip any segment. Even short or placeholder text must be translated.
+        Only translate the human-readable parts.
+        
+        Output MUST use the exact same `|||` separator between translated segments.
+        Do NOT wrap the result in quotation marks or code blocks.
+        
+        Translate each segment separated by `|||` into {target_language}.
+        Ensure the output has the exact same number of segments, separated by `|||`.
+        """
 
-    # prompt_bytes = count_tokens(prompt)
-    # print(prompt_bytes)
-    # text_bytes = count_tokens(text)
-    # estimated_total_bytes = prompt_bytes + text_bytes
-    # print(f"Estimated total bytes: {estimated_total_bytes}")
+    # print(prompt)
 
-    print('Translating to '+target_language+'....')
+    print(f"Translating to {target_language} {chunk_index}...")
 
     response = client.chat.completions.create(
         model="gpt-4-turbo",
+        temperature=0.2,
         messages=[
             {"role": "system", "content": prompt.strip()},
             {"role": "user", "content": text}
         ]
     )
-    print(response)
-    print('Translating complete '+target_language+'.')
+
+    print(f"Translation complete: {target_language} {chunk_index}")
+
+    return {
+        "content": response.choices[0].message.content.strip(),
+        "total_token": response.usage.total_tokens
+    }
 
 
-    return { "content": response.choices[0].message.content, "total_token": response.usage.total_tokens }
+# def translate_text(text, target_language, file_format=None, context=None, description=None):
+#     """Translate entire file content using OpenAI API with context and description"""
+#
+#     format_instruction = f"The following is a {file_format} file." if file_format else ""
+#     context_instruction = f"Context: {context}." if context else ""
+#     description_instruction = f"Description: {description}." if description else ""
+#
+#     prompt = f"""
+#     {format_instruction}
+#     {context_instruction}
+#     {description_instruction}
+#     Translate the entire content into {target_language}. Keep the structure unchanged.
+#     """
+#
+#     # prompt_tokens = count_tokens(prompt)
+#     # text_tokens = count_tokens(text)
+#     # estimated_total_tokens = prompt_tokens + text_tokens
+#     #
+#     # print(f"Estimated token usage: {estimated_total_tokens} tokens")
+#
+#     # prompt_bytes = count_tokens(prompt)
+#     # print(prompt_bytes)
+#     # text_bytes = count_tokens(text)
+#     # estimated_total_bytes = prompt_bytes + text_bytes
+#     # print(f"Estimated total bytes: {estimated_total_bytes}")
+#
+#     print('Translating to '+target_language+'....')
+#
+#     response = client.chat.completions.create(
+#         model="gpt-4-turbo",
+#         messages=[
+#             {"role": "system", "content": prompt.strip()},
+#             {"role": "user", "content": text}
+#         ]
+#     )
+#     print(response)
+#     print('Translating complete '+target_language+'.')
+#
+#
+#     return { "content": response.choices[0].message.content, "total_token": response.usage.total_tokens }
 
 
 def get_file_format(file_name):
