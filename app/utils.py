@@ -6,6 +6,9 @@ import configparser
 import xml.etree.ElementTree as ET
 from io import StringIO
 import re
+import openai
+from django.conf import settings
+client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
 
 def chunk_dict(d, chunk_size):
     items = list(d.items())
@@ -282,3 +285,60 @@ def build_content(translated_content, file_format):
 
     else:
         raise ValueError(f"Unsupported file format: {file_format}")
+
+
+def translate_text(text, target_language, file_format=None, context=None, description=None, prompt=None,
+                   chunk_index=None):
+    """
+    Translate a separator-joined batch of plain values using OpenAI API.
+    Preserves order and assumes each segment is a user-facing string.
+    """
+    if not prompt:
+        format_instruction = f"The content is in `{file_format}` format." if file_format else ""
+        context_instruction = f"Context: {context.strip()}" if context else ""
+        description_instruction = f"Description: {description.strip()}" if description else ""
+
+        prompt = f"""
+        You are a professional translation assistant.
+
+        Each line or segment in the user message is a separate string to be translated. The segments are separated by the delimiter: `|||`.
+
+        {format_instruction}
+        {context_instruction}
+        {description_instruction}
+
+        Translate each segment into **{target_language}**, preserving their order.
+        Do NOT combine, remove, or reorder segments.
+        Do NOT translate the delimiter (`|||`).
+        Do not skip any segment. Even short or placeholder text must be translated.
+        Only translate the human-readable parts.
+
+        Output MUST use the exact same `|||` separator between translated segments.
+        Do NOT wrap the result in quotation marks or code blocks.
+
+        Translate each segment separated by `|||` into {target_language}.
+        Ensure the output has the exact same number of segments, separated by `|||`.
+        """
+
+    # print(prompt)
+
+    print(f"Translating to {target_language} {chunk_index}...")
+
+    response = client.chat.completions.create(
+        # model="gpt-4-turbo",
+        # model="gpt-3.5-turbo",
+        model="gpt-4o",
+        # model="gpt-4o-mini",
+        temperature=0.1,
+        messages=[
+            {"role": "system", "content": prompt.strip()},
+            {"role": "user", "content": text}
+        ]
+    )
+
+    print(f"Translation complete: {target_language} {chunk_index}")
+
+    return {
+        "content": response.choices[0].message.content.strip(),
+        "total_token": response.usage.total_tokens
+    }
