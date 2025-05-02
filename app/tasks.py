@@ -123,6 +123,7 @@ def translate_language(parsed_content, target_language, file_format, context, de
             Ensure each output pair follows the format: key => translated_value.
             Do not skip any values. Preserve the order.
             Do NOT translate the delimiter (`|||`).
+            Do NOT translate the new line (`\n`).
             Only translate the human-readable parts.
             Output MUST use the exact same `|||` separator between translated segments.
             Do NOT wrap the result in quotation marks or code blocks.
