@@ -111,7 +111,7 @@ def translate_language(parsed_content, target_language, file_format, context, de
     translated_result = {}
     total_tokens = 0
 
-    chunks = list(chunk_dict(parsed_content, 50))
+    chunks = list(chunk_dict(parsed_content, 10))
 
     def translate_chunk(chunk,index=None):
         pairs = [f"{key} => {value}" for key, value in chunk.items()]
