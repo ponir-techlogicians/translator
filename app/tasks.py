@@ -56,7 +56,7 @@ def translate_and_package(self, file_name, content, target_languages, file_forma
             # Update progress
             completed_steps += 1
             progress_percent = int((completed_steps / progress_steps) * 90)
-            self.update_state(state='PROGRESS', meta={'progress': progress_percent})
+            self.update_state(state='PROGRESS', meta={'progress': progress_percent,'language_completed':completed_steps,'language_total':progress_steps})
 
     # Step 8: Zip the translated files
     unique_id = uuid.uuid4().hex[:8]

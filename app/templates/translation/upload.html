@@ -498,7 +498,7 @@
                         .then(res => res.json())
                         .then(data => {
                             if (data.task_id) {
-                                $("#payment-message").text("Translation in progress...");
+                                $("#payment-message").text("AI translating now...");
 
                                 // Show progress UI
                                 progressContainer.style.display = 'block';
@@ -554,11 +554,13 @@
                                             let progress = progressData.progress || 0;
                                             progressBar.value = progress;
                                             progressText.textContent = progress + '%';
+                                            $("#payment-message").text(progressData.language_completed+" language done.");
                                         }else if(progressData.status==="pending"){
                                             fakeProgress++;
                                             progressBar.value = fakeProgress;
                                             progressText.textContent = fakeProgress + '%';
                                         } else if (progressData.status === "SUCCESS" || progressData.status === "completed") {
+                                             $("#payment-message").text("Making zip file");
                                             loadingSpinner.style.display = 'none';
                                             clearInterval(timer);
                                             progressBar.value = 100;

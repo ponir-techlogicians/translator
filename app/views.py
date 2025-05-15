@@ -318,15 +318,16 @@ def price_estimate(request):
                 if text_bytes > 50000:
                     return JsonResponse({
                         "status": "error",
-                        "message": "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Please separate your content into smaller chunks."
+                        "message": f"Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is {text_bytes} bytes. Please separate your content into smaller chunks."
                     }, status=400)
 
                 total_bytes = int(text_bytes * len(target_languages))
 
                 if total_bytes > 300000:
+                    max_languages = 300000 // text_bytes
                     return JsonResponse({
                         "status": "error",
-                        "message": "You have selected too many languages. Please choose up to 3 languages at a time to keep total processing under 300,000 bytes."
+                        "message": f"You have selected too many languages. With your file size of {text_bytes} bytes, you can select up to {max_languages} languages to keep total processing under 300,000 bytes."
                     }, status=400)
                 
                 if total_bytes <= 300000:
@@ -384,7 +385,8 @@ def translation_status(request, task_id):
     elif result.state == 'PROGRESS':
         return JsonResponse({
             "status": "progress",
-            "progress": result.info.get('progress', 0)
+            "progress": result.info.get('progress', 0),
+            "language_completed": result.info.get('language_completed', 0)
         })
 
     elif result.state == 'SUCCESS':
