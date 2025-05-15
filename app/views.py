@@ -330,7 +330,14 @@ def price_estimate(request):
                     }, status=400)
 
                 if total_bytes <= 200000:
-                    price = total_bytes * 0.0006
+                    if total_bytes <= 10000:
+                        price = 1
+                    elif total_bytes <= 50000:
+                        price = 2
+                    elif total_bytes <= 120000:
+                        price = 3
+                    else:
+                        price = 4
                 else:
                     return JsonResponse({
                         "status": "error",
