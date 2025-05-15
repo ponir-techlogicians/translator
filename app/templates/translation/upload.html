@@ -60,9 +60,17 @@
             box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
         }
 
+        .close-modal {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #666;
+        }
 
 
-#price-message {
+        #price-message {
     font-size: 16px;
     margin-bottom: 10px;
     text-align: center;
@@ -198,6 +206,7 @@
             </div>
         </form>
         <div id="price-modal">
+            <span class="close-modal">&times;</span>
             <p id="price-message">Price estimating...</p>
             <div id="stripe-payment" style="display: none;">
                 <form id="payment-form">
@@ -219,6 +228,11 @@
         let form = document.getElementById('translateForm');
         let loadingSpinner = document.getElementById('loadingSpinner');
         let priceModal = document.getElementById('price-modal');
+
+        document.querySelector('.close-modal').addEventListener('click', function () {
+            priceModal.style.display = 'none';
+            loadingSpinner.style.display = 'none';
+        });
         let priceDisplay = document.getElementById('price-display');
         let payButton = document.getElementById('pay-button');
         const progressBar = document.getElementById('upload-progress');
@@ -289,8 +303,15 @@
                     $("#price-message").html(html);
                     $("#stripe-payment").show();
                 },
-                error: function () {
-                    $("#price-message").text("Error estimating price.");
+                
+                error: function (xhr) {
+                    if (xhr.responseJSON) {
+                        $("#price-message").html(`<p style="color: red; font-weight: bold;">${xhr.responseJSON.message}</p>`);
+                    } else {
+                        $("#price-message").html('<p style="color: red; font-weight: bold;">Error estimating price.</p>');
+                    }
+                    $("#stripe-payment").hide();
+                    loadingSpinner.style.display = 'none';
                 }
             });
 });

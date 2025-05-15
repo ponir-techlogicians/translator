@@ -310,9 +310,32 @@ def price_estimate(request):
         try:
             with default_storage.open(file_path, "rb") as f:
                 content = f.read().decode("utf-8")
+                char_count = len(content)
+                print('char',char_count)
                 text_bytes = count_bytes(content)
+                print('bytes',text_bytes)
+
+                if text_bytes > 30000:
+                    return JsonResponse({
+                        "status": "error",
+                        "message": "Your translation content is too large. Maximum allowed is 30,000 bytes per file. Please separate your content into smaller chunks."
+                    }, status=400)
+
                 total_bytes = int(text_bytes * len(target_languages))
-                price = total_bytes * 0.0006
+
+                if total_bytes > 200000:
+                    return JsonResponse({
+                        "status": "error",
+                        "message": "You have selected too many languages. Please choose up to 3 languages at a time to keep total processing under 200,000 bytes."
+                    }, status=400)
+
+                if total_bytes <= 200000:
+                    price = total_bytes * 0.0006
+                else:
+                    return JsonResponse({
+                        "status": "error",
+                        "message": "Total processing size exceeds limit of 200,000 bytes"
+                    }, status=400)
                 # if total_bytes >= 1000 and total_bytes <= 2000:
                 #     price = 2
                 # if total_bytes > 2000 and total_bytes <= 4000:
