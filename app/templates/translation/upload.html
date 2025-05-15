@@ -212,9 +212,9 @@
                 <form id="payment-form">
                     <div id="card-element"><!-- Stripe Elements will insert the card input here --></div>
                     <button id="pay-btn">Pay Now</button>
-                    <div id="payment-message"></div>
+
                     <div id="upload-progress-container" style="display:none;">
-                        <p>Translating... <span id="upload-progress-text">0%</span></p>
+                        <p><span id="payment-message"></span> <span id="upload-progress-text">0%</span></p>
                         <progress id="upload-progress" value="0" max="100" style="width: 100%;"></progress>
                     </div>
                 </form>
@@ -556,7 +556,8 @@
                                             progressText.textContent = progress + '%';
                                             $("#payment-message").text(progressData.language_completed+" language done.");
                                         }else if(progressData.status==="pending"){
-                                            fakeProgress++;
+                                            {#fakeProgress++;#}
+                                            fakeProgress = fakeProgress + 2;
                                             progressBar.value = fakeProgress;
                                             progressText.textContent = fakeProgress + '%';
                                         } else if (progressData.status === "SUCCESS" || progressData.status === "completed") {
@@ -581,7 +582,7 @@
                                             $("#price-modal").hide();
                                         }
                                     });
-                            }, 1000);
+                            }, 2000);
                             } else {
                                 $("#payment-message").text("Error starting translation.");
                                 $("#pay-btn").text("Pay Now").prop("disabled", false);
