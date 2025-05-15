@@ -315,26 +315,26 @@ def price_estimate(request):
                 text_bytes = count_bytes(content)
                 print('bytes',text_bytes)
 
-                if text_bytes > 30000:
+                if text_bytes > 50000:
                     return JsonResponse({
                         "status": "error",
-                        "message": "Your translation content is too large. Maximum allowed is 30,000 bytes per file. Please separate your content into smaller chunks."
+                        "message": "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Please separate your content into smaller chunks."
                     }, status=400)
 
                 total_bytes = int(text_bytes * len(target_languages))
 
-                if total_bytes > 200000:
+                if total_bytes > 300000:
                     return JsonResponse({
                         "status": "error",
-                        "message": "You have selected too many languages. Please choose up to 3 languages at a time to keep total processing under 200,000 bytes."
+                        "message": "You have selected too many languages. Please choose up to 3 languages at a time to keep total processing under 300,000 bytes."
                     }, status=400)
-
-                if total_bytes <= 200000:
+                
+                if total_bytes <= 300000:
                     if total_bytes <= 10000:
                         price = 1
                     elif total_bytes <= 50000:
                         price = 2
-                    elif total_bytes <= 120000:
+                    elif total_bytes <= 150000:
                         price = 3
                     else:
                         price = 4
