@@ -267,6 +267,9 @@ def get_file_format(file_name):
 #
 #     return render(request, "translation/upload.html", context={'stripe_key': settings.STRIPE_PUBLISHABLE_KEY})
 
+def home(request):
+    return render(request, "translation/home.html")
+
 @csrf_exempt
 def file_translate(request):
     if request.method == "POST" and request.FILES.get("file"):
@@ -299,7 +302,7 @@ def file_translate(request):
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)
 
-    return render(request, "translation/upload.html", context={'stripe_key': settings.STRIPE_PUBLISHABLE_KEY})
+    return render(request, "translation/translate.html", context={'stripe_key': settings.STRIPE_PUBLISHABLE_KEY})
 
 
 def price_estimate(request):
@@ -318,6 +321,7 @@ def price_estimate(request):
                 if text_bytes > 50000:
                     return JsonResponse({
                         "status": "error",
+                        "reason":"Too big file",
                         "message": f"Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is {text_bytes} bytes. Please separate your content into smaller chunks."
                     }, status=400)
 
@@ -327,6 +331,7 @@ def price_estimate(request):
                     max_languages = 300000 // text_bytes
                     return JsonResponse({
                         "status": "error",
+                        "reason": "Too many selected language",
                         "message": f"You have selected too many languages. With your file size of {text_bytes} bytes, you can select up to {max_languages} languages to keep total processing under 300,000 bytes."
                     }, status=400)
                 

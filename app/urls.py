@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import file_translate, price_estimate, create_payment_intent,translation_status
+from .views import file_translate, price_estimate, create_payment_intent, translation_status, home
 
 urlpatterns = [
+    path('', home, name='file-translate-home'),
     path('translate/', file_translate, name='file-translate'),
     path('price-estimate/', price_estimate, name='price-estimate'),
 

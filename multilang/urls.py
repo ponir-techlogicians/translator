@@ -20,7 +20,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
-    path('', lambda request: redirect('file-translate'), name='home'),
+    # path('', lambda request: redirect('file-translate'), name='home'),
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
 ]

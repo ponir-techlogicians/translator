@@ -1,0 +1,482 @@
+/*─────────────────────────────────────────
+  0. 공통 변수
+─────────────────────────────────────────*/
+:root {
+    --purple: #7534FB;
+    --pink:   #FF00FB;
+    --yellow: #FFEB0F;
+    --blue: #495AFF;
+    --lightPurple: #7065F0;
+    --dark:   #100A55;
+    --light-bg: #f5f5ff;
+    --text:   #333;
+    --gray:   #666;
+}
+
+/*─────────────────────────────────────────
+  1. Reset & Base
+─────────────────────────────────────────*/
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text);
+    line-height: 1.5;
+    background: #fff;
+}
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*─────────────────────────────────────────
+  2. Header
+─────────────────────────────────────────*/
+.site-header {
+    padding: 10px 0;
+}
+.logo img {
+    height: 40px;
+}
+
+/*─────────────────────────────────────────
+  3. Hero Section
+─────────────────────────────────────────*/
+.hero {
+    padding: 60px 0;
+}
+.hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.hero-text {
+    flex: 1;
+}
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 70px;
+    color: var(--purple);
+}
+.highlight {
+    color: var(--pink);
+}
+.steps {
+    margin-bottom: 32px;
+    position: relative;
+}
+.steps:before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    left: 18px;
+    top: 38px;
+    height: 72px;
+    background-color: var(--blue);
+}
+.step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.circle {
+    width: 40px; height: 40px;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    font-weight: 700;
+    margin-right: 24px;
+    font-size: 16px;
+}
+.step-content {
+    padding-top: 5px;
+}
+.step-content .title {
+    font-weight: 700;
+    font-size: 20px;
+}
+.step-content .desc {
+    color: var(--gray);
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.hero-action {
+    width: 430px;
+    height: 190px;
+    background: #fff;
+    padding: 38px 60px;
+    border-radius: 16px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    display: inline-block;
+    text-align: center;
+}
+.cta {
+    width: 234px;
+    height: 60px;
+    background: var(--yellow);
+    border: none;
+    padding: 12px 48px;
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+.support {
+    color: var(--gray);
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+    background: #FFFFF0;
+    padding:85px 0 24px;
+    font-size: 36px;
+    font-weight: 700;
+}
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*─────────────────────────────────────────
+  4. Who is for
+─────────────────────────────────────────*/
+.who-for {
+    background: var(--light-bg);
+    padding: 60px 0;
+    text-align: center;
+}
+.who-for h2 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+.who-for p {
+    color: rgba(var(--text), 0.2);
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+.who-for p.bold {
+    color: var(--text);
+    font-weight: 700;
+    margin-top: 66px;
+}
+
+/*─────────────────────────────────────────
+  5. Contact
+─────────────────────────────────────────*/
+.contact {
+    background: var(--dark);
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+.contact .subtitle {
+    color: var(--lightPurple);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.contact h3 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+.contact a {
+    color: #D3D5DA;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/*─────────────────────────────────────────
+  6. Footer
+─────────────────────────────────────────*/
+.site-footer {
+    max-width: 1200px;
+    padding: 20px 0;
+}
+.site-footer .copyright {
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+    font-weight: 500;
+}
+.site-footer .footer-logo img {
+    height: 40px;
+    margin-bottom: 15px;
+}
+/* ─────────────────────────────────────
+   Form Section
+───────────────────────────────────── */
+.form-section {
+    padding: 60px 0;
+}
+.form-section .container {
+    max-width: 1024px;
+}
+.form-section h2,
+.form-section h3 {
+    color: var(--text);
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.form-section .context-group {
+    margin-bottom: 20px;
+}
+.context-group label {
+    margin-right: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.context-group input[type="radio"] {
+    accent-color: var(--purple);
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.form-group {
+    margin-bottom: 24px;
+}
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+.text-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fafafa;
+    font-size: 14px;
+}
+.text-input::placeholder {
+    color: #ccc;
+}
+
+.form-section hr {
+    border: none;
+    border-top: 1px solid #e5e7fa;
+    margin: 32px 0;
+}
+
+/* Language Grid */
+.language-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 24px;
+    margin-top: 35px;
+    margin-bottom: 24px;
+}
+.language-list label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.language-list input[type="checkbox"] {
+    accent-color: var(--purple);
+}
+
+/* Upload Box */
+.upload-box {
+    border: 2px dotted #454545;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    transition: border-color 0.2s ease;
+}
+.upload-box:hover {
+    border-color: var(--purple);
+}
+.upload-box p {
+    font-size: 16px;
+}
+.select-file {
+    background: var(--purple);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    border: 0;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.upload-box .support {
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+.upload-box .support span {
+    color: var(--purple);
+}
+
+/* Translate Button */
+.translate-btn {
+    width: 100%;
+    height: 60px;
+    padding: 14px 0;
+    background: var(--yellow);
+    border: none;
+    border-radius: 28px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+.translate-btn:hover {
+    background: #fff43e;
+}
+
+/* ─────────────────────────────────────
+   모달 공통
+───────────────────────────────────── */
+.modal-overlay {
+    display: none;
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    z-index: 1001;
+    width: 400px;
+    max-width: 90%;
+    overflow: hidden;
+}
+.modal.active,
+.modal-overlay.active {
+    display: block;
+}
+
+/* 팝업 컨텐츠 */
+.modal-inner {
+    padding: 10px 20px 20px;
+    text-align: center;
+}
+.modal-icon {
+    width: 48px;
+    height: 48px;
+    background: url("../img/ico_info.svg") no-repeat center center / contain;
+    margin-bottom: 12px;
+}
+.modal h4 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    text-align: left;
+}
+.modal p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.modal button {
+    width: 100%;
+    height: 44px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.modal-close {
+    background-color: #D92D20;
+    color:#fff;
+    margin-top: 32px;
+}
+/* close / ok 버튼 */
+.modal .modal-x {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: url("../img/ico_close.svg") no-repeat center center;
+}
+
+/* 결제 모달 헤더 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+}
+.modal-pay-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #E9EAEB;
+    border-radius: 10px;
+    background: url("../img/ico_card.svg") no-repeat center center;
+}
+.modal-x {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+.modal-input {
+    width: 100%;
+    height: 44px;
+    padding: 8px 10px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.progress-bar {
+    background: #E0E0E0;
+    height: 8px;
+    border-radius: 64px;
+    overflow: hidden;
+    margin: 5px 0 32px;
+}
+.progress {
+    background: var(--purple);
+    height: 100%;
+    width: 0; /* JS 에서 width 조절 */
+}
+.progress-text {
+    text-align: left;
+    font-size: 16px;
+    color:#FF4343;
+}
+.progress-text strong {
+    font-size: 18px;
+    color:#262626;
+    margin-right: 8px;
+}
+.modal-confirm {
+    background: var(--yellow);
+    color: #000;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.modal-confirm:hover {
+    opacity: 0.9;
+}

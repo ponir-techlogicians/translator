@@ -1,0 +1,300 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EchoNow - AI Translation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}"/>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="container">
+        <a href="#" class="logo">
+            <img src="{% static 'app/img/logo.png' %}" alt="EchoNow Logo">
+        </a>
+    </div>
+</header>
+
+<section class="form-section">
+    <div class="container">
+        <form id="translateForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" id="usage_id" name="usage_id">
+            <!-- Context -->
+            <h2>Context</h2>
+            <div class="context-group">
+                <p class="form-label">What is this for?</p>
+                <label><input type="radio" name="context" value="app" checked> App Or Web</label>
+                <label><input type="radio" name="context" value="content"> Contents</label>
+            </div>
+            <div class="form-group">
+                <label for="about" class="form-label">What is it about?</label>
+                <input type="text" id="about"  name="description" class="text-input" placeholder="Eg. This is app for a delivery service, people who is teenager will use">
+            </div>
+
+            <hr>
+
+            <!-- Language -->
+            <h3>Language (Multiple selections allowed)</h3>
+            <div class="language-list">
+
+                <label><input type="checkbox" name="languages" value="English"> English</label>
+                <label><input type="checkbox" name="languages" value="Spanish"> Spanish</label>
+                <label><input type="checkbox" name="languages" value="French"> French</label>
+                <label><input type="checkbox" name="languages" value="German"> German</label>
+                <label><input type="checkbox" name="languages" value="Japanese"> Japanese</label>
+                <label><input type="checkbox" name="languages" value="Simplified Chinese"> Simplified Chinese</label>
+                <label><input type="checkbox" name="languages" value="Traditional Chinese"> Traditional Chinese</label>
+                <label><input type="checkbox" name="languages" value="Korean"> Korean</label>
+                <label><input type="checkbox" name="languages" value="Russian"> Russian</label>
+                <label><input type="checkbox" name="languages" value="Arabic"> Arabic</label>
+                <label><input type="checkbox" name="languages" value="Portuguese"> Portuguese</label>
+                <label><input type="checkbox" name="languages" value="Italian"> Italian</label>
+                <label><input type="checkbox" name="languages" value="Hindi"> Hindi</label>
+                <label><input type="checkbox" name="languages" value="Indonesian"> Indonesian</label>
+                <label><input type="checkbox" name="languages" value="Turkish"> Turkish</label>
+                <label><input type="checkbox" name="languages" value="Thai"> Thai</label>
+                <label><input type="checkbox" name="languages" value="Vietnamese"> Vietnamese</label>
+                <label><input type="checkbox" name="languages" value="Urdu"> Urdu</label>
+                <label><input type="checkbox" name="languages" value="Malay"> Malay</label>
+                <label><input type="checkbox" name="languages" value="Dutch"> Dutch</label>
+                <label><input type="checkbox" name="languages" value="Polish"> Polish</label>
+                <label><input type="checkbox" name="languages" value="Swedish"> Swedish</label>
+                <label><input type="checkbox" name="languages" value="Norwegian"> Norwegian</label>
+                <label><input type="checkbox" name="languages" value="Danish"> Danish</label>
+                <label><input type="checkbox" name="languages" value="Czech"> Czech</label>
+                <label><input type="checkbox" name="languages" value="Hungarian"> Hungarian</label>
+                <label><input type="checkbox" name="languages" value="Finnish"> Finnish</label>
+                <label><input type="checkbox" name="languages" value="Hebrew"> Hebrew</label>
+                <label><input type="checkbox" name="languages" value="Romanian"> Romanian</label>
+                <label><input type="checkbox" name="languages" value="Greek"> Greek</label>
+            </div>
+
+            <hr>
+
+            <!-- Upload -->
+            <h3>Upload File</h3>
+            <div class="upload-box" id="drop-area">
+                <p><img src="{% static 'app/img/ico_upload.svg' %}" alt="">︎</p>
+                <p><strong>Drag and Drop here <br> or</strong></p>
+{#                <button class="select-file" type="button">Select file</button>#}
+                <p class="support">.CSV .ts .ini .xliff .json .xml .php .yaml <span>Supported</span></p>
+                <input type="file" id="fileInput" name="file" class="select-file">
+                <div id="file-name" class="file-name"></div>
+            </div>
+
+            <!-- Translate Button -->
+            <button class="translate-btn" id="translateBtn">Translate</button>
+
+            <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                <p>Translating... Please wait.</p>
+                <div class="spinner"></div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-logo">
+            <img src="{% static 'app/img/logo.png' %}" alt="EchoNow Logo">
+        </div>
+        <div class="copyright">
+            ©2025 Bgoos Inc., All rights reserved
+        </div>
+    </div>
+</footer>
+<!-- 모달 오버레이 (body 맨 아래) -->
+<div class="modal-overlay" id="modal-overlay"></div>
+
+<!-- 1) Too big file -->
+<div class="modal" id="modal-bigfile">
+    <div class="modal-inner">
+        <div class="modal-icon"></div>
+        <h4 class="error-reason">Too big file</h4>
+        <p class="error-msg">For better performance, only files smaller than 50,000 bytes are allowed for translation</p>
+        <button class="modal-close">Ok!</button>
+    </div>
+</div>
+
+<!-- 2) Too many selected language -->
+<div class="modal" id="modal-manylang">
+    <div class="modal-inner">
+        <div class="modal-icon"></div>
+        <h4>Too many selected language</h4>
+        <p>You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages.</p>
+        <button class="modal-close">Ok!</button>
+    </div>
+</div>
+
+<!-- 3) Payment / Progress -->
+<div class="modal" id="modal-payment">
+    <div class="modal-header">
+        <span class="modal-pay-icon"></span>
+        <button class="modal-x"></button>
+    </div>
+    <div class="modal-inner">
+        <!--<h4>$ 4 for translation</h4>
+        <p>Enter your card information.</p>
+        <input type="text" class="modal-input" placeholder="Card number">
+        <div class="progress-text"><strong>30%</strong> AI translating now…</div>
+        <div class="progress-bar">
+            <div class="progress" style="width:30%"></div>
+        </div>
+        <button class="modal-confirm">Confirm</button>-->
+        <h4 id="price-message">Price estimating...</h4>
+        <div id="stripe-payment" style="display: none;">
+            <form id="payment-form">
+                <div id="card-element"><!-- Stripe Elements will insert the card input here --></div>
+                <button id="pay-btn">Pay Now</button>
+
+                <div id="upload-progress-container" style="display:none;">
+                    <div class="progress-text"><strong id="upload-progress-text" >30%</strong> <span id="payment-message"></span> </div>
+                    <div class="progress-bar">
+                        <progress class="progress" id="upload-progress" value="0" max="100"  style="width:100%"></progress>
+                    </div>
+{#                    <p><span id="payment-message"></span> <span id="upload-progress-text">0%</span></p>#}
+{#                    <progress id="upload-progress" value="0" max="100" style="width: 100%;"></progress>#}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="price-modal">
+    <span class="close-modal">&times;</span>
+    <p id="price-message">Price estimating...</p>
+    <div id="stripe-payment" style="display: none;">
+        <form id="payment-form">
+            <div id="card-element"><!-- Stripe Elements will insert the card input here --></div>
+            <button id="pay-btn">Pay Now</button>
+
+            <div id="upload-progress-container" style="display:none;">
+                <p><span id="payment-message"></span> <span id="upload-progress-text">0%</span></p>
+                <progress id="upload-progress" value="0" max="100" style="width: 100%;"></progress>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="{% static 'app/js/script.js' %}"></script>
+<script>
+    let priceDisplay = document.getElementById('price-display');
+    let payButton = document.getElementById('pay-button');
+    const progressBar = document.getElementById('upload-progress');
+    const progressText = document.getElementById('upload-progress-text');
+    const progressContainer = document.getElementById('upload-progress-container');
+    let form = document.getElementById('translateForm');
+    let stripe = Stripe('{{ stripe_key }}');
+    $(document).ready(function () {
+    let elements = stripe.elements();
+    let cardElement = elements.create("card");
+    cardElement.mount("#card-element");
+
+    $("#payment-form").submit(function (e) {
+        e.preventDefault();
+        $("#pay-btn").text("Processing...").prop("disabled", true);
+
+        //let form = document.getElementById("payment-form");
+        let formData = new FormData(form);
+
+        $.ajax({
+            url: "/create-payment-intent/",
+            type: "POST",
+            data: { price: estimatedPrice },
+            success: function (response) {
+                stripe.confirmCardPayment(response.client_secret, {
+                    payment_method: {
+                        card: cardElement
+                    }
+                }).then(function (result) {
+                    if (result.error) {
+                        $("#payment-message").text(result.error.message);
+                        $("#pay-btn").text("Pay Now").prop("disabled", false);
+                    } else {
+                        $("#payment-message").text("Payment successful! Starting translation...");
+
+                        // Upload file and get task_id
+                        fetch("{% url 'file-translate' %}", {
+                            method: "POST",
+                            body: formData
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.task_id) {
+                                $("#payment-message").text("AI translating now...");
+
+                                // Show progress UI
+                                progressContainer.style.display = 'block';
+                                progressBar.value = 0;
+                                progressText.textContent = '0%';
+
+                                let fakeProgress = 0;
+                                let timer = setInterval(() => {
+                                fetch(`/translation-status/${data.task_id}/`)
+                                    .then(res => res.json())
+                                    .then(progressData => {
+                                        if (progressData.status === "PROGRESS" || progressData.status === "progress") {
+                                            let progress = progressData.progress || 0;
+                                            progressBar.value = progress;
+                                            progressText.textContent = progress + '%';
+                                            $("#payment-message").text(progressData.language_completed+" language done.");
+                                        }else if(progressData.status==="pending"){
+
+                                            fakeProgress = fakeProgress + 2;
+                                            progressBar.value = fakeProgress;
+                                            progressText.textContent = fakeProgress + '%';
+                                        } else if (progressData.status === "SUCCESS" || progressData.status === "completed") {
+                                             $("#payment-message").text("Making zip file");
+                                            loadingSpinner.style.display = 'none';
+                                            clearInterval(timer);
+                                            progressBar.value = 100;
+                                            progressText.textContent = '100%';
+
+                                            // Download ZIP and reset UI
+                                            let a = document.createElement('a');
+                                            a.href = progressData.download_url;
+                                            a.download = "";
+                                            document.body.appendChild(a);
+                                            a.click();
+                                            a.remove();
+
+                                            $("#payment-message").text("Translation complete!");
+                                            form.reset();
+                                            $("#pay-btn").text("Pay Now").prop("disabled", false);
+                                            progressContainer.style.display = 'none';
+                                            $("#modal-payment").hide();
+                                        }
+                                    });
+                            }, 2000);
+                            } else {
+                                $("#payment-message").text("Error starting translation.");
+                                $("#pay-btn").text("Pay Now").prop("disabled", false);
+                            }
+                        })
+                        .catch(err => {
+                            console.error("Upload error:", err);
+                            $("#payment-message").text("Upload failed.");
+                            $("#pay-btn").text("Pay Now").prop("disabled", false);
+                        });
+                    }
+                });
+            },
+            error: function () {
+                $("#payment-message").text("Payment failed.");
+                $("#pay-btn").text("Pay Now").prop("disabled", false);
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
