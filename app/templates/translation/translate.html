@@ -176,7 +176,7 @@
                 <div id="upload-progress-container" style="display:none;">
                     <div class="progress-text"><strong id="upload-progress-text" >30%</strong> <span id="payment-message"></span> </div>
                     <div class="progress-bar">
-                        <progress class="progress" id="upload-progress" value="0" max="100"  style="width:100%"></progress>
+                        <progress class="progress" id="upload-progress" value="0" max="100"  style="width:0%"></progress>
                     </div>
 {#                    <p><span id="payment-message"></span> <span id="upload-progress-text">0%</span></p>#}
 {#                    <progress id="upload-progress" value="0" max="100" style="width: 100%;"></progress>#}
@@ -185,21 +185,21 @@
         </div>
     </div>
 </div>
-<div id="price-modal">
-    <span class="close-modal">&times;</span>
-    <p id="price-message">Price estimating...</p>
-    <div id="stripe-payment" style="display: none;">
-        <form id="payment-form">
-            <div id="card-element"><!-- Stripe Elements will insert the card input here --></div>
-            <button id="pay-btn">Pay Now</button>
-
-            <div id="upload-progress-container" style="display:none;">
-                <p><span id="payment-message"></span> <span id="upload-progress-text">0%</span></p>
-                <progress id="upload-progress" value="0" max="100" style="width: 100%;"></progress>
-            </div>
-        </form>
-    </div>
-</div>
+{#<div id="price-modal">#}
+{#    <span class="close-modal">&times;</span>#}
+{#    <p id="price-message">Price estimating...</p>#}
+{#    <div id="stripe-payment" style="display: none;">#}
+{#        <form id="payment-form">#}
+{#            <div id="card-element"><!-- Stripe Elements will insert the card input here --></div>#}
+{#            <button id="pay-btn">Pay Now</button>#}
+{##}
+{#            <div id="upload-progress-container" style="display:none;">#}
+{#                <p><span id="payment-message"></span> <span id="upload-progress-text">0%</span></p>#}
+{#                <progress id="upload-progress" value="0" max="100" style="width: 100%;"></progress>#}
+{#            </div>#}
+{#        </form>#}
+{#    </div>#}
+{#</div>#}
 <script src="{% static 'app/js/script.js' %}"></script>
 <script>
     let priceDisplay = document.getElementById('price-display');
@@ -263,18 +263,21 @@
                                         if (progressData.status === "PROGRESS" || progressData.status === "progress") {
                                             let progress = progressData.progress || 0;
                                             progressBar.value = progress;
+                                            progressBar.style.width = progress + '%';
                                             progressText.textContent = progress + '%';
                                             $("#payment-message").text(progressData.language_completed+" language done.");
                                         }else if(progressData.status==="pending"){
 
                                             fakeProgress = fakeProgress + 2;
                                             progressBar.value = fakeProgress;
+                                            progressBar.style.width = fakeProgress + '%';
                                             progressText.textContent = fakeProgress + '%';
                                         } else if (progressData.status === "SUCCESS" || progressData.status === "completed") {
                                              $("#payment-message").text("Making zip file");
                                             loadingSpinner.style.display = 'none';
                                             clearInterval(timer);
                                             progressBar.value = 100;
+                                            progressBar.style.width = '100%';
                                             progressText.textContent = '100%';
 
                                             // Download ZIP and reset UI
@@ -290,6 +293,8 @@
                                             $("#pay-btn").text("Pay Now").prop("disabled", false);
                                             progressContainer.style.display = 'none';
                                             $("#modal-payment").hide();
+                                            $("#file-name").text(''); // Clear the file name display
+
                                         }
                                     });
                             }, 2000);

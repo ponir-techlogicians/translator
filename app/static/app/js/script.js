@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let loadingSpinner = document.getElementById('loadingSpinner');
     let priceModal = document.getElementById('price-modal');
 
-    document.querySelector('.close-modal').addEventListener('click', function () {
-        priceModal.style.display = 'none';
-        loadingSpinner.style.display = 'none';
-    });
+    // document.querySelector('.close-modal').addEventListener('click', function () {
+    //     priceModal.style.display = 'none';
+    //     loadingSpinner.style.display = 'none';
+    // });
 
     let stripe = Stripe('{{ stripe_key }}');
     let elements = stripe.elements();
