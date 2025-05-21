@@ -461,11 +461,31 @@ body {
     border-radius: 64px;
     overflow: hidden;
     margin: 5px 0 32px;
+    position: relative;
 }
 .progress {
+    position: absolute;
+    left: 0;
     background: var(--purple);
     height: 100%;
     width: 0; /* JS 에서 width 조절 */
+    appearance: none;
+    accent-color: var(--purple);
+}
+.progress::-webkit-progress-bar {
+    background-color:var(--purple);
+}
+.progress::-webkit-progress-value {
+    background-color:var(--purple);  /* 원하는 색 */
+}
+/* Firefox */
+.progress::-moz-progress-bar {
+    background-color: var(--purple);
+}
+
+/* IE10+ / Edge Legacy */
+.progress::-ms-fill {
+    background-color: var(--purple)
 }
 .progress-text {
     text-align: left;
@@ -493,10 +513,6 @@ body {
     color: #000;
     font-weight: 600;
 }
-.CardField {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
 .CardField--ltr .CardBrandIcon-container {
     padding-left: 10px;
 }
@@ -510,4 +526,10 @@ body {
 }
 .CardField--ltr .CardField-input-wrapper .CardField-cvc {
     transform: translateX(-40px) !important;
+}
+#card-element {
+    margin:12px 0;
+    padding:12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

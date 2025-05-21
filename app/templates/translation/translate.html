@@ -152,7 +152,7 @@
 <div class="modal" id="modal-payment">
     <div class="modal-header">
         <span class="modal-pay-icon"></span>
-        <button class="modal-x"></button>
+{#        <button class="modal-x"></button>#}
     </div>
     <div class="modal-inner">
         <!--<h4>$ 4 for translation</h4>
@@ -164,6 +164,10 @@
         </div>
         <button class="modal-confirm">Confirm</button>-->
         <h4 id="price-message">Price estimating...</h4>
+        <div id="proccesing-container" style="display: none;">
+            <h4>Processing</h4>
+            <p>Please wait , It will take around 30 sec</p>
+        </div>
         <div id="stripe-payment" style="display: none;">
             <form id="payment-form">
                 <div id="card-element"><!-- Stripe Elements will insert the card input here --></div>
@@ -232,7 +236,10 @@
                         $("#pay-btn").text("Pay Now").prop("disabled", false);
                     } else {
                         $("#payment-message").text("Payment successful! Starting translation...");
-
+                        $('#card-element').hide();
+                        $('#pay-btn').hide();
+                        $('#proccesing-container').show();
+                        $('#price-message').hide();
                         // Upload file and get task_id
                         fetch("{% url 'file-translate' %}", {
                             method: "POST",
