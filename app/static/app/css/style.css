@@ -389,7 +389,8 @@ body {
     background: url("../img/ico_info.svg") no-repeat center center / contain;
     margin-bottom: 12px;
 }
-.modal h4 {
+.modal h4,
+.modal h4 p {
     margin-bottom: 8px;
     font-size: 18px;
     text-align: left;
@@ -423,6 +424,7 @@ body {
     height: 44px;
     padding: 0;
     background: url("../img/ico_close.svg") no-repeat center center;
+    margin: 0;
 }
 
 /* 결제 모달 헤더 */
@@ -469,6 +471,7 @@ body {
     text-align: left;
     font-size: 16px;
     color:#FF4343;
+    margin-top: 20px;
 }
 .progress-text strong {
     font-size: 18px;
@@ -484,4 +487,27 @@ body {
 }
 .modal-confirm:hover {
     opacity: 0.9;
+}
+#pay-btn {
+    background: var(--yellow);
+    color: #000;
+    font-weight: 600;
+}
+.CardField {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.CardField--ltr .CardBrandIcon-container {
+    padding-left: 10px;
+}
+.CardField--ltr .CardField-input-wrapper {
+    top: 13px;
+    width: 85px;
+}
+
+.CardField--ltr .CardField-input-wrapper .CardField-expiry {
+    transform: translateX(-40px) !important;
+}
+.CardField--ltr .CardField-input-wrapper .CardField-cvc {
+    transform: translateX(-40px) !important;
 }
