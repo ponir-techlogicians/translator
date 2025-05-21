@@ -308,6 +308,7 @@ body {
     font-size: 16px;
 }
 .select-file {
+    display: inline-block;
     background: var(--purple);
     color: #fff;
     padding: 8px 20px;
@@ -316,6 +317,10 @@ body {
     border: 0;
     cursor: pointer;
     margin-top: 5px;
+}
+/* 숨길 파일 입력 */
+.file-input {
+    display: none;
 }
 .upload-box .support {
     color: var(--gray);

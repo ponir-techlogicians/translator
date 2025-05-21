@@ -82,13 +82,24 @@
             <hr>
 
             <!-- Upload -->
+{#            <h3>Upload File</h3>#}
+{#            <div class="upload-box" id="drop-area">#}
+{#                <p><img src="{% static 'app/img/ico_upload.svg' %}" alt="">︎</p>#}
+{#                <p><strong>Drag and Drop here <br> or</strong></p>#}
+{#                <button class="select-file" type="button">Select file</button>#}
+{#                <p class="support">.CSV .ts .ini .xliff .json .xml .php .yaml <span>Supported</span></p>#}
+{#                <input type="file" id="fileInput" name="file" class="select-file">#}
+{#                <div id="file-name" class="file-name"></div>#}
+{#            </div>#}
+
+            <!-- Upload -->
             <h3>Upload File</h3>
-            <div class="upload-box" id="drop-area">
+            <div class="upload-box"  id="drop-area">
                 <p><img src="{% static 'app/img/ico_upload.svg' %}" alt="">︎</p>
                 <p><strong>Drag and Drop here <br> or</strong></p>
-{#                <button class="select-file" type="button">Select file</button>#}
+                <input type="file" id="fileInput"  class="file-input" name="file"  />
+                <label for="file-input"  class="select-file">Select file</label>
                 <p class="support">.CSV .ts .ini .xliff .json .xml .php .yaml <span>Supported</span></p>
-                <input type="file" id="fileInput" name="file" class="select-file">
                 <div id="file-name" class="file-name"></div>
             </div>
 
@@ -96,7 +107,7 @@
             <button class="translate-btn" id="translateBtn">Translate</button>
 
             <div id="loadingSpinner" class="loading-spinner" style="display: none;">
-                <p>Translating... Please wait.</p>
+{#                <p>Translating... Please wait.</p>#}
                 <div class="spinner"></div>
             </div>
         </form>
