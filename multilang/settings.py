@@ -179,11 +179,11 @@ OPENAI_API_KEY = config('OPENAI_API_KEY')
 STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
-SECURE_HSTS_SECONDS = 31536000  # HTTP Strict Transport Security
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to subdomains
-SECURE_HSTS_PRELOAD = True  # Preload the HSTS policy
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
+# SECURE_HSTS_SECONDS = 31536000  # HTTP Strict Transport Security
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to subdomains
+# SECURE_HSTS_PRELOAD = True  # Preload the HSTS policy
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
 CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
