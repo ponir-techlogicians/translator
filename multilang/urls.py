@@ -19,10 +19,17 @@ from django.shortcuts import redirect
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
+
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
     # path('', lambda request: redirect('file-translate'), name='home'),
     path('admin/', admin.site.urls),
-    path('', include('app.urls')),
+    # path('', include('app.urls')),
 ]
+urlpatterns += i18n_patterns(
+   # URLs that should be translated
+   path('', include('app.urls')),
+)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

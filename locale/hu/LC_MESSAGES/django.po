@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:46+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: app/templates/translation/home.html:8
+#: app/templates/translation/translate.html:8
+
+msgid "English"
+msgstr "Angol"
+
+msgid "Spanish"
+msgstr "Spanyol"
+
+msgid "French"
+msgstr "Francia"
+
+msgid "German"
+msgstr "Német"
+
+msgid "Japanese"
+msgstr "Japán"
+
+msgid "Simplified Chinese"
+msgstr "Egyszerűsített kínai"
+
+msgid "Traditional Chinese"
+msgstr "Hagyományos kínai"
+
+msgid "Korean"
+msgstr "Koreai"
+
+msgid "Russian"
+msgstr "Orosz"
+
+msgid "Arabic"
+msgstr "Arab"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Fordítsuk le"
+
+msgid "files easy by"
+msgstr "fájlokat egyszerűen"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "Húzza és válassza ki a nyelvet"
+
+msgid "Only 30 sec"
+msgstr "Csak 30 másodperc"
+
+msgid "Apply to code"
+msgstr "Alkalmazza a kódra"
+
+msgid "Try AI Now"
+msgstr "Próbálja ki az AI-t most"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml támogatott"
+
+msgid "What is this for?"
+msgstr "Mire való ez?"
+
+msgid "App Or Web"
+msgstr "Alkalmazás vagy web"
+
+msgid "Contents"
+msgstr "Tartalom"
+
+msgid "What is it about?"
+msgstr "Miről szól?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "Pl. Ez egy alkalmazás egy szállítási szolgáltatáshoz, amelyet tinédzserek fognak használni"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Nyelv (több választás lehetséges)"
+
+msgid "Upload File"
+msgstr "Fájl feltöltése"
+
+msgid "Drag and Drop here"
+msgstr "Húzza ide"
+
+msgid "or"
+msgstr "vagy"
+
+msgid "Select file"
+msgstr "Fájl kiválasztása"
+
+msgid "Building a global"
+msgstr "Globális építés"
+
+msgid "app or web?"
+msgstr "alkalmazás vagy web?"
+
+msgid "Who is for"
+msgstr "Kinek szól"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Ha Ön fejlesztő vagy egy vállalat, amely globális alkalmazást vagy webszolgáltatást készít"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "30 ember munkája, 1 ember által 1 perc alatt elvégezve"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Nincs Excel. Nincsenek fordítók. Nincs szükség átalakításra."
+
+msgid "Any Problem?"
+msgstr "Van probléma?"
+
+msgid "Contact us"
+msgstr "Lépjen kapcsolatba velünk"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Minden jog fenntartva"
+
+msgid "Context"
+msgstr "Kontextus"
+
+msgid "Portuguese"
+msgstr "portugál"
+
+msgid "Italian"
+msgstr "olasz"
+
+msgid "Hindi"
+msgstr "hindi"
+
+msgid "Indonesian"
+msgstr "indonéz"
+
+msgid "Turkish"
+msgstr "török"
+
+msgid "Thai"
+msgstr "thai"
+
+msgid "Vietnamese"
+msgstr "vietnámi"
+
+msgid "Urdu"
+msgstr "urdu"
+
+msgid "Malay"
+msgstr "maláj"
+
+msgid "Dutch"
+msgstr "holland"
+
+msgid "Polish"
+msgstr "Lengyel"
+
+msgid "Swedish"
+msgstr "Svéd"
+
+msgid "Norwegian"
+msgstr "Norvég"
+
+msgid "Danish"
+msgstr "Spanyol"
+
+msgid "Czech"
+msgstr "Cseh"
+
+msgid "Hungarian"
+msgstr "Magyar"
+
+msgid "Finnish"
+msgstr "Finn"
+
+msgid "Hebrew"
+msgstr "Héber"
+
+msgid "Romanian"
+msgstr "Román"
+
+msgid "Greek"
+msgstr "Görög"
+
+msgid "Supported"
+msgstr "Támogatott"
+
+msgid "Translate"
+msgstr "Fordítás"
+
+msgid "Too big file"
+msgstr "Túl nagy fájl"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "A jobb teljesítmény érdekében csak 50,000 byte-nál kisebb fájlok engedélyezettek fordításra"
+
+msgid "Ok!"
+msgstr "Rendben!"
+
+msgid "Too many selected language"
+msgstr "Túl sok kiválasztott nyelv"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "Sok nyelvet választott ki. A fájlmérete 30,897 byte, így legfeljebb 9 nyelvet választhat ki."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "A fordítási tartalom túl nagy. A maximálisan engedélyezett méret 50,000 byte fájlonként. Az Ön fájlmérete %(bytes)s byte. Kérjük, ossza fel tartalmát kisebb részekre."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "Túl sok nyelvet választott ki. A fájlmérete %(bytes)s byte, így legfeljebb %(max)s nyelvet választhat ki, hogy a teljes feldolgozás 300,000 byte alatt maradjon."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "A teljes feldolgozási méret meghaladja a 200,000 byte-os határt."

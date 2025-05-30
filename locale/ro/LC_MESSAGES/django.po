@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:46+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
+
+msgid "English"
+msgstr "English"
+
+msgid "Spanish"
+msgstr "Spanish"
+
+msgid "French"
+msgstr "French"
+
+msgid "German"
+msgstr "German"
+
+msgid "Japanese"
+msgstr "Japanese"
+
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+msgid "Traditional Chinese"
+msgstr "Traditional Chinese"
+
+msgid "Korean"
+msgstr "Coreeană"
+
+msgid "Russian"
+msgstr "Russian"
+
+msgid "Arabic"
+msgstr "Arabic"
+
+msgid "What is this for?"
+msgstr "Pentru ce este aceasta?"
+
+msgid "App Or Web"
+msgstr "Aplicație sau Web"
+
+msgid "Contents"
+msgstr "Conținut"
+
+msgid "What is it about?"
+msgstr "Despre ce este vorba?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "De exemplu, aceasta este o aplicație pentru un serviciu de livrare, utilizată de adolescenți"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Limbă (se permit selecții multiple)"
+
+msgid "Upload File"
+msgstr "Încarcă fișier"
+
+msgid "Drag and Drop here"
+msgstr "Trage și plasează aici"
+
+msgid "or"
+msgstr "sau"
+
+msgid "Select file"
+msgstr "Selectează fișier"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Să facem traducerea"
+
+msgid "files easy by"
+msgstr "fișierele ușor prin"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "Trageți și selectați limba"
+
+msgid "Only 30 sec"
+msgstr "Doar 30 de secunde"
+
+msgid "Apply to code"
+msgstr "Aplică la cod"
+
+msgid "Try AI Now"
+msgstr "Încearcă AI acum"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml Suportat"
+
+msgid "Building a global"
+msgstr "Construirea unei globale"
+
+msgid "app or web?"
+msgstr "aplicație sau web?"
+
+msgid "Who is for"
+msgstr "Pentru cine este"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Dacă ești un dezvoltator sau o companie care pregătește o aplicație globală sau un serviciu web"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "Munca a 30 de persoane, realizată de 1 persoană în 1 minut"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Fără Excel. Fără traducători. Fără conversie necesară."
+
+msgid "Any Problem?"
+msgstr "Vreo problemă?"
+
+msgid "Contact us"
+msgstr "Contactați-ne"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Toate drepturile rezervate"
+
+msgid "Context"
+msgstr "Context"
+
+msgid "Portuguese"
+msgstr "Portugheză"
+
+msgid "Italian"
+msgstr "Italiană"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Indonesian"
+msgstr "Indoneziană"
+
+msgid "Turkish"
+msgstr "Turcă"
+
+msgid "Thai"
+msgstr "Thailandeză"
+
+msgid "Vietnamese"
+msgstr "Vietnameză"
+
+msgid "Urdu"
+msgstr "Urdu"
+
+msgid "Malay"
+msgstr "Malaeză"
+
+msgid "Dutch"
+msgstr "Olandeză"
+
+msgid "Polish"
+msgstr "poloneză"
+
+msgid "Swedish"
+msgstr "suedeză"
+
+msgid "Norwegian"
+msgstr "norvegiană"
+
+msgid "Danish"
+msgstr "daneză"
+
+msgid "Czech"
+msgstr "cehă"
+
+msgid "Hungarian"
+msgstr "maghiară"
+
+msgid "Finnish"
+msgstr "finlandeză"
+
+msgid "Hebrew"
+msgstr "ebraică"
+
+msgid "Romanian"
+msgstr "română"
+
+msgid "Greek"
+msgstr "greacă"
+
+msgid "Supported"
+msgstr "Suportat"
+
+msgid "Translate"
+msgstr "Traduce"
+
+msgid "Too big file"
+msgstr "Fișier prea mare"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "Pentru o performanță mai bună, doar fișierele mai mici de 50.000 de octeți sunt permise pentru traducere"
+
+msgid "Ok!"
+msgstr "Ok!"
+
+msgid "Too many selected language"
+msgstr "Prea multe limbi selectate"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "Ați selectat multe limbi. Cu dimensiunea fișierului dvs. de 30.897 de octeți, puteți selecta până la 9 limbi."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "Conținutul traducerii dvs. este prea mare. Maximul permis este de 50.000 de octeți pe fișier. Dimensiunea fișierului dvs. este de %(bytes)s octeți. Vă rugăm să separați conținutul în bucăți mai mici."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "Ați selectat prea multe limbi. Cu dimensiunea fișierului dvs. de %(bytes)s octeți, puteți selecta până la %(max)s limbi pentru a menține procesarea totală sub 300.000 de octeți."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "Dimensiunea totală a procesării depășește limita de 200.000 de octeți"

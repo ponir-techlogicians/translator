@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:45+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: app/templates/translation/home.html:8
+#: app/templates/translation/translate.html:8
+
+msgid "English"
+msgstr "Engels"
+
+msgid "Spanish"
+msgstr "Spaans"
+
+msgid "French"
+msgstr "Frans"
+
+msgid "German"
+msgstr "Duits"
+
+msgid "Japanese"
+msgstr "Japans"
+
+msgid "Simplified Chinese"
+msgstr "Vereenvoudigd Chinees"
+
+msgid "Traditional Chinese"
+msgstr "Traditioneel Chinees"
+
+msgid "Korean"
+msgstr "Koreaans"
+
+msgid "Russian"
+msgstr "Russisch"
+
+msgid "Arabic"
+msgstr "Arabisch"
+
+msgid "What is this for?"
+msgstr "Waar is dit voor?"
+
+msgid "App Or Web"
+msgstr "App Of Web"
+
+msgid "Contents"
+msgstr "Inhoud"
+
+msgid "What is it about?"
+msgstr "Waar gaat het over?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "Bijv. Dit is een app voor een bezorgdienst, tieners zullen het gebruiken"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Taal (Meerdere selecties toegestaan)"
+
+msgid "Upload File"
+msgstr "Bestand uploaden"
+
+msgid "Drag and Drop here"
+msgstr "Sleep hierheen"
+
+msgid "or"
+msgstr "of"
+
+msgid "Select file"
+msgstr "Selecteer bestand"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Laten we vertalen"
+
+msgid "files easy by"
+msgstr "bestanden gemakkelijk maken door"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "Sleep & Selecteer taal"
+
+msgid "Only 30 sec"
+msgstr "Slechts 30 sec"
+
+msgid "Apply to code"
+msgstr "Toepassen op code"
+
+msgid "Try AI Now"
+msgstr "Probeer AI Nu"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml Ondersteund"
+
+msgid "Building a global"
+msgstr "Een wereldwijde opbouw"
+
+msgid "app or web?"
+msgstr "app of web?"
+
+msgid "Who is for"
+msgstr "Voor wie is het"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Als u een ontwikkelaar of een bedrijf bent dat een wereldwijde app of webdienst voorbereidt"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "Het werk van 30 mensen, gedaan door 1 persoon in 1 minuut"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Geen Excel. Geen vertalers. Geen conversie nodig."
+
+msgid "Any Problem?"
+msgstr "Een probleem?"
+
+msgid "Contact us"
+msgstr "Neem contact met ons op"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Alle rechten voorbehouden"
+
+msgid "Context"
+msgstr "Context"
+
+msgid "Portuguese"
+msgstr "Portugees"
+
+msgid "Italian"
+msgstr "Italiaans"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Indonesian"
+msgstr "Indonesisch"
+
+msgid "Turkish"
+msgstr "Turks"
+
+msgid "Thai"
+msgstr "Thais"
+
+msgid "Vietnamese"
+msgstr "Vietnamees"
+
+msgid "Urdu"
+msgstr "Urdu"
+
+msgid "Malay"
+msgstr "Maleis"
+
+msgid "Dutch"
+msgstr "Nederlands"
+
+msgid "Polish"
+msgstr "Pools"
+
+msgid "Swedish"
+msgstr "Zweeds"
+
+msgid "Norwegian"
+msgstr "Noors"
+
+msgid "Danish"
+msgstr "Spaans"
+
+msgid "Czech"
+msgstr "Tsjechisch"
+
+msgid "Hungarian"
+msgstr "Hongaars"
+
+msgid "Finnish"
+msgstr "Fins"
+
+msgid "Hebrew"
+msgstr "Hebreeuws"
+
+msgid "Romanian"
+msgstr "Roemeens"
+
+msgid "Greek"
+msgstr "Grieks"
+
+msgid "Supported"
+msgstr "Ondersteund"
+
+msgid "Translate"
+msgstr "Vertalen"
+
+msgid "Too big file"
+msgstr "Te groot bestand"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "Voor betere prestaties zijn alleen bestanden kleiner dan 50.000 bytes toegestaan voor vertaling"
+
+msgid "Ok!"
+msgstr "Oké!"
+
+msgid "Too many selected language"
+msgstr "Te veel geselecteerde talen"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "U heeft veel talen geselecteerd. Met uw bestandsgrootte van 30.897 bytes kunt u maximaal 9 talen selecteren."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "Uw vertaalinhoud is te groot. Het maximum toegestane is 50.000 bytes per bestand. Uw bestandsgrootte is %(bytes)s bytes. Gelieve uw inhoud in kleinere delen te splitsen."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "U heeft te veel talen geselecteerd. Met uw bestandsgrootte van %(bytes)s bytes kunt u maximaal %(max)s talen selecteren om de totale verwerking onder 300.000 bytes te houden."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "Totale verwerkingsgrootte overschrijdt de limiet van 200.000 bytes"

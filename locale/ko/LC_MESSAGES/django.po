@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:44+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+
+msgid "English"
+msgstr "영어"
+
+msgid "Spanish"
+msgstr "스페인어"
+
+msgid "French"
+msgstr "프랑스어"
+
+msgid "German"
+msgstr "독일어"
+
+msgid "Japanese"
+msgstr "일본어"
+
+msgid "Simplified Chinese"
+msgstr "중국어(간체)"
+
+msgid "Traditional Chinese"
+msgstr "중국어(번체)"
+
+msgid "Korean"
+msgstr "한국어"
+
+msgid "Russian"
+msgstr "러시아어"
+
+msgid "Arabic"
+msgstr "아랍어"
+
+msgid "What is this for?"
+msgstr "무엇을 위한 것인가요?"
+
+msgid "App Or Web"
+msgstr "앱 또는 웹"
+
+msgid "Contents"
+msgstr "내용"
+
+msgid "What is it about?"
+msgstr "무엇에 관한 것인가요?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "예. 이것은 배달 서비스용 앱이며, 십대들이 사용할 것입니다."
+
+msgid "Language (Multiple selections allowed)"
+msgstr "언어 (다중 선택 가능)"
+
+msgid "Upload File"
+msgstr "파일 업로드"
+
+msgid "Drag and Drop here"
+msgstr "여기에 드래그 앤 드롭"
+
+msgid "or"
+msgstr "또는"
+
+msgid "Select file"
+msgstr "파일 선택"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "번역을 쉽게 만들자"
+
+msgid "files easy by"
+msgstr "파일을 쉽게"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "드래그 & 언어 선택"
+
+msgid "Only 30 sec"
+msgstr "단 30초"
+
+msgid "Apply to code"
+msgstr "코드에 적용"
+
+msgid "Try AI Now"
+msgstr "지금 AI 시도"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml 지원됨"
+
+msgid "Building a global"
+msgstr "글로벌 구축하기"
+
+msgid "app or web?"
+msgstr "앱 또는 웹?"
+
+msgid "Who is for"
+msgstr "누구를 위한 것인가"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "글로벌 앱 또는 웹 서비스를 준비하는 개발자나 회사라면"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "30명이 할 일을 1명이 1분 만에"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "엑셀 필요 없음. 번역가 필요 없음. 변환 필요 없음."
+
+msgid "Any Problem?"
+msgstr "문제가 있나요?"
+
+msgid "Contact us"
+msgstr "문의하기"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., 모든 권리 보유"
+
+msgid "Context"
+msgstr "맥락"
+
+msgid "Portuguese"
+msgstr "포르투갈어"
+
+msgid "Italian"
+msgstr "이탈리아어"
+
+msgid "Hindi"
+msgstr "힌디어"
+
+msgid "Indonesian"
+msgstr "인도네시아어"
+
+msgid "Turkish"
+msgstr "터키어"
+
+msgid "Thai"
+msgstr "태국어"
+
+msgid "Vietnamese"
+msgstr "베트남어"
+
+msgid "Urdu"
+msgstr "우르두어"
+
+msgid "Malay"
+msgstr "말레이어"
+
+msgid "Dutch"
+msgstr "네덜란드어"
+
+msgid "Polish"
+msgstr "폴란드어"
+
+msgid "Swedish"
+msgstr "스웨덴어"
+
+msgid "Norwegian"
+msgstr "노르웨이어"
+
+msgid "Danish"
+msgstr "스페인어"
+
+msgid "Czech"
+msgstr "체코어"
+
+msgid "Hungarian"
+msgstr "헝가리어"
+
+msgid "Finnish"
+msgstr "핀란드어"
+
+msgid "Hebrew"
+msgstr "히브리어"
+
+msgid "Romanian"
+msgstr "루마니아어"
+
+msgid "Greek"
+msgstr "그리스어"
+
+msgid "Supported"
+msgstr "지원됨"
+
+msgid "Translate"
+msgstr "번역"
+
+msgid "Too big file"
+msgstr "파일이 너무 큼"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "더 나은 성능을 위해 50,000바이트보다 작은 파일만 번역이 허용됩니다"
+
+msgid "Ok!"
+msgstr "확인!"
+
+msgid "Too many selected language"
+msgstr "선택된 언어가 너무 많음"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "많은 언어를 선택했습니다. 파일 크기가 30,897바이트인 경우 최대 9개의 언어를 선택할 수 있습니다."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "번역 콘텐츠가 너무 큽니다. 파일당 최대 허용 크기는 50,000바이트입니다. 파일 크기는 %(bytes)s바이트입니다. 콘텐츠를 더 작은 조각으로 나누어 주세요."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "너무 많은 언어를 선택했습니다. 파일 크기가 %(bytes)s바이트인 경우 총 처리량을 300,000바이트 이하로 유지하기 위해 최대 %(max)s개의 언어를 선택할 수 있습니다."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "총 처리 크기가 200,000바이트 제한을 초과합니다."

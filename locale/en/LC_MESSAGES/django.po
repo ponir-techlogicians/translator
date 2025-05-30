@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:38+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/templates/translation/home.html:8
+#: app/templates/translation/translate.html:8
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+#: app/templates/translation/home.html:21
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+#: app/templates/translation/home.html:45
+msgid "Let's make translation"
+msgstr "Let's make translation"
+
+#: app/templates/translation/home.html:46
+msgid "files easy by"
+msgstr "files easy by"
+
+#: app/templates/translation/home.html:46
+msgid "AI"
+msgstr "AI"
+
+#: app/templates/translation/home.html:53
+msgid "Drag & Select language"
+msgstr "Drag & Select language"
+
+#: app/templates/translation/home.html:54
+msgid "Only 30 sec"
+msgstr "Only 30 sec"
+
+#: app/templates/translation/home.html:60
+msgid "Apply to code"
+msgstr "Apply to code"
+
+#: app/templates/translation/home.html:66
+msgid "Try AI Now"
+msgstr "Try AI Now"
+
+#: app/templates/translation/home.html:67
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+
+#: app/templates/translation/home.html:73
+msgid "Building a global"
+msgstr "Building a global"
+
+#: app/templates/translation/home.html:73
+msgid "app or web?"
+msgstr "app or web?"
+
+#: app/templates/translation/home.html:82
+msgid "Who is for"
+msgstr "Who is for"
+
+#: app/templates/translation/home.html:83
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "If you're a developer or a company preparing a global app or web service"
+
+#: app/templates/translation/home.html:85
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "30 people's work, done by 1 person for 1 minute"
+
+#: app/templates/translation/home.html:86
+msgid "No Excel. No translators. No conversion needed."
+msgstr "No Excel. No translators. No conversion needed."
+
+#: app/templates/translation/home.html:94
+msgid "Any Problem?"
+msgstr "Any Problem?"
+
+#: app/templates/translation/home.html:95
+msgid "Contact us"
+msgstr "Contact us"
+
+#: app/templates/translation/home.html:107
+#: app/templates/translation/translate.html:126
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., All rights reserved"
+
+#: app/templates/translation/translate.html:34
+msgid "Context"
+msgstr "Context"
+
+#: app/templates/translation/translate.html:36
+msgid "What is this for?"
+msgstr "What is this for?"
+
+#: app/templates/translation/translate.html:37
+msgid "App Or Web"
+msgstr "App Or Web"
+
+#: app/templates/translation/translate.html:38
+msgid "Contents"
+msgstr "Contents"
+
+#: app/templates/translation/translate.html:41
+msgid "What is it about?"
+msgstr "What is it about?"
+
+#: app/templates/translation/translate.html:43
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "Eg. This is app for a delivery service, people who is teenager will use"
+
+#: app/templates/translation/translate.html:49
+msgid "Language (Multiple selections allowed)"
+msgstr "Language (Multiple selections allowed)"
+
+#: app/templates/translation/translate.html:98
+msgid "Upload File"
+msgstr "Upload File"
+
+#: app/templates/translation/translate.html:101
+msgid "Drag and Drop here"
+msgstr "Drag and Drop here"
+
+#: app/templates/translation/translate.html:101
+msgid "or"
+msgstr "or"
+
+#: app/templates/translation/translate.html:103
+msgid "Select file"
+msgstr "Select file"
+
+#: app/templates/translation/translate.html:104
+msgid "Supported"
+msgstr "Supported"
+
+#: app/templates/translation/translate.html:109
+msgid "Translate"
+msgstr "Translate"
+
+#: app/templates/translation/translate.html:137 app/views.py:325
+msgid "Too big file"
+msgstr "Too big file"
+
+#: app/templates/translation/translate.html:138
+#, fuzzy
+#| msgid ""
+#| "For better performance, only files smaller than 50,000 bytes are allowed "
+#| "for translation "
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+
+#: app/templates/translation/translate.html:139
+#: app/templates/translation/translate.html:149
+msgid "Ok!"
+msgstr "Ok!"
+
+#: app/templates/translation/translate.html:147 app/views.py:337
+msgid "Too many selected language"
+msgstr "Too many selected language"
+
+#: app/templates/translation/translate.html:148
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+
+#: app/views.py:327
+#, python-format
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+
+#: app/views.py:339
+#, fuzzy, python-format
+#| msgid ""
+#| "You have selected too many languages. With your file size of %(bytes)s "
+#| "bytes, you can select up to %(max)s languages to keep total processing "
+#| "under 300,000 bytes"
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+
+#: app/views.py:355
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "Total processing size exceeds limit of 200,000 bytes"
+
+#: multilang/settings.py:111
+msgid "English"
+msgstr "English"
+
+#: multilang/settings.py:112
+msgid "Spanish"
+msgstr "Spanish"
+
+#: multilang/settings.py:113
+msgid "French"
+msgstr "French"
+
+#: multilang/settings.py:114
+msgid "German"
+msgstr "German"
+
+#: multilang/settings.py:115
+msgid "Japanese"
+msgstr "Japanese"
+
+#: multilang/settings.py:116
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+#: multilang/settings.py:117
+msgid "Traditional Chinese"
+msgstr "Traditional Chinese"
+
+#: multilang/settings.py:118
+msgid "Korean"
+msgstr "Korean"
+
+#: multilang/settings.py:119
+msgid "Russian"
+msgstr "Russian"
+
+#: multilang/settings.py:120
+msgid "Arabic"
+msgstr "Arabic"
+
+#: multilang/settings.py:121
+msgid "Portuguese"
+msgstr "Portuguese"
+
+#: multilang/settings.py:122
+msgid "Italian"
+msgstr "Italian"
+
+#: multilang/settings.py:123
+msgid "Hindi"
+msgstr "Hindi"
+
+#: multilang/settings.py:124
+msgid "Indonesian"
+msgstr "Indonesian"
+
+#: multilang/settings.py:125
+msgid "Turkish"
+msgstr "Turkish"
+
+#: multilang/settings.py:126
+msgid "Thai"
+msgstr "Thai"
+
+#: multilang/settings.py:127
+msgid "Vietnamese"
+msgstr "Vietnamese"
+
+#: multilang/settings.py:128
+msgid "Urdu"
+msgstr "Urdu"
+
+#: multilang/settings.py:129
+msgid "Malay"
+msgstr "Malay"
+
+#: multilang/settings.py:130
+msgid "Dutch"
+msgstr "Dutch"
+
+#: multilang/settings.py:131
+#, fuzzy
+#| msgid "English"
+msgid "Polish"
+msgstr "Polish"
+
+#: multilang/settings.py:132
+msgid "Swedish"
+msgstr "Swedish"
+
+#: multilang/settings.py:133
+msgid "Norwegian"
+msgstr "Norwegian"
+
+#: multilang/settings.py:134
+#, fuzzy
+#| msgid "Spanish"
+msgid "Danish"
+msgstr "Spanish"
+
+#: multilang/settings.py:135
+msgid "Czech"
+msgstr "Czech"
+
+#: multilang/settings.py:136
+msgid "Hungarian"
+msgstr "Hungarian"
+
+#: multilang/settings.py:137
+msgid "Finnish"
+msgstr "Finnish"
+
+#: multilang/settings.py:138
+msgid "Hebrew"
+msgstr "Hebrew"
+
+#: multilang/settings.py:139
+msgid "Romanian"
+msgstr "Romanian"
+
+#: multilang/settings.py:140
+msgid "Greek"
+msgstr "Greek"

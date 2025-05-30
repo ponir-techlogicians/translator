@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 from decouple import config
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -101,10 +103,56 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('fr', _('French')),
+    ('de', _('German')),
+    ('ja', _('Japanese')),
+    ('zhs', _('Simplified Chinese')),
+    ('zht', _('Traditional Chinese')),
+    ('ko', _('Korean')),
+    ('ru', _('Russian')),
+    ('ar', _('Arabic')),
+    ('pt', _('Portuguese')),
+    ('it', _('Italian')),
+    ('hi', _('Hindi')),
+    ('id', _('Indonesian')),
+    ('tr', _('Turkish')),
+    ('th', _('Thai')),
+    ('vi', _('Vietnamese')),
+    ('ur', _('Urdu')),
+    ('ms', _('Malay')),
+    ('nl', _('Dutch')),
+    ('pl', _('Polish')),
+    ('sv', _('Swedish')),
+    ('no', _('Norwegian')),
+    ('da', _('Danish')),
+    ('cs', _('Czech')),
+    ('hu', _('Hungarian')),
+    ('fi', _('Finnish')),
+    ('he', _('Hebrew')),
+    ('ro', _('Romanian')),
+    ('el', _('Greek')),
+]
+# Default language
+LANGUAGE_CODE = 'en'
+
+# Enable internationalization
+USE_I18N = True
+
+# Enable localization
+USE_L10N = True
+
+# Path where Django will look for translation files
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+
 
 TIME_ZONE = 'UTC'
 
@@ -131,11 +179,11 @@ OPENAI_API_KEY = config('OPENAI_API_KEY')
 STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
-SECURE_HSTS_SECONDS = 31536000  # HTTP Strict Transport Security
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to subdomains
-SECURE_HSTS_PRELOAD = True  # Preload the HSTS policy
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
+# SECURE_HSTS_SECONDS = 31536000  # HTTP Strict Transport Security
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to subdomains
+# SECURE_HSTS_PRELOAD = True  # Preload the HSTS policy
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
 CELERY_RESULT_BACKEND = "redis://localhost:6379/0"

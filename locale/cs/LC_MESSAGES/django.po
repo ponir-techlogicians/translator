@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:45+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+#: app/templates/translation/home.html:8
+#: app/templates/translation/translate.html:8
+msgid "English"
+msgstr "영어"
+
+msgid "Spanish"
+msgstr "스페인어"
+
+msgid "French"
+msgstr "프랑스어"
+
+msgid "German"
+msgstr "독일어"
+
+msgid "Japanese"
+msgstr "일본어"
+
+msgid "Simplified Chinese"
+msgstr "중국어 간체"
+
+msgid "Traditional Chinese"
+msgstr "중국어 번체"
+
+msgid "Korean"
+msgstr "한국어"
+
+msgid "Russian"
+msgstr "러시아어"
+
+msgid "Arabic"
+msgstr "아랍어"
+
+msgid "What is this for?"
+msgstr "What is this for?"
+
+msgid "App Or Web"
+msgstr "App Or Web"
+
+msgid "Contents"
+msgstr "Contents"
+
+msgid "What is it about?"
+msgstr "What is it about?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "Např. Toto je aplikace pro doručovací službu, kterou budou používat teenageři"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Jazyk (je povoleno více výběrů)"
+
+msgid "Upload File"
+msgstr "Nahrát soubor"
+
+msgid "Drag and Drop here"
+msgstr "Přetáhněte sem"
+
+msgid "or"
+msgstr "nebo"
+
+msgid "Select file"
+msgstr "Vybrat soubor"
+
+msgid "Portuguese"
+msgstr "Portuguese"
+
+msgid "Italian"
+msgstr "Italian"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Indonesian"
+msgstr "Indonesian"
+
+msgid "Turkish"
+msgstr "Turkish"
+
+msgid "Thai"
+msgstr "Thai"
+
+msgid "Vietnamese"
+msgstr "Vietnamese"
+
+msgid "Urdu"
+msgstr "Urdu"
+
+msgid "Malay"
+msgstr "Malay"
+
+msgid "Dutch"
+msgstr "Dutch"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Pojďme usnadnit překlad"
+
+msgid "files easy by"
+msgstr "soubory pomocí"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "Přetáhněte a vyberte jazyk"
+
+msgid "Only 30 sec"
+msgstr "Pouze 30 sekund"
+
+msgid "Apply to code"
+msgstr "Použít na kód"
+
+msgid "Try AI Now"
+msgstr "Vyzkoušejte AI nyní"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml Podporováno"
+
+msgid "Building a global"
+msgstr "Budování globálního"
+
+msgid "app or web?"
+msgstr "aplikace nebo web?"
+
+msgid "Who is for"
+msgstr "Pro koho je"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Pokud jste vývojář nebo společnost připravující globální aplikaci nebo webovou službu"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "Práce 30 lidí, provedená 1 osobou za 1 minutu"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Žádný Excel. Žádní překladatelé. Není potřeba žádná konverze."
+
+msgid "Any Problem?"
+msgstr "Nějaký problém?"
+
+msgid "Contact us"
+msgstr "Kontaktujte nás"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Všechna práva vyhrazena"
+
+msgid "Context"
+msgstr "Kontext"
+
+msgid "Supported"
+msgstr "Supported"
+
+msgid "Translate"
+msgstr "Přeložit"
+
+msgid "Too big file"
+msgstr "Příliš velký soubor"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "Pro lepší výkon jsou pro překlad povoleny pouze soubory menší než 50 000 bajtů"
+
+msgid "Ok!"
+msgstr "Ok!"
+
+msgid "Too many selected language"
+msgstr "Příliš mnoho vybraných jazyků"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "Vybrali jste mnoho jazyků. S velikostí vašeho souboru 30 897 bajtů můžete vybrat až 9 jazyků."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "Váš překladový obsah je příliš velký. Maximální povolená velikost je 50 000 bajtů na soubor. Velikost vašeho souboru je %(bytes)s bajtů. Prosím, rozdělte svůj obsah na menší části."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "Vybrali jste příliš mnoho jazyků. S velikostí vašeho souboru %(bytes)s bajtů můžete vybrat až %(max)s jazyků, aby celkové zpracování nepřesáhlo 300 000 bajtů."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "Celková velikost zpracování překračuje limit 200 000 bajtů"
+
+msgid "Polish"
+msgstr "polština"
+
+msgid "Swedish"
+msgstr "švédština"
+
+msgid "Norwegian"
+msgstr "norština"
+
+msgid "Danish"
+msgstr "španělština"
+
+msgid "Czech"
+msgstr "čeština"
+
+msgid "Hungarian"
+msgstr "maďarština"
+
+msgid "Finnish"
+msgstr "finština"
+
+msgid "Hebrew"
+msgstr "hebrejština"
+
+msgid "Romanian"
+msgstr "rumunština"
+
+msgid "Greek"
+msgstr "řečtina"

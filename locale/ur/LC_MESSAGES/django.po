@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:45+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: app/templates/translation/home.html:8
+#: app/templates/translation/translate.html:8
+
+msgid "What is this for?"
+msgstr "یہ کس لئے ہے؟"
+
+msgid "App Or Web"
+msgstr "ایپ یا ویب"
+
+msgid "Contents"
+msgstr "مواد"
+
+msgid "What is it about?"
+msgstr "یہ کس بارے میں ہے؟"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "مثال کے طور پر، یہ ایک ڈیلیوری سروس کے لئے ایپ ہے، جو نوجوان استعمال کریں گے"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "زبان (متعدد انتخاب کی اجازت ہے)"
+
+msgid "Upload File"
+msgstr "فائل اپ لوڈ کریں"
+
+msgid "Drag and Drop here"
+msgstr "یہاں گھسیٹیں اور چھوڑیں"
+
+msgid "or"
+msgstr "یا"
+
+msgid "Select file"
+msgstr "فائل منتخب کریں"
+
+msgid "English"
+msgstr "انگریزی"
+
+msgid "Spanish"
+msgstr "ہسپانوی"
+
+msgid "French"
+msgstr "فرانسیسی"
+
+msgid "German"
+msgstr "جرمن"
+
+msgid "Japanese"
+msgstr "جاپانی"
+
+msgid "Simplified Chinese"
+msgstr "سادہ چینی"
+
+msgid "Traditional Chinese"
+msgstr "روایتی چینی"
+
+msgid "Korean"
+msgstr "کورین"
+
+msgid "Russian"
+msgstr "روسی"
+
+msgid "Arabic"
+msgstr "عربی"
+
+msgid "Building a global"
+msgstr "عالمی سطح پر تعمیر کرنا"
+
+msgid "app or web?"
+msgstr "ایپ یا ویب؟"
+
+msgid "Who is for"
+msgstr "کس کے لئے ہے"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "اگر آپ ایک ڈویلپر یا کمپنی ہیں جو عالمی ایپ یا ویب سروس تیار کر رہے ہیں"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "30 افراد کا کام، 1 شخص کے ذریعہ 1 منٹ میں مکمل"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "کوئی ایکسل نہیں۔ کوئی مترجم نہیں۔ کوئی تبدیلی کی ضرورت نہیں۔"
+
+msgid "Any Problem?"
+msgstr "کوئی مسئلہ؟"
+
+msgid "Contact us"
+msgstr "ہم سے رابطہ کریں"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., جملہ حقوق محفوظ ہیں"
+
+msgid "Context"
+msgstr "سیاق و سباق"
+
+msgid "Portuguese"
+msgstr "پرتگالی"
+
+msgid "Italian"
+msgstr "اطالوی"
+
+msgid "Hindi"
+msgstr "ہندی"
+
+msgid "Indonesian"
+msgstr "انڈونیشیائی"
+
+msgid "Turkish"
+msgstr "ترکی"
+
+msgid "Thai"
+msgstr "تھائی"
+
+msgid "Vietnamese"
+msgstr "ویتنامی"
+
+msgid "Urdu"
+msgstr "اردو"
+
+msgid "Malay"
+msgstr "مالے"
+
+msgid "Dutch"
+msgstr "ڈچ"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "آئیے ترجمہ کو بنائیں"
+
+msgid "files easy by"
+msgstr "فائلوں کو آسان بنائیں"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "زبان کو گھسیٹیں اور منتخب کریں"
+
+msgid "Only 30 sec"
+msgstr "صرف 30 سیکنڈ"
+
+msgid "Apply to code"
+msgstr "کوڈ پر لاگو کریں"
+
+msgid "Try AI Now"
+msgstr "ابھی AI آزمائیں"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml معاونت یافتہ"
+
+msgid "Polish"
+msgstr "پولش"
+
+msgid "Swedish"
+msgstr "سویڈش"
+
+msgid "Norwegian"
+msgstr "نارویجن"
+
+msgid "Danish"
+msgstr "ہسپانوی"
+
+msgid "Czech"
+msgstr "چیک"
+
+msgid "Hungarian"
+msgstr "ہنگیرین"
+
+msgid "Finnish"
+msgstr "فینش"
+
+msgid "Hebrew"
+msgstr "عبرانی"
+
+msgid "Romanian"
+msgstr "رومانیائی"
+
+msgid "Greek"
+msgstr "یونانی"
+
+msgid "Supported"
+msgstr "Supported"
+
+msgid "Translate"
+msgstr "Translate"
+
+msgid "Too big file"
+msgstr "Too big file"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "بہتر کارکردگی کے لیے، صرف 50,000 بائٹس سے چھوٹی فائلوں کو ترجمہ کرنے کی اجازت ہے"
+
+msgid "Ok!"
+msgstr "Ok!"
+
+msgid "Too many selected language"
+msgstr "Too many selected language"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "آپ نے بہت سی زبانیں منتخب کی ہیں۔ آپ کی فائل کا سائز 30,897 بائٹس ہے، آپ 9 زبانیں منتخب کر سکتے ہیں۔"
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "آپ کا ترجمہ مواد بہت بڑا ہے۔ فی فائل زیادہ سے زیادہ 50,000 بائٹس کی اجازت ہے۔ آپ کی فائل کا سائز %(bytes)s بائٹس ہے۔ براہ کرم اپنے مواد کو چھوٹے حصوں میں تقسیم کریں۔"
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "آپ نے بہت سی زبانیں منتخب کی ہیں۔ آپ کی فائل کا سائز %(bytes)s بائٹس ہے، آپ %(max)s زبانیں منتخب کر سکتے ہیں تاکہ کل پروسیسنگ 300,000 بائٹس سے کم رہے۔"
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "کل پروسیسنگ سائز 200,000 بائٹس کی حد سے تجاوز کر گیا ہے۔"

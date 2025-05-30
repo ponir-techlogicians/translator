@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 18:58+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "English"
+msgstr "English"
+
+msgid "Spanish"
+msgstr "Spanish"
+
+msgid "French"
+msgstr "French"
+
+msgid "German"
+msgstr "German"
+
+msgid "Japanese"
+msgstr "Japanese"
+
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+msgid "Traditional Chinese"
+msgstr "繁體中文"
+
+msgid "Korean"
+msgstr "Korean"
+
+msgid "Russian"
+msgstr "Russian"
+
+msgid "Arabic"
+msgstr "Arabic"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "讓翻譯變得"
+
+msgid "files easy by"
+msgstr "文件變得簡單"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "拖動並選擇語言"
+
+msgid "Only 30 sec"
+msgstr "只需30秒"
+
+msgid "Apply to code"
+msgstr "應用於代碼"
+
+msgid "Try AI Now"
+msgstr "現在嘗試AI"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr "支援.CSV .ts .ini .xliff .json .xml .php .yaml"
+
+msgid "What is this for?"
+msgstr "這是做什麼用的？"
+
+msgid "App Or Web"
+msgstr "應用程式或網頁"
+
+msgid "Contents"
+msgstr "內容"
+
+msgid "What is it about?"
+msgstr "這是關於什麼的？"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "例如：這是一個送貨服務的應用程式，青少年會使用"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "語言（可多選）"
+
+msgid "Upload File"
+msgstr "上傳檔案"
+
+msgid "Drag and Drop here"
+msgstr "拖放到這裡"
+
+msgid "or"
+msgstr "或"
+
+msgid "Select file"
+msgstr "選擇檔案"
+
+msgid "Building a global"
+msgstr "建立全球"
+
+msgid "app or web?"
+msgstr "應用程式或網頁？"
+
+msgid "Who is for"
+msgstr "適合誰"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "如果您是準備全球應用程式或網頁服務的開發者或公司"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "30人的工作，1人1分鐘完成"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "無需 Excel。無需翻譯。無需轉換。"
+
+msgid "Any Problem?"
+msgstr "有任何問題？"
+
+msgid "Contact us"
+msgstr "聯繫我們"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., 版權所有"
+
+msgid "Context"
+msgstr "上下文"
+
+msgid "Portuguese"
+msgstr "葡萄牙語"
+
+msgid "Italian"
+msgstr "義大利語"
+
+msgid "Hindi"
+msgstr "印地語"
+
+msgid "Indonesian"
+msgstr "印尼語"
+
+msgid "Turkish"
+msgstr "土耳其語"
+
+msgid "Thai"
+msgstr "泰語"
+
+msgid "Vietnamese"
+msgstr "越南語"
+
+msgid "Urdu"
+msgstr "烏爾都語"
+
+msgid "Malay"
+msgstr "馬來語"
+
+msgid "Dutch"
+msgstr "荷蘭語"
+
+msgid "Polish"
+msgstr "波蘭文"
+
+msgid "Swedish"
+msgstr "瑞典文"
+
+msgid "Norwegian"
+msgstr "挪威文"
+
+msgid "Danish"
+msgstr "西班牙文"
+
+msgid "Czech"
+msgstr "捷克文"
+
+msgid "Hungarian"
+msgstr "匈牙利文"
+
+msgid "Finnish"
+msgstr "芬蘭文"
+
+msgid "Hebrew"
+msgstr "希伯來文"
+
+msgid "Romanian"
+msgstr "羅馬尼亞文"
+
+msgid "Greek"
+msgstr "希臘文"
+
+msgid "Supported"
+msgstr "Supported"
+
+msgid "Translate"
+msgstr "Translate"
+
+msgid "Too big file"
+msgstr "Too big file"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "為了更好的性能，只允許翻譯小於 50,000 字節的文件"
+
+msgid "Ok!"
+msgstr "好的！"
+
+msgid "Too many selected language"
+msgstr "選擇的語言太多"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "您選擇了很多語言。根據您的文件大小 30,897 字節，您最多可以選擇 9 種語言。"
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "您的翻譯內容太大。每個文件允許的最大大小為 50,000 字節。您的文件大小為 %(bytes)s 字節。請將您的內容分成較小的部分。"
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "您選擇的語言太多。根據您的文件大小 %(bytes)s 字節，您最多可以選擇 %(max)s 種語言，以保持總處理量在 300,000 字節以下。"
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "總處理大小超過 200,000 字節的限制"

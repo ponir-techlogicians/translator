@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:44+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "دعونا نجعل الترجمة"
+
+msgid "files easy by"
+msgstr "الملفات سهلة بواسطة"
+
+msgid "AI"
+msgstr "الذكاء الاصطناعي"
+
+msgid "Drag & Select language"
+msgstr "اسحب وحدد اللغة"
+
+msgid "Only 30 sec"
+msgstr "فقط 30 ثانية"
+
+msgid "Apply to code"
+msgstr "تطبيق على الكود"
+
+msgid "Try AI Now"
+msgstr "جرب الذكاء الاصطناعي الآن"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml مدعوم"
+
+msgid "What is this for?"
+msgstr "ما الغرض من هذا؟"
+
+msgid "App Or Web"
+msgstr "تطبيق أو ويب"
+
+msgid "Contents"
+msgstr "المحتويات"
+
+msgid "What is it about?"
+msgstr "ما الموضوع؟"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "مثال. هذا تطبيق لخدمة التوصيل، سيستخدمه الأشخاص الذين هم في سن المراهقة"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "اللغة (يمكن اختيار عدة لغات)"
+
+msgid "Upload File"
+msgstr "تحميل الملف"
+
+msgid "Drag and Drop here"
+msgstr "اسحب وأفلت هنا"
+
+msgid "or"
+msgstr "أو"
+
+msgid "Select file"
+msgstr "اختر الملف"
+
+msgid "English"
+msgstr "الإنجليزية"
+
+msgid "Spanish"
+msgstr "الإسبانية"
+
+msgid "French"
+msgstr "الفرنسية"
+
+msgid "German"
+msgstr "الألمانية"
+
+msgid "Japanese"
+msgstr "اليابانية"
+
+msgid "Simplified Chinese"
+msgstr "الصينية المبسطة"
+
+msgid "Traditional Chinese"
+msgstr "الصينية التقليدية"
+
+msgid "Korean"
+msgstr "الكورية"
+
+msgid "Russian"
+msgstr "الروسية"
+
+msgid "Arabic"
+msgstr "العربية"
+
+msgid "Building a global"
+msgstr "بناء عالمي"
+
+msgid "app or web?"
+msgstr "تطبيق أو ويب؟"
+
+msgid "Who is for"
+msgstr "لمن هذا"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "إذا كنت مطورًا أو شركة تعد تطبيقًا أو خدمة ويب عالمية"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "عمل 30 شخصًا، يتم بواسطة شخص واحد في دقيقة واحدة"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "لا إكسل. لا مترجمين. لا حاجة للتحويل."
+
+msgid "Any Problem?"
+msgstr "أي مشكلة؟"
+
+msgid "Contact us"
+msgstr "اتصل بنا"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc.، جميع الحقوق محفوظة"
+
+msgid "Context"
+msgstr "السياق"
+
+msgid "Portuguese"
+msgstr "البرتغالية"
+
+msgid "Italian"
+msgstr "الإيطالية"
+
+msgid "Hindi"
+msgstr "الهندية"
+
+msgid "Indonesian"
+msgstr "الإندونيسية"
+
+msgid "Turkish"
+msgstr "التركية"
+
+msgid "Thai"
+msgstr "التايلاندية"
+
+msgid "Vietnamese"
+msgstr "الفيتنامية"
+
+msgid "Urdu"
+msgstr "الأردية"
+
+msgid "Malay"
+msgstr "الماليزية"
+
+msgid "Dutch"
+msgstr "الهولندية"
+
+msgid "Polish"
+msgstr "البولندية"
+
+msgid "Swedish"
+msgstr "السويدية"
+
+msgid "Norwegian"
+msgstr "النرويجية"
+
+msgid "Danish"
+msgstr "الإسبانية"
+
+msgid "Czech"
+msgstr "التشيكية"
+
+msgid "Hungarian"
+msgstr "الهنغارية"
+
+msgid "Finnish"
+msgstr "الفنلندية"
+
+msgid "Hebrew"
+msgstr "العبرية"
+
+msgid "Romanian"
+msgstr "الرومانية"
+
+msgid "Greek"
+msgstr "اليونانية"
+
+msgid "Supported"
+msgstr "مدعوم"
+
+msgid "Translate"
+msgstr "ترجمة"
+
+msgid "Too big file"
+msgstr "ملف كبير جدًا"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "لتحسين الأداء، يُسمح فقط بالملفات الأصغر من 50,000 بايت للترجمة"
+
+msgid "Ok!"
+msgstr "حسناً!"
+
+msgid "Too many selected language"
+msgstr "تم اختيار عدد كبير جدًا من اللغات"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "لقد اخترت العديد من اللغات. مع حجم ملفك البالغ 30,897 بايت، يمكنك اختيار ما يصل إلى 9 لغات."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "محتوى الترجمة الخاص بك كبير جدًا. الحد الأقصى المسموح به هو 50,000 بايت لكل ملف. حجم ملفك هو %(bytes)s بايت. يرجى تقسيم المحتوى إلى أجزاء أصغر."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "لقد اخترت عددًا كبيرًا جدًا من اللغات. مع حجم ملفك البالغ %(bytes)s بايت، يمكنك اختيار ما يصل إلى %(max)s لغات للحفاظ على إجمالي المعالجة تحت 300,000 بايت."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "حجم المعالجة الإجمالي يتجاوز الحد الأقصى البالغ 200,000 بايت."

@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:44+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: app/templates/translation/home.html:8
+#: app/templates/translation/translate.html:8
+
+msgid "English"
+msgstr "Inglês"
+
+msgid "Spanish"
+msgstr "Espanhol"
+
+msgid "French"
+msgstr "Francês"
+
+msgid "German"
+msgstr "Alemão"
+
+msgid "Japanese"
+msgstr "Japonês"
+
+msgid "Simplified Chinese"
+msgstr "Chinês Simplificado"
+
+msgid "Traditional Chinese"
+msgstr "Chinês Tradicional"
+
+msgid "Korean"
+msgstr "Coreano"
+
+msgid "Russian"
+msgstr "Russo"
+
+msgid "Arabic"
+msgstr "Árabe"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Vamos tornar a tradução"
+
+msgid "files easy by"
+msgstr "de arquivos fácil com"
+
+msgid "AI"
+msgstr "IA"
+
+msgid "Drag & Select language"
+msgstr "Arraste e selecione o idioma"
+
+msgid "Only 30 sec"
+msgstr "Apenas 30 segundos"
+
+msgid "Apply to code"
+msgstr "Aplicar ao código"
+
+msgid "Try AI Now"
+msgstr "Experimente a IA agora"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml Suportado"
+
+msgid "What is this for?"
+msgstr "Para que é isso?"
+
+msgid "App Or Web"
+msgstr "App Or Web"
+
+msgid "Contents"
+msgstr "Conteúdos"
+
+msgid "What is it about?"
+msgstr "Sobre o que é isso?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "Por exemplo, este é um aplicativo para um serviço de entrega, pessoas que são adolescentes irão usar"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Idioma (várias seleções permitidas)"
+
+msgid "Upload File"
+msgstr "Carregar Arquivo"
+
+msgid "Drag and Drop here"
+msgstr "Arraste e Solte aqui"
+
+msgid "or"
+msgstr "ou"
+
+msgid "Select file"
+msgstr "Selecionar arquivo"
+
+msgid "Portuguese"
+msgstr "Português"
+
+msgid "Italian"
+msgstr "Italiano"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Indonesian"
+msgstr "Indonésio"
+
+msgid "Turkish"
+msgstr "Turco"
+
+msgid "Thai"
+msgstr "Tailandês"
+
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+msgid "Urdu"
+msgstr "Urdu"
+
+msgid "Malay"
+msgstr "Malaio"
+
+msgid "Dutch"
+msgstr "Holandês"
+
+msgid "Building a global"
+msgstr "Construindo um global"
+
+msgid "app or web?"
+msgstr "app ou web?"
+
+msgid "Who is for"
+msgstr "Para quem é"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Se você é um desenvolvedor ou uma empresa preparando um aplicativo ou serviço web global"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "Trabalho de 30 pessoas, feito por 1 pessoa em 1 minuto"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Sem Excel. Sem tradutores. Sem conversão necessária."
+
+msgid "Any Problem?"
+msgstr "Algum problema?"
+
+msgid "Contact us"
+msgstr "Contate-nos"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Todos os direitos reservados"
+
+msgid "Context"
+msgstr "Contexto"
+
+msgid "Polish"
+msgstr "Polonês"
+
+msgid "Swedish"
+msgstr "Sueco"
+
+msgid "Norwegian"
+msgstr "Norueguês"
+
+msgid "Danish"
+msgstr "Espanhol"
+
+msgid "Czech"
+msgstr "Checo"
+
+msgid "Hungarian"
+msgstr "Húngaro"
+
+msgid "Finnish"
+msgstr "Finlandês"
+
+msgid "Hebrew"
+msgstr "Hebraico"
+
+msgid "Romanian"
+msgstr "Romeno"
+
+msgid "Greek"
+msgstr "Grego"
+
+msgid "Supported"
+msgstr "Supported"
+
+msgid "Translate"
+msgstr "Translate"
+
+msgid "Too big file"
+msgstr "Too big file"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "Para um melhor desempenho, apenas arquivos menores que 50.000 bytes são permitidos para tradução"
+
+msgid "Ok!"
+msgstr "Ok!"
+
+msgid "Too many selected language"
+msgstr "Too many selected language"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "Você selecionou muitos idiomas. Com o tamanho do seu arquivo de 30.897 bytes, você pode selecionar até 9 idiomas."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "O conteúdo da sua tradução é muito grande. O máximo permitido é 50.000 bytes por arquivo. O tamanho do seu arquivo é de %(bytes)s bytes. Por favor, separe seu conteúdo em partes menores."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "Você selecionou muitos idiomas. Com o tamanho do seu arquivo de %(bytes)s bytes, você pode selecionar até %(max)s idiomas para manter o processamento total abaixo de 300.000 bytes."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "O tamanho total do processamento excede o limite de 200.000 bytes"

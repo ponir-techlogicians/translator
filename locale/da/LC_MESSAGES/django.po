@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:45+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "English"
+msgstr "English"
+
+msgid "Spanish"
+msgstr "Spanish"
+
+msgid "French"
+msgstr "French"
+
+msgid "German"
+msgstr "German"
+
+msgid "Japanese"
+msgstr "Japanese"
+
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+msgid "Traditional Chinese"
+msgstr "Traditional Chinese"
+
+msgid "Korean"
+msgstr "한국어"
+
+msgid "Russian"
+msgstr "Russian"
+
+msgid "Arabic"
+msgstr "Arabic"
+
+msgid "What is this for?"
+msgstr "Hvad er dette til?"
+
+msgid "App Or Web"
+msgstr "App Or Web"
+
+msgid "Contents"
+msgstr "Indhold"
+
+msgid "What is it about?"
+msgstr "Hvad handler det om?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "F.eks. Dette er en app til en leveringstjeneste, som teenagere vil bruge"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Sprog (flere valg tilladt)"
+
+msgid "Upload File"
+msgstr "Upload fil"
+
+msgid "Drag and Drop here"
+msgstr "Træk og slip her"
+
+msgid "or"
+msgstr "eller"
+
+msgid "Select file"
+msgstr "Vælg fil"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Lad os gøre oversættelse"
+
+msgid "files easy by"
+msgstr "filer nemme ved"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "Træk & Vælg sprog"
+
+msgid "Only 30 sec"
+msgstr "Kun 30 sek"
+
+msgid "Apply to code"
+msgstr "Anvend til kode"
+
+msgid "Try AI Now"
+msgstr "Prøv AI nu"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml Understøttet"
+
+msgid "Building a global"
+msgstr "Bygning en global"
+
+msgid "app or web?"
+msgstr "app eller web?"
+
+msgid "Who is for"
+msgstr "Hvem er det til"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Hvis du er en udvikler eller en virksomhed, der forbereder en global app eller webtjeneste"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "30 personers arbejde, udført af 1 person i 1 minut"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Ingen Excel. Ingen oversættere. Ingen konvertering nødvendig."
+
+msgid "Any Problem?"
+msgstr "Nogle problemer?"
+
+msgid "Contact us"
+msgstr "Kontakt os"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Alle rettigheder forbeholdes"
+
+msgid "Context"
+msgstr "Kontekst"
+
+msgid "Portuguese"
+msgstr "Portugisisk"
+
+msgid "Italian"
+msgstr "Italiensk"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Indonesian"
+msgstr "Indonesisk"
+
+msgid "Turkish"
+msgstr "Tyrkisk"
+
+msgid "Thai"
+msgstr "Thailandsk"
+
+msgid "Vietnamese"
+msgstr "Vietnamesisk"
+
+msgid "Urdu"
+msgstr "Urdu"
+
+msgid "Malay"
+msgstr "Malaysisk"
+
+msgid "Dutch"
+msgstr "Hollandsk"
+
+msgid "Polish"
+msgstr "Polish"
+
+msgid "Swedish"
+msgstr "Swedish"
+
+msgid "Norwegian"
+msgstr "Norwegian"
+
+msgid "Danish"
+msgstr "Spansk"
+
+msgid "Czech"
+msgstr "Czech"
+
+msgid "Hungarian"
+msgstr "Hungarian"
+
+msgid "Finnish"
+msgstr "Finnish"
+
+msgid "Hebrew"
+msgstr "Hebrew"
+
+msgid "Romanian"
+msgstr "Romanian"
+
+msgid "Greek"
+msgstr "Greek"
+
+msgid "Supported"
+msgstr "Understøttet"
+
+msgid "Translate"
+msgstr "Oversæt"
+
+msgid "Too big file"
+msgstr "For stor fil"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "For bedre ydeevne, er kun filer mindre end 50.000 bytes tilladt til oversættelse"
+
+msgid "Ok!"
+msgstr "Ok!"
+
+msgid "Too many selected language"
+msgstr "For mange valgte sprog"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "Du har valgt mange sprog. Med din filstørrelse på 30.897 bytes kan du vælge op til 9 sprog."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "Dit oversættelsesindhold er for stort. Maksimalt tilladt er 50.000 bytes pr. fil. Din filstørrelse er %(bytes)s bytes. Venligst del dit indhold op i mindre dele."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "Du har valgt for mange sprog. Med din filstørrelse på %(bytes)s bytes kan du vælge op til %(max)s sprog for at holde den samlede behandling under 300.000 bytes."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "Den samlede behandlingsstørrelse overskrider grænsen på 200.000 bytes"

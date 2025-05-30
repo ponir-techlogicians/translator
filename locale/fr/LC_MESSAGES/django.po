@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:43+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Rendons la traduction"
+
+msgid "files easy by"
+msgstr "des fichiers facile grâce à"
+
+msgid "AI"
+msgstr "IA"
+
+msgid "Drag & Select language"
+msgstr "Glisser et sélectionner la langue"
+
+msgid "Only 30 sec"
+msgstr "Seulement 30 secondes"
+
+msgid "Apply to code"
+msgstr "Appliquer au code"
+
+msgid "Try AI Now"
+msgstr "Essayez l'IA maintenant"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml pris en charge"
+
+msgid "What is this for?"
+msgstr "À quoi ça sert ?"
+
+msgid "App Or Web"
+msgstr "Application ou Web"
+
+msgid "Contents"
+msgstr "Contenus"
+
+msgid "What is it about?"
+msgstr "De quoi s'agit-il ?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "Par exemple, c'est une application pour un service de livraison, les adolescents l'utiliseront"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Langue (sélections multiples autorisées)"
+
+msgid "Upload File"
+msgstr "Télécharger le fichier"
+
+msgid "Drag and Drop here"
+msgstr "Glisser-déposer ici"
+
+msgid "or"
+msgstr "ou"
+
+msgid "Select file"
+msgstr "Sélectionner le fichier"
+
+msgid "Building a global"
+msgstr "Construire un global"
+
+msgid "app or web?"
+msgstr "application ou web?"
+
+msgid "Who is for"
+msgstr "Pour qui"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Si vous êtes un développeur ou une entreprise préparant une application ou un service web global"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "Le travail de 30 personnes, effectué par 1 personne en 1 minute"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Pas d'Excel. Pas de traducteurs. Pas de conversion nécessaire."
+
+msgid "Any Problem?"
+msgstr "Un problème?"
+
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Tous droits réservés"
+
+msgid "Context"
+msgstr "Contexte"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "Spanish"
+msgstr "Espagnol"
+
+msgid "French"
+msgstr "Français"
+
+msgid "German"
+msgstr "Allemand"
+
+msgid "Japanese"
+msgstr "Japonais"
+
+msgid "Simplified Chinese"
+msgstr "Chinois simplifié"
+
+msgid "Traditional Chinese"
+msgstr "Chinois traditionnel"
+
+msgid "Korean"
+msgstr "Coréen"
+
+msgid "Russian"
+msgstr "Russe"
+
+msgid "Arabic"
+msgstr "Arabe"
+
+msgid "Supported"
+msgstr "Supported"
+
+msgid "Translate"
+msgstr "Translate"
+
+msgid "Too big file"
+msgstr "Too big file"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "Pour de meilleures performances, seuls les fichiers de moins de 50 000 octets sont autorisés pour la traduction"
+
+msgid "Ok!"
+msgstr "D'accord!"
+
+msgid "Too many selected language"
+msgstr "Trop de langues sélectionnées"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "Vous avez sélectionné de nombreuses langues. Avec votre taille de fichier de 30 897 octets, vous pouvez sélectionner jusqu'à 9 langues."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "Votre contenu de traduction est trop volumineux. Le maximum autorisé est de 50 000 octets par fichier. La taille de votre fichier est de %(bytes)s octets. Veuillez séparer votre contenu en morceaux plus petits."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "Vous avez sélectionné trop de langues. Avec votre taille de fichier de %(bytes)s octets, vous pouvez sélectionner jusqu'à %(max)s langues pour maintenir le traitement total sous 300 000 octets."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "La taille totale du traitement dépasse la limite de 200 000 octets"
+
+msgid "Polish"
+msgstr "polonais"
+
+msgid "Swedish"
+msgstr "suédois"
+
+msgid "Norwegian"
+msgstr "norvégien"
+
+msgid "Danish"
+msgstr "espagnol"
+
+msgid "Czech"
+msgstr "tchèque"
+
+msgid "Hungarian"
+msgstr "hongrois"
+
+msgid "Finnish"
+msgstr "finnois"
+
+msgid "Hebrew"
+msgstr "hébreu"
+
+msgid "Romanian"
+msgstr "roumain"
+
+msgid "Greek"
+msgstr "grec"
+
+msgid "Portuguese"
+msgstr "Portugais"
+
+msgid "Italian"
+msgstr "Italien"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Indonesian"
+msgstr "Indonésien"
+
+msgid "Turkish"
+msgstr "Turc"
+
+msgid "Thai"
+msgstr "Thaï"
+
+msgid "Vietnamese"
+msgstr "Vietnamien"
+
+msgid "Urdu"
+msgstr "Ourdou"
+
+msgid "Malay"
+msgstr "Malais"
+
+msgid "Dutch"
+msgstr "Néerlandais"

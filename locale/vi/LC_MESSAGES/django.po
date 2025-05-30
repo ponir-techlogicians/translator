@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:45+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: app/templates/translation/home.html:8
+#: app/templates/translation/translate.html:8
+
+msgid "English"
+msgstr "English"
+
+msgid "Spanish"
+msgstr "Spanish"
+
+msgid "French"
+msgstr "French"
+
+msgid "German"
+msgstr "German"
+
+msgid "Japanese"
+msgstr "Japanese"
+
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+msgid "Traditional Chinese"
+msgstr "Traditional Chinese"
+
+msgid "Korean"
+msgstr "Korean"
+
+msgid "Russian"
+msgstr "Russian"
+
+msgid "Arabic"
+msgstr "Arabic"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Hãy làm cho việc dịch thuật"
+
+msgid "files easy by"
+msgstr "tệp dễ dàng bằng"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "Kéo & Chọn ngôn ngữ"
+
+msgid "Only 30 sec"
+msgstr "Chỉ 30 giây"
+
+msgid "Apply to code"
+msgstr "Áp dụng vào mã"
+
+msgid "Try AI Now"
+msgstr "Thử AI ngay bây giờ"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr "Hỗ trợ .CSV .ts .ini .xliff .json .xml .php .yaml"
+
+msgid "Building a global"
+msgstr "Xây dựng toàn cầu"
+
+msgid "app or web?"
+msgstr "ứng dụng hay web?"
+
+msgid "Who is for"
+msgstr "Dành cho ai"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Nếu bạn là nhà phát triển hoặc công ty đang chuẩn bị một ứng dụng hoặc dịch vụ web toàn cầu"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "Công việc của 30 người, thực hiện bởi 1 người trong 1 phút"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Không cần Excel. Không cần dịch giả. Không cần chuyển đổi."
+
+msgid "Any Problem?"
+msgstr "Có vấn đề gì không?"
+
+msgid "Contact us"
+msgstr "Liên hệ với chúng tôi"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Bảo lưu mọi quyền"
+
+msgid "Context"
+msgstr "Bối cảnh"
+
+msgid "Portuguese"
+msgstr "Bồ Đào Nha"
+
+msgid "Italian"
+msgstr "Ý"
+
+msgid "Hindi"
+msgstr "Tiếng Hindi"
+
+msgid "Indonesian"
+msgstr "Tiếng Indonesia"
+
+msgid "Turkish"
+msgstr "Tiếng Thổ Nhĩ Kỳ"
+
+msgid "Thai"
+msgstr "Tiếng Thái"
+
+msgid "Vietnamese"
+msgstr "Tiếng Việt"
+
+msgid "Urdu"
+msgstr "Tiếng Urdu"
+
+msgid "Malay"
+msgstr "Tiếng Mã Lai"
+
+msgid "Dutch"
+msgstr "Tiếng Hà Lan"
+
+msgid "Polish"
+msgstr "Ba Lan"
+
+msgid "Swedish"
+msgstr "Thụy Điển"
+
+msgid "Norwegian"
+msgstr "Na Uy"
+
+msgid "Danish"
+msgstr "Tây Ban Nha"
+
+msgid "Czech"
+msgstr "Séc"
+
+msgid "Hungarian"
+msgstr "Hungary"
+
+msgid "Finnish"
+msgstr "Phần Lan"
+
+msgid "Hebrew"
+msgstr "Tiếng Do Thái"
+
+msgid "Romanian"
+msgstr "Rumani"
+
+msgid "Greek"
+msgstr "Hy Lạp"
+
+msgid "Supported"
+msgstr "Được hỗ trợ"
+
+msgid "Translate"
+msgstr "Dịch"
+
+msgid "Too big file"
+msgstr "Tệp quá lớn"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "Để có hiệu suất tốt hơn, chỉ cho phép các tệp nhỏ hơn 50.000 byte để dịch"
+
+msgid "Ok!"
+msgstr "Được rồi!"
+
+msgid "Too many selected language"
+msgstr "Quá nhiều ngôn ngữ được chọn"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "Bạn đã chọn nhiều ngôn ngữ. Với kích thước tệp của bạn là 30.897 byte, bạn có thể chọn tối đa 9 ngôn ngữ."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "Nội dung dịch của bạn quá lớn. Tối đa cho phép là 50.000 byte mỗi tệp. Kích thước tệp của bạn là %(bytes)s byte. Vui lòng tách nội dung của bạn thành các phần nhỏ hơn."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "Bạn đã chọn quá nhiều ngôn ngữ. Với kích thước tệp của bạn là %(bytes)s byte, bạn có thể chọn tối đa %(max)s ngôn ngữ để giữ tổng xử lý dưới 300.000 byte."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "Tổng kích thước xử lý vượt quá giới hạn 200.000 byte"
+
+msgid "What is this for?"
+msgstr "Cái này để làm gì?"
+
+msgid "App Or Web"
+msgstr "Ứng dụng hoặc Web"
+
+msgid "Contents"
+msgstr "Nội dung"
+
+msgid "What is it about?"
+msgstr "Nó nói về cái gì?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "Ví dụ: Đây là ứng dụng cho dịch vụ giao hàng, người dùng là thanh thiếu niên sẽ sử dụng"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Ngôn ngữ (Cho phép chọn nhiều)"
+
+msgid "Upload File"
+msgstr "Tải lên tệp"
+
+msgid "Drag and Drop here"
+msgstr "Kéo và thả vào đây"
+
+msgid "or"
+msgstr "hoặc"
+
+msgid "Select file"
+msgstr "Chọn tệp"

@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:44+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: app/templates/translation/home.html:8
+#: app/templates/translation/translate.html:8
+
+msgid "English"
+msgstr "English"
+
+msgid "Spanish"
+msgstr "Spanish"
+
+msgid "French"
+msgstr "French"
+
+msgid "German"
+msgstr "German"
+
+msgid "Japanese"
+msgstr "Japanese"
+
+msgid "Simplified Chinese"
+msgstr "Simplified Chinese"
+
+msgid "Traditional Chinese"
+msgstr "Traditional Chinese"
+
+msgid "Korean"
+msgstr "Korean"
+
+msgid "Russian"
+msgstr "Russian"
+
+msgid "Arabic"
+msgstr "Arabic"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Rendiamo la traduzione"
+
+msgid "files easy by"
+msgstr "dei file facile con"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "Trascina e seleziona la lingua"
+
+msgid "Only 30 sec"
+msgstr "Solo 30 secondi"
+
+msgid "Apply to code"
+msgstr "Applica al codice"
+
+msgid "Try AI Now"
+msgstr "Prova l'AI ora"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml Supportati"
+
+msgid "Portuguese"
+msgstr "Portuguese"
+
+msgid "Italian"
+msgstr "Italiano"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Indonesian"
+msgstr "Indonesiano"
+
+msgid "Turkish"
+msgstr "Turco"
+
+msgid "Thai"
+msgstr "Tailandese"
+
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+msgid "Urdu"
+msgstr "Urdu"
+
+msgid "Malay"
+msgstr "Malese"
+
+msgid "Dutch"
+msgstr "Olandese"
+
+msgid "What is this for?"
+msgstr "A cosa serve?"
+
+msgid "App Or Web"
+msgstr "App o Web"
+
+msgid "Contents"
+msgstr "Contenuti"
+
+msgid "What is it about?"
+msgstr "Di cosa si tratta?"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "Ad es. Questa è un'app per un servizio di consegna, utilizzata da adolescenti"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Lingua (Selezioni multiple consentite)"
+
+msgid "Upload File"
+msgstr "Carica file"
+
+msgid "Drag and Drop here"
+msgstr "Trascina e rilascia qui"
+
+msgid "or"
+msgstr "o"
+
+msgid "Select file"
+msgstr "Seleziona file"
+
+msgid "Building a global"
+msgstr "Costruire un globale"
+
+msgid "app or web?"
+msgstr "app o web?"
+
+msgid "Who is for"
+msgstr "Per chi è"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Se sei uno sviluppatore o un'azienda che prepara un'app o un servizio web globale"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "Il lavoro di 30 persone, fatto da 1 persona in 1 minuto"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Niente Excel. Niente traduttori. Nessuna conversione necessaria."
+
+msgid "Any Problem?"
+msgstr "Qualche problema?"
+
+msgid "Contact us"
+msgstr "Contattaci"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Tutti i diritti riservati"
+
+msgid "Context"
+msgstr "Contesto"
+
+msgid "Polish"
+msgstr "polacco"
+
+msgid "Swedish"
+msgstr "svedese"
+
+msgid "Norwegian"
+msgstr "norvegese"
+
+msgid "Danish"
+msgstr "spagnolo"
+
+msgid "Czech"
+msgstr "ceco"
+
+msgid "Hungarian"
+msgstr "ungherese"
+
+msgid "Finnish"
+msgstr "finlandese"
+
+msgid "Hebrew"
+msgstr "ebraico"
+
+msgid "Romanian"
+msgstr "rumeno"
+
+msgid "Greek"
+msgstr "greco"
+
+msgid "Supported"
+msgstr "Supportato"
+
+msgid "Translate"
+msgstr "Tradurre"
+
+msgid "Too big file"
+msgstr "File troppo grande"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "Per una migliore prestazione, sono consentiti solo file più piccoli di 50.000 byte per la traduzione"
+
+msgid "Ok!"
+msgstr "Ok!"
+
+msgid "Too many selected language"
+msgstr "Troppe lingue selezionate"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "Hai selezionato molte lingue. Con la dimensione del tuo file di 30.897 byte, puoi selezionare fino a 9 lingue."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "Il contenuto della tua traduzione è troppo grande. Il massimo consentito è di 50.000 byte per file. La dimensione del tuo file è di %(bytes)s byte. Si prega di separare il contenuto in parti più piccole."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "Hai selezionato troppe lingue. Con la dimensione del tuo file di %(bytes)s byte, puoi selezionare fino a %(max)s lingue per mantenere l'elaborazione totale sotto i 300.000 byte."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "La dimensione totale dell'elaborazione supera il limite di 200.000 byte"

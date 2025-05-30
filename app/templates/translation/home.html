@@ -1,10 +1,11 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>EchoNow - AI Translation</title>
+    <title>{% trans "EchoNow - AI Translation" %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,10 +16,25 @@
 
 <!-- Header -->
 <header class="site-header">
-    <div class="container">
+    <div class="container" style="display: flex;
+  justify-content: space-between; /* pushes first child to left, last to right */
+  align-items: center;">
         <a href="#" class="logo">
-            <img src="{% static 'app/img/logo.png' %}" alt="EchoNow Logo">
+            <img src="{% static 'app/img/logo.png' %}" alt="{% trans 'EchoNow Logo' %}">
         </a>
+        <form action="{% url 'set_language' %}" method="post">
+         {% csrf_token %}
+         <input name="next" type="hidden" value="{{ redirect_to }}">
+         <select name="language" onchange="this.form.submit()">
+           {% get_current_language as LANGUAGE_CODE %}
+           {% get_available_languages as LANGUAGES %}
+           {% for lang in LANGUAGES %}
+             <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+               {{ lang.1 }}
+             </option>
+           {% endfor %}
+         </select>
+       </form>
     </div>
 </header>
 
@@ -28,35 +44,35 @@
         <!-- 좌측 텍스트 -->
         <div class="hero-text">
             <h1>
-                Let's make translation<br/>
-                files easy by <span class="highlight">AI</span>
+                {% trans "Let's make translation" %}<br/>
+                {% trans "files easy by" %} <span class="highlight">{% trans "AI" %}</span>
             </h1>
 
             <div class="steps">
                 <div class="step">
                     <div class="circle">01</div>
                     <div class="step-content">
-                        <div class="title">Drag & Select language</div>
-                        <div class="desc">Only 30 sec</div>
+                        <div class="title">{% trans "Drag & Select language" %}</div>
+                        <div class="desc">{% trans "Only 30 sec" %}</div>
                     </div>
                 </div>
                 <div class="step">
                     <div class="circle">02</div>
                     <div class="step-content">
-                        <div class="title">Apply to code</div>
+                        <div class="title">{% trans "Apply to code" %}</div>
                     </div>
                 </div>
             </div>
 
             <div class="hero-action">
-                <button class="cta" onclick="window.location.href='/translate'">Try AI Now</button>
-                <div class="support">.CSV .ts .ini .xliff .json .xml .php .yaml Supported</div>
+                <button class="cta" onclick="window.location.href='/translate'">{% trans "Try AI Now" %}</button>
+                <div class="support">{% trans ".CSV .ts .ini .xliff .json .xml .php .yaml Supported" %}</div>
             </div>
         </div>
 
         <!-- 우측 이미지 -->
         <div class="hero-image">
-            <p class="hero-image__txt poppins">Building a global <br>app or web? </p>
+            <p class="hero-image__txt poppins">{% trans "Building a global" %} <br>{% trans "app or web?" %}</p>
             <img src="{% static 'app/img/think.png' %}" alt="Hero Illustration">
         </div>
     </div>
@@ -65,11 +81,11 @@
 <!-- Who is for -->
 <section class="who-for">
     <div class="container">
-        <h2>Who is for</h2>
-        <p>If you're a developer or a company preparing a global app or web service</p>
+        <h2>{% trans "Who is for" %}</h2>
+        <p>{% trans "If you're a developer or a company preparing a global app or web service" %}</p>
         <p class="bold">
-            30 people's work, done by 1 person for 1 minute<br/>
-            No Excel. No translators. No conversion needed.
+            {% trans "30 people's work, done by 1 person for 1 minute" %}<br/>
+            {% trans "No Excel. No translators. No conversion needed." %}
         </p>
     </div>
 </section>
@@ -77,8 +93,8 @@
 <!-- Contact -->
 <section class="contact">
     <div class="container">
-        <div class="subtitle">Any Problem?</div>
-        <h3>Contact us</h3>
+        <div class="subtitle">{% trans "Any Problem?" %}</div>
+        <h3>{% trans "Contact us" %}</h3>
         <a href="mailto:support@kemi.ai">support@kemi.ai</a>
     </div>
 </section>
@@ -90,7 +106,7 @@
             <img src="{% static 'app/img/logo.png' %}" alt="EchoNow Logo">
         </div>
         <div class="copyright">
-            ©2025 Bgoos Inc., All rights reserved
+            {% trans "©2025 Bgoos Inc., All rights reserved" %}
         </div>
     </div>
 </footer>

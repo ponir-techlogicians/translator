@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 17:46+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "English"
+msgstr "Αγγλικά"
+
+msgid "Spanish"
+msgstr "Ισπανικά"
+
+msgid "French"
+msgstr "Γαλλικά"
+
+msgid "German"
+msgstr "Γερμανικά"
+
+msgid "Japanese"
+msgstr "Ιαπωνικά"
+
+msgid "Simplified Chinese"
+msgstr "Απλοποιημένα Κινέζικα"
+
+msgid "Traditional Chinese"
+msgstr "Παραδοσιακά Κινέζικα"
+
+msgid "Korean"
+msgstr "Κορεατικά"
+
+msgid "Russian"
+msgstr "Ρωσικά"
+
+msgid "Arabic"
+msgstr "Αραβικά"
+
+msgid "EchoNow - AI Translation"
+msgstr "EchoNow - AI Translation"
+
+msgid "EchoNow Logo"
+msgstr "EchoNow Logo"
+
+msgid "Let's make translation"
+msgstr "Ας κάνουμε τη μετάφραση"
+
+msgid "files easy by"
+msgstr "τα αρχεία εύκολα με"
+
+msgid "AI"
+msgstr "AI"
+
+msgid "Drag & Select language"
+msgstr "Σύρετε & Επιλέξτε γλώσσα"
+
+msgid "Only 30 sec"
+msgstr "Μόνο 30 δευτερόλεπτα"
+
+msgid "Apply to code"
+msgstr "Εφαρμόστε στον κώδικα"
+
+msgid "Try AI Now"
+msgstr "Δοκιμάστε το AI τώρα"
+
+msgid ".CSV .ts .ini .xliff .json .xml .php .yaml Supported"
+msgstr ".CSV .ts .ini .xliff .json .xml .php .yaml Υποστηρίζονται"
+
+msgid "What is this for?"
+msgstr "Τι είναι αυτό για;"
+
+msgid "App Or Web"
+msgstr "Εφαρμογή ή Ιστός"
+
+msgid "Contents"
+msgstr "Περιεχόμενα"
+
+msgid "What is it about?"
+msgstr "Τι αφορά;"
+
+msgid "Eg. This is app for a delivery service, people who is teenager will use"
+msgstr "Π.χ. Αυτή είναι μια εφαρμογή για υπηρεσία παράδοσης, που θα χρησιμοποιούν έφηβοι"
+
+msgid "Language (Multiple selections allowed)"
+msgstr "Γλώσσα (Επιτρέπονται πολλαπλές επιλογές)"
+
+msgid "Upload File"
+msgstr "Μεταφόρτωση αρχείου"
+
+msgid "Drag and Drop here"
+msgstr "Σύρετε και αποθέστε εδώ"
+
+msgid "or"
+msgstr "ή"
+
+msgid "Select file"
+msgstr "Επιλέξτε αρχείο"
+
+msgid "Building a global"
+msgstr "Building a global"
+
+msgid "app or web?"
+msgstr "app or web?"
+
+msgid "Who is for"
+msgstr "Who is for"
+
+msgid "If you're a developer or a company preparing a global app or web service"
+msgstr "Αν είστε προγραμματιστής ή εταιρεία που προετοιμάζει μια παγκόσμια εφαρμογή ή υπηρεσία ιστού"
+
+msgid "30 people's work, done by 1 person for 1 minute"
+msgstr "Η εργασία 30 ατόμων, γίνεται από 1 άτομο για 1 λεπτό"
+
+msgid "No Excel. No translators. No conversion needed."
+msgstr "Χωρίς Excel. Χωρίς μεταφραστές. Δεν απαιτείται μετατροπή."
+
+msgid "Any Problem?"
+msgstr "Οποιοδήποτε πρόβλημα;"
+
+msgid "Contact us"
+msgstr "Επικοινωνήστε μαζί μας"
+
+msgid "©2025 Bgoos Inc., All rights reserved"
+msgstr "©2025 Bgoos Inc., Με επιφύλαξη παντός δικαιώματος"
+
+msgid "Context"
+msgstr "Context"
+
+msgid "Portuguese"
+msgstr "Πορτογαλικά"
+
+msgid "Italian"
+msgstr "Ιταλικά"
+
+msgid "Hindi"
+msgstr "Χίντι"
+
+msgid "Indonesian"
+msgstr "Ινδονησιακά"
+
+msgid "Turkish"
+msgstr "Τουρκικά"
+
+msgid "Thai"
+msgstr "Ταϊλανδικά"
+
+msgid "Vietnamese"
+msgstr "Βιετναμέζικα"
+
+msgid "Urdu"
+msgstr "Ουρντού"
+
+msgid "Malay"
+msgstr "Μαλαισιανά"
+
+msgid "Dutch"
+msgstr "Ολλανδικά"
+
+msgid "Supported"
+msgstr "Supported"
+
+msgid "Translate"
+msgstr "Translate"
+
+msgid "Too big file"
+msgstr "Too big file"
+
+msgid "For better performance, only files smaller than 50,000 bytes are allowed for translation"
+msgstr "Για καλύτερη απόδοση, επιτρέπονται μόνο αρχεία μικρότερα από 50,000 bytes για μετάφραση"
+
+msgid "Ok!"
+msgstr "Εντάξει!"
+
+msgid "Too many selected language"
+msgstr "Too many selected language"
+
+msgid "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages."
+msgstr "Έχετε επιλέξει πολλές γλώσσες. Με το μέγεθος του αρχείου σας 30,897 bytes, μπορείτε να επιλέξετε έως 9 γλώσσες."
+
+msgid "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks."
+msgstr "Το περιεχόμενο της μετάφρασής σας είναι πολύ μεγάλο. Το μέγιστο επιτρεπόμενο είναι 50,000 bytes ανά αρχείο. Το μέγεθος του αρχείου σας είναι %(bytes)s bytes. Παρακαλώ χωρίστε το περιεχόμενό σας σε μικρότερα κομμάτια."
+
+msgid "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes."
+msgstr "Έχετε επιλέξει πάρα πολλές γλώσσες. Με το μέγεθος του αρχείου σας %(bytes)s bytes, μπορείτε να επιλέξετε έως %(max)s γλώσσες για να διατηρήσετε τη συνολική επεξεργασία κάτω από 300,000 bytes."
+
+msgid "Total processing size exceeds limit of 200,000 bytes"
+msgstr "Το συνολικό μέγεθος επεξεργασίας υπερβαίνει το όριο των 200,000 bytes"
+
+msgid "Polish"
+msgstr "Πολωνικά"
+
+msgid "Swedish"
+msgstr "Σουηδικά"
+
+msgid "Norwegian"
+msgstr "Νορβηγικά"
+
+msgid "Danish"
+msgstr "Ισπανικά"
+
+msgid "Czech"
+msgstr "Τσέχικα"
+
+msgid "Hungarian"
+msgstr "Ουγγρικά"
+
+msgid "Finnish"
+msgstr "Φινλανδικά"
+
+msgid "Hebrew"
+msgstr "Εβραϊκά"
+
+msgid "Romanian"
+msgstr "Ρουμανικά"
+
+msgid "Greek"
+msgstr "Ελληνικά"

@@ -11,6 +11,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.text import get_valid_filename
+from django.utils.translation import gettext as _
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import stripe
 from app.tasks import translate_and_package
@@ -321,8 +322,10 @@ def price_estimate(request):
                 if text_bytes > 50000:
                     return JsonResponse({
                         "status": "error",
-                        "reason":"Too big file",
-                        "message": f"Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is {text_bytes} bytes. Please separate your content into smaller chunks."
+                        "reason": _("Too big file"),
+                        "message": _(
+                            "Your translation content is too large. Maximum allowed is 50,000 bytes per file. Your file size is %(bytes)s bytes. Please separate your content into smaller chunks.") % {
+                                       'bytes': text_bytes}
                     }, status=400)
 
                 total_bytes = int(text_bytes * len(target_languages))
@@ -331,8 +334,10 @@ def price_estimate(request):
                     max_languages = 300000 // text_bytes
                     return JsonResponse({
                         "status": "error",
-                        "reason": "Too many selected language",
-                        "message": f"You have selected too many languages. With your file size of {text_bytes} bytes, you can select up to {max_languages} languages to keep total processing under 300,000 bytes."
+                        "reason": _("Too many selected language"),
+                        "message": _(
+                            "You have selected too many languages. With your file size of %(bytes)s bytes, you can select up to %(max)s languages to keep total processing under 300,000 bytes.") % {
+                                       'bytes': text_bytes, 'max': max_languages}
                     }, status=400)
                 
                 if total_bytes <= 300000:
@@ -347,7 +352,7 @@ def price_estimate(request):
                 else:
                     return JsonResponse({
                         "status": "error",
-                        "message": "Total processing size exceeds limit of 200,000 bytes"
+                        "message": _("Total processing size exceeds limit of 200,000 bytes")
                     }, status=400)
                 # if total_bytes >= 1000 and total_bytes <= 2000:
                 #     price = 2

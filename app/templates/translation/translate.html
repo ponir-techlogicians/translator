@@ -1,10 +1,11 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>EchoNow - AI Translation</title>
+    <title>{% trans "EchoNow - AI Translation" %}</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,10 +18,25 @@
 
 <!-- Header -->
 <header class="site-header">
-    <div class="container">
+    <div class="container" style="display: flex;
+  justify-content: space-between; /* pushes first child to left, last to right */
+  align-items: center;">
         <a href="/" class="logo">
             <img src="{% static 'app/img/logo.png' %}" alt="EchoNow Logo">
         </a>
+        <form action="{% url 'set_language' %}" method="post">
+         {% csrf_token %}
+         <input name="next" type="hidden" value="{{ redirect_to }}">
+         <select name="language" onchange="this.form.submit()">
+           {% get_current_language as LANGUAGE_CODE %}
+           {% get_available_languages as LANGUAGES %}
+           {% for lang in LANGUAGES %}
+             <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+               {{ lang.1 }}
+             </option>
+           {% endfor %}
+         </select>
+       </form>
     </div>
 </header>
 
@@ -30,21 +46,22 @@
             {% csrf_token %}
             <input type="hidden" id="usage_id" name="usage_id">
             <!-- Context -->
-            <h2>Context</h2>
+            <h2>{% trans "Context" %}</h2>
             <div class="context-group">
-                <p class="form-label">What is this for?</p>
-                <label><input type="radio" name="context" value="app" checked> App Or Web</label>
-                <label><input type="radio" name="context" value="content"> Contents</label>
+                <p class="form-label">{% trans "What is this for?" %}</p>
+                <label><input type="radio" name="context" value="app" checked> {% trans "App Or Web" %}</label>
+                <label><input type="radio" name="context" value="content"> {% trans "Contents" %}</label>
             </div>
             <div class="form-group">
-                <label for="about" class="form-label">What is it about?</label>
-                <input type="text" id="about"  name="description" class="text-input" placeholder="Eg. This is app for a delivery service, people who is teenager will use">
+                <label for="about" class="form-label">{% trans "What is it about?" %}</label>
+                <input type="text" id="about" name="description" class="text-input"
+                       placeholder="{% trans 'Eg. This is app for a delivery service, people who is teenager will use' %}">
             </div>
 
             <hr>
 
             <!-- Language -->
-            <h3>Language (Multiple selections allowed)</h3>
+            <h3>{% trans "Language (Multiple selections allowed)" %}</h3>
             <div class="language-list">
 
                 <label><input type="checkbox" name="languages" value="English"> English</label>
@@ -93,18 +110,18 @@
 {#            </div>#}
 
             <!-- Upload -->
-            <h3>Upload File</h3>
-            <div class="upload-box"  id="drop-area">
+            <h3>{% trans "Upload File" %}</h3>
+            <div class="upload-box" id="drop-area">
                 <p><img src="{% static 'app/img/ico_upload.svg' %}" alt="">︎</p>
-                <p><strong>Drag and Drop here <br> or</strong></p>
-                <input type="file" id="fileInput"  class="file-input" name="file"  />
-                <label for="file-input"  class="select-file">Select file</label>
-                <p class="support">.CSV .ts .ini .xliff .json .xml .php .yaml <span>Supported</span></p>
+                <p><strong>{% trans "Drag and Drop here" %}<br> {% trans "or" %}</strong></p>
+                <input type="file" id="fileInput" class="file-input" name="file"/>
+                <label for="file-input" class="select-file">{% trans "Select file" %}</label>
+                <p class="support">.CSV .ts .ini .xliff .json .xml .php .yaml <span>{% trans "Supported" %}</span></p>
                 <div id="file-name" class="file-name"></div>
             </div>
 
             <!-- Translate Button -->
-            <button class="translate-btn" id="translateBtn">Translate</button>
+            <button class="translate-btn" id="translateBtn">{% trans "Translate" %}</button>
 
             <div id="loadingSpinner" class="loading-spinner" style="display: none;">
 {#                <p>Translating... Please wait.</p>#}
@@ -121,7 +138,7 @@
             <img src="{% static 'app/img/logo.png' %}" alt="EchoNow Logo">
         </a>
         <div class="copyright">
-            ©2025 Bgoos Inc., All rights reserved
+            {% trans "©2025 Bgoos Inc., All rights reserved" %}
         </div>
     </div>
 </footer>
@@ -132,9 +149,9 @@
 <div class="modal" id="modal-bigfile">
     <div class="modal-inner">
         <div class="modal-icon"></div>
-        <h4 class="error-reason">Too big file</h4>
-        <p class="error-msg">For better performance, only files smaller than 50,000 bytes are allowed for translation</p>
-        <button class="modal-close">Ok!</button>
+        <h4 class="error-reason">{% trans "Too big file" %}</h4>
+        <p class="error-msg">{% trans "For better performance, only files smaller than 50,000 bytes are allowed for translation" %}</p>
+        <button class="modal-close">{% trans "Ok!" %}</button>
     </div>
 </div>
 
@@ -142,9 +159,9 @@
 <div class="modal" id="modal-manylang">
     <div class="modal-inner">
         <div class="modal-icon"></div>
-        <h4>Too many selected language</h4>
-        <p>You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages.</p>
-        <button class="modal-close">Ok!</button>
+        <h4>{% trans "Too many selected language" %}</h4>
+        <p>{% trans "You have selected many languages. With your file size of 30,897 bytes, you can select up to 9 languages." %}</p>
+        <button class="modal-close">{% trans "Ok!" %}</button>
     </div>
 </div>
 
