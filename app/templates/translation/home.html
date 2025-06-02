@@ -27,10 +27,11 @@
          <input name="next" type="hidden" value="{{ redirect_to }}">
          <select name="language" onchange="this.form.submit()">
            {% get_current_language as LANGUAGE_CODE %}
-           {% get_available_languages as LANGUAGES %}
-           {% for lang in LANGUAGES %}
-             <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
-               {{ lang.1 }}
+           {% get_available_languages as AVAILABLE_LANG_CODES %}
+           {% get_language_info_list for AVAILABLE_LANG_CODES as LANGUAGE_INFO_LIST %}
+           {% for lang in LANGUAGE_INFO_LIST %}
+             <option value="{{ lang.code }}" {% if lang.code == LANGUAGE_CODE %}selected{% endif %}>
+               {{ lang.name }}
              </option>
            {% endfor %}
          </select>

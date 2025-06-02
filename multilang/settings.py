@@ -107,37 +107,72 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
+# LANGUAGES = [
+#     ('en', _('English')),
+#     ('es', _('Spanish')),
+#     ('fr', _('French')),
+#     ('de', _('German')),
+#     ('ja', _('Japanese')),
+#     ('zhs', _('Simplified Chinese')),
+#     ('zht', _('Traditional Chinese')),
+#     ('ko', _('Korean')),
+#     ('ru', _('Russian')),
+#     ('ar', _('Arabic')),
+#     ('pt', _('Portuguese')),
+#     ('it', _('Italian')),
+#     ('hi', _('Hindi')),
+#     ('id', _('Indonesian')),
+#     ('tr', _('Turkish')),
+#     ('th', _('Thai')),
+#     ('vi', _('Vietnamese')),
+#     ('ur', _('Urdu')),
+#     ('ms', _('Malay')),
+#     ('nl', _('Dutch')),
+#     ('pl', _('Polish')),
+#     ('sv', _('Swedish')),
+#     ('no', _('Norwegian')),
+#     ('da', _('Danish')),
+#     ('cs', _('Czech')),
+#     ('hu', _('Hungarian')),
+#     ('fi', _('Finnish')),
+#     ('he', _('Hebrew')),
+#     ('ro', _('Romanian')),
+#     ('el', _('Greek')),
+# ]
+
+# settings.py
+
 LANGUAGES = [
-    ('en', _('English')),
-    ('es', _('Spanish')),
-    ('fr', _('French')),
-    ('de', _('German')),
-    ('ja', _('Japanese')),
-    ('zhs', _('Simplified Chinese')),
-    ('zht', _('Traditional Chinese')),
-    ('ko', _('Korean')),
-    ('ru', _('Russian')),
-    ('ar', _('Arabic')),
-    ('pt', _('Portuguese')),
-    ('it', _('Italian')),
-    ('hi', _('Hindi')),
-    ('id', _('Indonesian')),
-    ('tr', _('Turkish')),
-    ('th', _('Thai')),
-    ('vi', _('Vietnamese')),
-    ('ur', _('Urdu')),
-    ('ms', _('Malay')),
-    ('nl', _('Dutch')),
-    ('pl', _('Polish')),
-    ('sv', _('Swedish')),
-    ('no', _('Norwegian')),
-    ('da', _('Danish')),
-    ('cs', _('Czech')),
-    ('hu', _('Hungarian')),
-    ('fi', _('Finnish')),
-    ('he', _('Hebrew')),
-    ('ro', _('Romanian')),
-    ('el', _('Greek')),
+    ('en', 'English'),
+    ('es', 'Spanish'),
+    ('fr', 'French'),
+    ('de', 'German'),
+    ('ja', 'Japanese'),
+    ('zh-hans', 'Simplified Chinese'),
+    ('zh-hant', 'Traditional Chinese'),
+    ('ko', 'Korean'),
+    ('ru', 'Russian'),
+    ('ar', 'Arabic'),
+    ('pt', 'Portuguese'),
+    ('it', 'Italian'),
+    ('hi', 'Hindi'),
+    ('id', 'Indonesian'),
+    ('tr', 'Turkish'),
+    ('th', 'Thai'),
+    ('vi', 'Vietnamese'),
+    ('ur', 'Urdu'),
+    ('ms', 'Malay'),
+    ('nl', 'Dutch'),
+    ('pl', 'Polish'),
+    ('sv', 'Swedish'),
+    ('no', 'Norwegian'),
+    ('da', 'Danish'),
+    ('cs', 'Czech'),
+    ('hu', 'Hungarian'),
+    ('fi', 'Finnish'),
+    ('he', 'Hebrew'),
+    ('ro', 'Romanian'),
+    ('el', 'Greek'),
 ]
 # Default language
 LANGUAGE_CODE = 'en'
@@ -179,11 +214,11 @@ OPENAI_API_KEY = config('OPENAI_API_KEY')
 STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-# SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
-# SECURE_HSTS_SECONDS = 31536000  # HTTP Strict Transport Security
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to subdomains
-# SECURE_HSTS_PRELOAD = True  # Preload the HSTS policy
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
+SECURE_HSTS_SECONDS = 31536000  # HTTP Strict Transport Security
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to subdomains
+SECURE_HSTS_PRELOAD = True  # Preload the HSTS policy
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
 CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
