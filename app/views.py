@@ -271,6 +271,9 @@ def get_file_format(file_name):
 def home(request):
     return render(request, "translation/home.html")
 
+def translation(request):
+    return render(request, "translation/translate.html", context={'stripe_key': settings.STRIPE_PUBLISHABLE_KEY})
+
 @csrf_exempt
 def file_translate(request):
     if request.method == "POST" and request.FILES.get("file"):

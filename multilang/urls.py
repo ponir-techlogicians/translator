@@ -21,10 +21,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
+from app.views import file_translate, price_estimate, translation_status, create_payment_intent
+
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     # path('', lambda request: redirect('file-translate'), name='home'),
     path('admin/', admin.site.urls),
+    path('translate/', file_translate, name='file-translate'),
+    path('price-estimate/', price_estimate, name='price-estimate'),
+
+    path("translation-status/<str:task_id>/", translation_status, name="translation_status"),
+    path('create-payment-intent/', create_payment_intent, name='create-payment-intent'),
     # path('', include('app.urls')),
 ]
 urlpatterns += i18n_patterns(
