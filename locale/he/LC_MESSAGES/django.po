@@ -230,3 +230,6 @@ msgstr "בחרת יותר מדי שפות. עם גודל הקובץ שלך של 
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "גודל העיבוד הכולל חורג מהמגבלה של 200,000 בתים"
+
+msgid "Invalid request"
+msgstr "בקשה לא חוקית"

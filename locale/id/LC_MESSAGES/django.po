@@ -229,3 +229,6 @@ msgstr "Anda telah memilih terlalu banyak bahasa. Dengan ukuran file Anda %(byte
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "Ukuran pemrosesan total melebihi batas 200.000 byte"
+
+msgid "Invalid request"
+msgstr "Permintaan tidak valid"

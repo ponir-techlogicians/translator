@@ -228,3 +228,6 @@ msgstr "Ați selectat prea multe limbi. Cu dimensiunea fișierului dvs. de %(byt
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "Dimensiunea totală a procesării depășește limita de 200.000 de octeți"
+
+msgid "Invalid request"
+msgstr "Cerere invalidă"

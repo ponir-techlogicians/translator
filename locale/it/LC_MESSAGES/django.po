@@ -229,3 +229,6 @@ msgstr "Hai selezionato troppe lingue. Con la dimensione del tuo file di %(bytes
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "La dimensione totale dell'elaborazione supera il limite di 200.000 byte"
+
+msgid "Invalid request"
+msgstr "Richiesta non valida"

@@ -229,3 +229,6 @@ msgstr "آپ نے بہت سی زبانیں منتخب کی ہیں۔ آپ کی ف
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "کل پروسیسنگ سائز 200,000 بائٹس کی حد سے تجاوز کر گیا ہے۔"
+
+msgid "Invalid request"
+msgstr "غلط درخواست"

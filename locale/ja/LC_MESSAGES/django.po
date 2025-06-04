@@ -227,3 +227,6 @@ msgstr "ルーマニア語"
 
 msgid "Greek"
 msgstr "ギリシャ語"
+
+msgid "Invalid request"
+msgstr "無効なリクエスト"

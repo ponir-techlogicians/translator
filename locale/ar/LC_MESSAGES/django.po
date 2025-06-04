@@ -228,3 +228,6 @@ msgstr "لقد اخترت عددًا كبيرًا جدًا من اللغات. م
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "حجم المعالجة الإجمالي يتجاوز الحد الأقصى البالغ 200,000 بايت."
+
+msgid "Invalid request"
+msgstr "طلب غير صالح"

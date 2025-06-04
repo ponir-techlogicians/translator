@@ -377,7 +377,7 @@ def price_estimate(request):
         except Exception as e:
             return JsonResponse({"status": "error", "message": str(e)}, status=400)
 
-    return JsonResponse({"status": "error", "message": "Invalid request"}, status=400)
+    return JsonResponse({"status": "error", "message": _("Invalid request")}, status=400)
 
 # def translation_status(request, task_id):
 #     result = AsyncResult(task_id)

@@ -229,3 +229,6 @@ msgstr "Olet valinnut liian monta kieltä. Tiedostosi koko on %(bytes)s tavua, v
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "Kokonaiskäsittelyn koko ylittää 200 000 tavun rajan"
+
+msgid "Invalid request"
+msgstr "Virheellinen pyyntö"

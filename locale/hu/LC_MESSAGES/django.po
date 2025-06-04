@@ -229,3 +229,6 @@ msgstr "Túl sok nyelvet választott ki. A fájlmérete %(bytes)s byte, így leg
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "A teljes feldolgozási méret meghaladja a 200,000 byte-os határt."
+
+msgid "Invalid request"
+msgstr "Érvénytelen kérés"

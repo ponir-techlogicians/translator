@@ -229,3 +229,6 @@ msgstr "คุณได้เลือกภาษามากเกินไป
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "ขนาดการประมวลผลทั้งหมดเกินขีดจำกัดที่ 200,000 ไบต์"
+
+msgid "Invalid request"
+msgstr "คำขอไม่ถูกต้อง"

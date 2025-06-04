@@ -227,3 +227,6 @@ msgstr "Malais"
 
 msgid "Dutch"
 msgstr "Néerlandais"
+
+msgid "Invalid request"
+msgstr "Demande invalide"

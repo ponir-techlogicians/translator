@@ -226,3 +226,6 @@ msgstr "您選擇的語言太多。根據您的文件大小 %(bytes)s 字節，�
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "總處理大小超過 200,000 字節的限制"
+
+msgid "Invalid request"
+msgstr "無效的請求"

@@ -229,3 +229,6 @@ msgstr "rumunština"
 
 msgid "Greek"
 msgstr "řečtina"
+
+msgid "Invalid request"
+msgstr "Neplatný požadavek"

@@ -228,3 +228,6 @@ msgstr "너무 많은 언어를 선택했습니다. 파일 크기가 %(bytes)s�
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "총 처리 크기가 200,000바이트 제한을 초과합니다."
+
+msgid "Invalid request"
+msgstr "잘못된 요청"

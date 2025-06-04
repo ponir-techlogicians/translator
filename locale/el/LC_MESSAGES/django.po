@@ -227,3 +227,6 @@ msgstr "Ρουμανικά"
 
 msgid "Greek"
 msgstr "Ελληνικά"
+
+msgid "Invalid request"
+msgstr "Μη έγκυρο αίτημα"

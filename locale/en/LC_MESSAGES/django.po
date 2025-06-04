@@ -314,3 +314,6 @@ msgstr "Romanian"
 #: multilang/settings.py:140
 msgid "Greek"
 msgstr "Greek"
+
+msgid "Invalid request"
+msgstr "Invalid request"

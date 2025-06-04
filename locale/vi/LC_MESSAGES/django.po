@@ -229,3 +229,6 @@ msgstr "hoặc"
 
 msgid "Select file"
 msgstr "Chọn tệp"
+
+msgid "Invalid request"
+msgstr "Yêu cầu không hợp lệ"

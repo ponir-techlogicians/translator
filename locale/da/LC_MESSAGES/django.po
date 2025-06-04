@@ -227,3 +227,6 @@ msgstr "Du har valgt for mange sprog. Med din filstørrelse på %(bytes)s bytes 
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "Den samlede behandlingsstørrelse overskrider grænsen på 200.000 bytes"
+
+msgid "Invalid request"
+msgstr "Ugyldig anmodning"

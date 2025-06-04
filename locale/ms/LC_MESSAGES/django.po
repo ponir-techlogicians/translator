@@ -229,3 +229,6 @@ msgstr "Anda telah memilih terlalu banyak bahasa. Dengan saiz fail anda sebanyak
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "Jumlah saiz pemprosesan melebihi had 200,000 bait"
+
+msgid "Invalid request"
+msgstr "Permintaan tidak sah"

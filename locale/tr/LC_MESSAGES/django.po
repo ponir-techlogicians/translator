@@ -229,3 +229,6 @@ msgstr "Çok fazla dil seçtiniz. %(bytes)s bayt boyutundaki dosyanızla, toplam
 
 msgid "Total processing size exceeds limit of 200,000 bytes"
 msgstr "Toplam işlem boyutu 200,000 bayt sınırını aşıyor"
+
+msgid "Invalid request"
+msgstr "Geçersiz istek"
