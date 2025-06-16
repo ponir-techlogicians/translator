@@ -94,7 +94,7 @@ def translate_language(parsed_content, target_language, file_format, context, de
 
     chunks = list(chunk_dict(parsed_content, CHUNK_SIZE))
 
-    def translate_chunk(chunk,index=None):
+    def translate_chunk(chunk, index=None):
         pairs = [f"{key} => {value}" for key, value in chunk.items()]
         combined_text = SEPARATOR.join(pairs)
 
@@ -109,7 +109,7 @@ def translate_language(parsed_content, target_language, file_format, context, de
             Only translate the human-readable parts.
             Output MUST use the exact same `|||` separator between translated segments.
             Do NOT wrap the result in quotation marks or code blocks.
-                """
+        """
 
         translated_combined = translate_text(
             combined_text,
@@ -117,30 +117,99 @@ def translate_language(parsed_content, target_language, file_format, context, de
             file_format,
             context,
             description,
-            prompt=prompt,# Pass this custom prompt to your `translate_text` function,
-            chunk_index = index
+            prompt=prompt,
+            chunk_index=index
         )
 
         translated_pairs = translated_combined["content"].split(SEPARATOR)
 
         translated_chunk = {}
         for pair in translated_pairs:
-            #print(pair)
             if "=>" in pair:
                 key, value = pair.split("=>", 1)
                 translated_chunk[key.strip()] = value.strip()
             else:
                 print(f"[Warning] Malformed pair in language {target_language}: '{pair}'")
 
-
         return translated_chunk, translated_combined.get("total_token", 0)
 
+    # Run and collect futures with index
     with ThreadPoolExecutor() as executor:
-        futures = [executor.submit(translate_chunk, chunk,index) for index, chunk in enumerate(chunks)]
+        futures = {
+            executor.submit(translate_chunk, chunk, index): index
+            for index, chunk in enumerate(chunks)
+        }
+
+        ordered_results = [None] * len(chunks)
 
         for future in as_completed(futures):
+            index = futures[future]
             translated_chunk, chunk_tokens = future.result()
-            translated_result.update(translated_chunk)
-            total_tokens += chunk_tokens
+            ordered_results[index] = (translated_chunk, chunk_tokens)
+
+    # Reconstruct in original chunk order
+    for translated_chunk, chunk_tokens in ordered_results:
+        translated_result.update(translated_chunk)
+        total_tokens += chunk_tokens
 
     return translated_result, total_tokens
+
+
+# def translate_language(parsed_content, target_language, file_format, context, description):
+#     from concurrent.futures import ThreadPoolExecutor, as_completed
+#
+#     translated_result = {}
+#     total_tokens = 0
+#
+#     chunks = list(chunk_dict(parsed_content, CHUNK_SIZE))
+#
+#     def translate_chunk(chunk,index=None):
+#         pairs = [f"{key} => {value}" for key, value in chunk.items()]
+#         combined_text = SEPARATOR.join(pairs)
+#
+#         prompt = f"""
+#             You will receive a list of key-value pairs separated by "{SEPARATOR}".
+#             Translate only the **values** into {target_language}, keeping the keys unchanged.
+#             The original language is in korean.
+#             Ensure each output pair follows the format: key => translated_value.
+#             Do not skip any values. Preserve the order.
+#             Do NOT translate the delimiter (`|||`).
+#             You must preserve every line break exactly.
+#             Only translate the human-readable parts.
+#             Output MUST use the exact same `|||` separator between translated segments.
+#             Do NOT wrap the result in quotation marks or code blocks.
+#                 """
+#
+#         translated_combined = translate_text(
+#             combined_text,
+#             target_language,
+#             file_format,
+#             context,
+#             description,
+#             prompt=prompt,# Pass this custom prompt to your `translate_text` function,
+#             chunk_index = index
+#         )
+#
+#         translated_pairs = translated_combined["content"].split(SEPARATOR)
+#
+#         translated_chunk = {}
+#         for pair in translated_pairs:
+#             #print(pair)
+#             if "=>" in pair:
+#                 key, value = pair.split("=>", 1)
+#                 translated_chunk[key.strip()] = value.strip()
+#             else:
+#                 print(f"[Warning] Malformed pair in language {target_language}: '{pair}'")
+#
+#
+#         return translated_chunk, translated_combined.get("total_token", 0)
+#
+#     with ThreadPoolExecutor() as executor:
+#         futures = [executor.submit(translate_chunk, chunk,index) for index, chunk in enumerate(chunks)]
+#
+#         for future in as_completed(futures):
+#             translated_chunk, chunk_tokens = future.result()
+#             translated_result.update(translated_chunk)
+#             total_tokens += chunk_tokens
+#
+#     return translated_result, total_tokens
