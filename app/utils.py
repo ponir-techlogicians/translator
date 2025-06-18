@@ -10,6 +10,31 @@ import openai
 from django.conf import settings
 client = openai.OpenAI(api_key=settings.OPENAI_API_KEY)
 
+
+def generate_po_header(project_version="PACKAGE VERSION", bugs_email="", creation_date=None,
+                       revision_date="YEAR-MO-DA HO:MI+ZONE", translator="FULL NAME <EMAIL@ADDRESS>",
+                       language_team="LANGUAGE <LL@li.org>", language=""):
+    if creation_date is None:
+        from datetime import datetime
+        creation_date = datetime.now().strftime("%Y-%m-%d %H:%M%z")
+
+    return f'''msgid ""
+msgstr ""
+"Project-Id-Version: {project_version}\\n"
+"Report-Msgid-Bugs-To: {bugs_email}\\n"
+"POT-Creation-Date: {creation_date}\\n"
+"PO-Revision-Date: {revision_date}\\n"
+"Last-Translator: {translator}\\n"
+"Language-Team: {language_team}\\n"
+"Language: {language}\\n"
+"MIME-Version: 1.0\\n"
+"Content-Type: text/plain; charset=UTF-8\\n"
+"Content-Transfer-Encoding: 8bit\\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\\n"
+'''
+
+
 def chunk_dict(d, chunk_size):
     items = list(d.items())
     for i in range(0, len(items), chunk_size):
@@ -56,7 +81,7 @@ def reconstruct_file_content(data, file_format):
         return tostring(root, encoding='unicode')
 
     elif file_format in ("po","PO"):
-        output = []
+        output = [generate_po_header()]
         for key, value in data.items():
             output.append(f'msgid "{key}"\nmsgstr "{value}"\n')
         return "\n".join(output)
