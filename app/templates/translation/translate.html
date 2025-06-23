@@ -24,18 +24,18 @@
         <a href="/" class="logo">
             <img src="{% static 'app/img/logo.png' %}" alt="EchoNow Logo">
         </a>
-        <form action="{% url 'set_language' %}" method="post">
-         {% csrf_token %}
-         <input name="next" type="hidden" value="{{ redirect_to }}">
-         <select name="language" onchange="this.form.submit()">
-           {% get_current_language as LANGUAGE_CODE %}
-           {% get_available_languages as LANGUAGES %}
-           {% for lang in LANGUAGES %}
-             <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
-               {{ lang.1 }}
-             </option>
-           {% endfor %}
-         </select>
+{#        <form action="{% url 'set_language' %}" method="post">#}
+{#         {% csrf_token %}#}
+{#         <input name="next" type="hidden" value="{{ redirect_to }}">#}
+{#         <select name="language" onchange="this.form.submit()">#}
+{#           {% get_current_language as LANGUAGE_CODE %}#}
+{#           {% get_available_languages as LANGUAGES %}#}
+{#           {% for lang in LANGUAGES %}#}
+{#             <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>#}
+{#               {{ lang.1 }}#}
+{#             </option>#}
+{#           {% endfor %}#}
+{#         </select>#}
 {#            <select name="language" onchange="this.form.submit()">#}
 {#               {% get_current_language as LANGUAGE_CODE %}#}
 {#               {% get_available_languages as AVAILABLE_LANG_CODES %}#}
@@ -46,7 +46,7 @@
 {#                 </option>#}
 {#               {% endfor %}#}
 {#             </select>#}
-       </form>
+{#       </form>#}
     </div>
 </header>
 
